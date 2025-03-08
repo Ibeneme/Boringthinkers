@@ -4,9 +4,9 @@ import FAQPage from "../Faqs/FAQPage";
 import Section from "../Section/Section";
 
 const AboutUsComponent = () => {
-  // Function to handle the button click event and open the website
-  const openWebsite = (url: string) => {
-    window.open(url, "_blank"); // Opens the provided URL in a new tab
+  // Function to handle opening the email client
+  const openEmail = () => {
+    window.location.href = "mailto:boringthinkers@gmail.com";
   };
 
   return (
@@ -18,10 +18,10 @@ const AboutUsComponent = () => {
         Our goal is to empower individuals and organizations to work more efficiently, making life easier and more productive. 
         By focusing on simplicity and effectiveness, we envision a world where technology seamlessly integrates into daily life, reducing complexity and allowing users to focus on what matters most. 
         In clearer terms, we aim to create a society where complex activities become so simple and boring to do."
-        buttonText="Learn More"
+        buttonText="Contact Us"
         imgSrc={img1} // Replace with a relevant image
         status="Vision"
-        onButtonClick={() => openWebsite("#")}
+        onButtonClick={openEmail}
         ctaBgColor="#FFD000"
         ctaTextColor="#011404"
         about
@@ -35,10 +35,10 @@ const AboutUsComponent = () => {
         Through thoughtful research, ideation, design, development, and continuous improvement, we are dedicated to creating software solutions that solve practical problems. 
         With a relentless focus on the real needs of our users, we aim to simplify tasks, enhance productivity, and improve everyday experiences. 
         Our goal is to empower individuals and organizations to work smarter, not harder, by delivering intuitive, reliable products that make life easier."
-        buttonText="Learn More"
+        buttonText="Contact Us"
         imgSrc={srm} // Replace with a relevant image
         status="Mission"
-        onButtonClick={() => openWebsite("#")}
+        onButtonClick={openEmail}
         reverse={true}
         ctaBgColor="#FFD000"
         ctaTextColor="#011404"
