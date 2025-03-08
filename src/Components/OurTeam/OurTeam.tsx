@@ -2,34 +2,34 @@ import React, { useEffect, useRef } from "react";
 import "./OurTeam.css"; // Import the CSS file for styling
 
 import ibenemeImage from "../../assets/images/team/me.jpeg";
-//import wilsonImage from "../../assets/images/team/mudi.jpg";
+import divineImage from "../../assets/images/team/divine.jpg";
 import reevesImage from "../../assets/images/team/reeves.jpg";
 import ernestImage from "../../assets/images/team/ernest.png";
 //import bonaventureImage from "../../assets/images/team/me.jpeg";
 
 const teamMembers = [
   {
-    name: "Ibeneme",
+    name: "Ibeneme Ikenna",
     title: "Founder/CEO & Software Developer",
     bio: "Ibeneme Ikenna is the Founder and CEO of Boring Thinkers Limited, a software developer with over 5 years of experience specializing in Fullstack MERN (MongoDB, Express, React, Node.js), Rust, and React Native. He has a passion for building scalable applications and empowering others through technology.",
     image: ibenemeImage, // Replace with the actual image variable or path
     twitter: "https://x.com/Ibeneme_Ikenna", // Twitter URL for Ibeneme
   },
   {
-    name: "Divine",
+    name: "Divine Chibueze",
     title: "Top Brand & Graphics Designer | UI/UX Designer",
     bio: "Divine is a seasoned Brand and Graphics Designer with over 4 years of experience in creating impactful visual identities. He also brings 2 years of expertise in UI/UX design, blending design aesthetics with user-centric functionality. His work combines creativity with technology to deliver stunning, user-friendly designs.",
-    image: ibenemeImage, // Replace with the actual image variable or path
-    twitter: "https://x.com/madebymudi", // Twitter URL for Wilson
+    image: divineImage, // Replace with the actual image variable or path
+    twitter: "https://www.behance.net/divinechibueze", // Twitter URL for Wilson
   },
   {
-    name: "Reeves",
+    name: "Reeves Akwa",
     title: "Python Developer | Backend Developer | Cloud Developer Lead",
     bio: "Reeves is a highly skilled Python Developer with strong expertise in backend development and cloud architecture. With a solid foundation in building scalable and efficient systems, he has taken the lead in numerous cloud projects and served as a key technical leader in the development team. He excels in creating robust backend infrastructures and optimizing cloud solutions.",
     image: reevesImage, // Replace with the actual image variable or path
   },
   {
-    name: "Ernest",
+    name: "Ernest Nwankwo",
     title: "Fullstack Developer | MERN Stack Specialist",
     bio: "Ernest is a skilled Fullstack Developer with 3 years of experience specializing in the MERN stack (MongoDB, Express, React, Node.js). He is passionate about building modern, efficient web applications and has a strong foundation in both frontend and backend technologies. Ernest thrives in fast-paced environments, constantly learning new technologies and frameworks to improve his skills.",
     image: ernestImage, // Replace with the actual image variable or path
@@ -102,7 +102,7 @@ const OurTeam: React.FC = () => {
                     padding: `4px 12px`,
                   }}
                 >
-                  View Twitter
+                  Get to Know
                 </a>
               )}
 
