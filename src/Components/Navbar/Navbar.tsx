@@ -17,7 +17,7 @@ const Navbar = () => {
             src={logo}
             alt="Logo"
             className="clipped-image"
-            style={{ height: 38 }}
+            // style={{ height: 38 }}
           />
         </NavLink>
 

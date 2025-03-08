@@ -4,7 +4,7 @@ import AboutUsComponent from "../Components/About/About";
 
 const Home = () => {
   return (
-    <div>
+    <div style={{}}> 
       <Hero />
       <OurCompany />
       <AboutUsComponent />
