@@ -58,7 +58,6 @@ const Section: React.FC<SectionProps> = ({
   //       };
   //   }
   // };
-
   // const statusStyles = getStatusStyles(status);
 
   return (
@@ -66,7 +65,7 @@ const Section: React.FC<SectionProps> = ({
       data-aos="zoom-out"
       className={`section-container ${reverse ? "reverse" : ""}`}
     >
-      <div className="text-content">
+      <div className="text-content" data-aos="zoom-out">
         {!about && (
           <div
             style={{
@@ -86,6 +85,7 @@ const Section: React.FC<SectionProps> = ({
         <h2 className="section-title">{title}</h2>
         <p className="section-description">{description}</p>
         <button
+          data-aos="zoom-out"
           onClick={onButtonClick}
           className="cta"
           style={{
@@ -99,7 +99,12 @@ const Section: React.FC<SectionProps> = ({
         </button>
       </div>
       <div className="image-content">
-        <img src={imgSrc} alt={title} className="section-image" />
+        <img
+          data-aos="zoom-out"
+          src={imgSrc}
+          alt={title}
+          className="section-image"
+        />
       </div>
     </section>
   );

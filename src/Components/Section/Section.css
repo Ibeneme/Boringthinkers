@@ -3,7 +3,8 @@
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-    padding: 3rem 5%;
+    padding: 3rem 12px;
+    width: 100vw;
 }
 
 .text-content {
@@ -22,6 +23,7 @@
     color: #555;
     margin: 1rem 0;
     line-height: 1.5rem;
+    
 }
 
 .section-cta {
@@ -44,7 +46,7 @@
 }
 
 .section-image {
-    width: 100%;
+    width: 90%;
     max-width: 700px;
     height: auto;
     border-radius: 10px;
@@ -59,6 +61,7 @@
     .section-container {
         flex-direction: column;
         text-align:left;
+        width: 85vw;
     }
 
     .reverse {

@@ -16,6 +16,8 @@ const OurProjectComponent = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        margin: 0,
+        padding: 0,
       }}
     >
       {/* Hensard University Section */}
