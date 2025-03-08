@@ -10,7 +10,16 @@ const AboutUsComponent = () => {
   };
 
   return (
-    <>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        margin: 0,
+        padding: 0,
+      }}
+    >
       {/* Our Vision Section */}
       <Section
         title="Our Vision"
@@ -45,7 +54,7 @@ const AboutUsComponent = () => {
         about
       />
       <FAQPage />
-    </>
+    </div>
   );
 };
 
