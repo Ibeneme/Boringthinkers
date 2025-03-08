@@ -61,7 +61,7 @@
     .section-container {
         flex-direction: column;
         text-align:left;
-        width: 85vw;
+        width: 75vw;
     }
 
     .reverse {
