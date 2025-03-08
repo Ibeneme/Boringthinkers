@@ -4,7 +4,7 @@
     justify-content: space-between;
     gap: 2rem;
     padding: 3rem 12px;
-    width: 75vw;
+
 }
 
 .text-content {
@@ -61,10 +61,19 @@
     .section-container {
         flex-direction: column;
         text-align:left;
-        width: 75vw;
+        width: 100vw;
+        
     }
 
     .reverse {
         flex-direction: column;
+        width: 100vw;
+        
+    }
+    .section-image {
+        width: '75%';
+        max-width: 300px;
+        height: auto;
+        border-radius: 10px;
     }
 }

@@ -18,6 +18,7 @@ const AboutUsComponent = () => {
         alignItems: "center",
         margin: 0,
         padding: 0,
+        width: '100vw'
       }}
     >
       {/* Our Vision Section */}
