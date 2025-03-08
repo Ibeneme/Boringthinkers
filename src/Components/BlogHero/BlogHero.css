@@ -1,6 +1,6 @@
 .blog-hero {
   position: relative;
-  background: url('../../assets//images/snips/code.jpg') no-repeat center center fixed;
+  background: url('../../assets/images/snips/code.jpg') no-repeat center center fixed;
   background-size: cover;
   background-attachment: fixed;
   /* Enables the parallax effect */
