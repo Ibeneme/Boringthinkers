@@ -16,13 +16,7 @@ const teamMembers = [
     twitter: "https://x.com/Ibeneme_Ikenna", // Twitter URL for Ibeneme
   },
   {
-    name: "Divine Chibueze",
-    title: "Top Brand & Graphics Designer | UI/UX Designer",
-    bio: "Divine is a seasoned Brand and Graphics Designer with over 4 years of experience in creating impactful visual identities. He also brings 2 years of expertise in UI/UX design, blending design aesthetics with user-centric functionality. His work combines creativity with technology to deliver stunning, user-friendly designs.",
-    image: divineImage, // Replace with the actual image variable or path
-    twitter: "https://www.behance.net/divinechibueze", // Twitter URL for Wilson
-  },
-  {
+    twitter: "https://www.linkedin.com/in/reeves-akwa-97ab5b165/",
     name: "Reeves Akwa",
     title: "Python Developer | Backend Developer | Cloud Developer Lead",
     bio: "Reeves is a highly skilled Python Developer with strong expertise in backend development and cloud architecture. With a solid foundation in building scalable and efficient systems, he has taken the lead in numerous cloud projects and served as a key technical leader in the development team. He excels in creating robust backend infrastructures and optimizing cloud solutions.",
@@ -34,12 +28,13 @@ const teamMembers = [
     bio: "Ernest is a skilled Fullstack Developer with 3 years of experience specializing in the MERN stack (MongoDB, Express, React, Node.js). He is passionate about building modern, efficient web applications and has a strong foundation in both frontend and backend technologies. Ernest thrives in fast-paced environments, constantly learning new technologies and frameworks to improve his skills.",
     image: ernestImage, // Replace with the actual image variable or path
   },
-  //   {
-  //     name: "Bonaventure",
-  //     title: "Fullstack Developer | Flutter Specialist",
-  //     bio: "Bonaventure is a Fullstack Developer with expertise in building robust web and mobile applications. With a strong focus on React Native, he is a seasoned React Native Developer with extensive experience in developing high-performance, cross-platform mobile apps. Bonaventure is dedicated to delivering seamless and engaging user experiences in both web and mobile spaces.",
-  //     image: bonaventureImage, // Replace with the actual image variable or path
-  //   },
+  {
+    name: "Divine Chibueze",
+    title: "Top Brand & Graphics Designer | UI/UX Designer",
+    bio: "Divine is a seasoned Brand and Graphics Designer with over 4 years of experience in creating impactful visual identities. He also brings 2 years of expertise in UI/UX design, blending design aesthetics with user-centric functionality. His work combines creativity with technology to deliver stunning, user-friendly designs.",
+    image: divineImage, // Replace with the actual image variable or path
+    twitter: "https://www.behance.net/divinechibueze", // Twitter URL for Wilson
+  },
 ];
 
 const OurTeam: React.FC = () => {
