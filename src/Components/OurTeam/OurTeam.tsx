@@ -6,7 +6,7 @@ import divineImage from "../../assets/images/team/divine.jpg";
 import reevesImage from "../../assets/images/team/reeves.jpg";
 import ernestImage from "../../assets/images/team/ernest.png";
 //import bonaventureImage from "../../assets/images/team/me.jpeg";
-
+import wilson from "../../assets/images/team/mudi.jpg";
 const teamMembers = [
   {
     name: "Ibeneme Ikenna",
@@ -15,12 +15,21 @@ const teamMembers = [
     image: ibenemeImage, // Replace with the actual image variable or path
     twitter: "https://x.com/Ibeneme_Ikenna", // Twitter URL for Ibeneme
   },
+
   {
     twitter: "https://www.linkedin.com/in/reeves-akwa-97ab5b165/",
     name: "Reeves Akwa",
-    title: "Co-Foubder | Python Developer | Backend Developer | Cloud Developer Lead",
+    title:
+      "Co-Founder | Python Developer | Backend Developer | Cloud Developer Lead",
     bio: "Reeves is a highly skilled Python Developer with strong expertise in backend development and cloud architecture. With a solid foundation in building scalable and efficient systems, he has taken the lead in numerous cloud projects and served as a key technical leader in the development team. He excels in creating robust backend infrastructures and optimizing cloud solutions.",
     image: reevesImage, // Replace with the actual image variable or path
+  },
+  {
+    name: "Wilson Ofiavwe",
+    title: "Marketing and Sales Specialist",
+    bio: "Wilson Ofiavwe is a seasoned professional with over 4 years of experience in Brand and Graphics Design, creating impactful visual identities that leave a lasting impression. With an additional 2 years of expertise in UI/UX design, he expertly blends creativity with user-centric functionality to deliver innovative, user-friendly digital experiences. Wilson's work is a fusion of design aesthetics and technology, ensuring every project is not only visually stunning but also highly functional.",
+    image: wilson, // Replace with the actual image variable or path
+    twitter: "https://x.com/madebymudi", // Twitter URL for Wilson
   },
   {
     name: "Ernest Nwankwo",
