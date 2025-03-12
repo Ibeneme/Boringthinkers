@@ -26,8 +26,8 @@ const teamMembers = [
   },
   {
     name: "Wilson Ofiavwe",
-    title: "Marketing and Sales Specialist",
-    bio: "Wilson Ofiavwe is a seasoned professional with over 4 years of experience in Brand and Graphics Design, creating impactful visual identities that leave a lasting impression. With an additional 2 years of expertise in UI/UX design, he expertly blends creativity with user-centric functionality to deliver innovative, user-friendly digital experiences. Wilson's work is a fusion of design aesthetics and technology, ensuring every project is not only visually stunning but also highly functional.",
+    title: "Sales and Marketing Specialist",
+    bio: "Wilson Ofiavwe is an accomplished Sales and Marketing Specialist with over 4 years of experience in crafting compelling brand identities and driving impactful marketing strategies. His expertise spans across both creative design and marketing, blending innovative visuals with data-driven strategies to elevate brand presence. With an additional 2 years of experience in UI/UX design, Wilson focuses on user-centric design while ensuring that his work not only stands out but also resonates with target audiences for maximum engagement and growth.",
     image: wilson, // Replace with the actual image variable or path
     twitter: "https://x.com/madebymudi", // Twitter URL for Wilson
   },
