@@ -62,10 +62,13 @@ const Section: React.FC<SectionProps> = ({
 
   return (
     <section
-      data-aos="zoom-out"
+      // data-aos="zoom-out"
       className={`section-container ${reverse ? "reverse" : ""}`}
     >
-      <div className="text-content" data-aos="zoom-out">
+      <div
+        className="text-content"
+        //data-aos="zoom-out"
+      >
         {!about && (
           <div
             style={{
@@ -85,7 +88,7 @@ const Section: React.FC<SectionProps> = ({
         <h2 className="section-title">{title}</h2>
         <p className="section-description">{description}</p>
         <button
-          data-aos="zoom-out"
+          // data-aos="zoom-out"
           onClick={onButtonClick}
           className="cta"
           style={{
@@ -100,7 +103,7 @@ const Section: React.FC<SectionProps> = ({
       </div>
       <div className="image-content">
         <img
-          data-aos="zoom-out"
+          // data-aos="zoom-out"
           src={imgSrc}
           alt={title}
           className="section-image"

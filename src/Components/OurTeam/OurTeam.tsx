@@ -10,8 +10,9 @@ import wilson from "../../assets/images/team/mudi.jpg";
 const teamMembers = [
   {
     name: "Ibeneme Ikenna",
-    title: "Founder/CEO & Software Developer",
-    bio: "Ibeneme Ikenna is the Founder and CEO of Boring Thinkers Limited, a software developer with over 5 years of experience specializing in Fullstack MERN (MongoDB, Express, React, Node.js), Rust, and React Native. He has a passion for building scalable applications and empowering others through technology.",
+    title:
+      "Founder/CEO & Software Developer || Mobile App Develop",
+    bio: "Ibeneme Ikenna is the Founder and CEO of Boring Thinkers Limited, a software developer with over 5 years of experience specializing in Mobile applications as well as Fullstack MERN (MongoDB, Express, React, Node.js) websites and applications in React Native. He has a passion for building scalable applications and empowering others through technology.",
     image: ibenemeImage, // Replace with the actual image variable or path
     twitter: "https://x.com/Ibeneme_Ikenna", // Twitter URL for Ibeneme
   },
