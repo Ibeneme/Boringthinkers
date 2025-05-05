@@ -3,6 +3,7 @@ import "./OurTeam.css"; // Import the CSS file for styling
 
 import ibenemeImage from "../../assets/images/team/me.jpeg";
 import divineImage from "../../assets/images/team/divine.jpg";
+import main from "../../assets/images/main.jpg";
 import reevesImage from "../../assets/images/team/reeves.jpg";
 import ernestImage from "../../assets/images/team/ernest.png";
 //import bonaventureImage from "../../assets/images/team/me.jpeg";
@@ -10,8 +11,7 @@ import wilson from "../../assets/images/team/mudi.jpg";
 const teamMembers = [
   {
     name: "Ibeneme Ikenna",
-    title:
-      "Founder/CEO & Software Developer || Mobile App Develop",
+    title: "Founder/CEO & Software Developer || Mobile App Develop",
     bio: "Ibeneme Ikenna is the Founder and CEO of Boring Thinkers Limited, a software developer with over 5 years of experience specializing in Mobile applications as well as Fullstack MERN (MongoDB, Express, React, Node.js) websites and applications in React Native. He has a passion for building scalable applications and empowering others through technology.",
     image: ibenemeImage, // Replace with the actual image variable or path
     twitter: "https://x.com/Ibeneme_Ikenna", // Twitter URL for Ibeneme
@@ -43,6 +43,13 @@ const teamMembers = [
     title: "Top Brand & Graphics Designer | UI/UX Designer",
     bio: "Divine is a seasoned Brand and Graphics Designer with over 4 years of experience in creating impactful visual identities. He also brings 2 years of expertise in UI/UX design, blending design aesthetics with user-centric functionality. His work combines creativity with technology to deliver stunning, user-friendly designs.",
     image: divineImage, // Replace with the actual image variable or path
+    twitter: "https://www.behance.net/divinechibueze", // Twitter URL for Wilson
+  },
+  {
+    name: "Divine Chris-Korie",
+    title: "Top UI Designer & AI Prompt Engineer",
+    bio: "Divine is a seasoned Brand and Graphics Designer with over 4 years of experience in creating impactful visual identities. He also brings 2 years of expertise in UI/UX design and AI Prompt Engineering, seamlessly blending design aesthetics with user-centric functionality and cutting-edge AI technologies. His work combines creativity, design thinking, and AI-driven solutions to deliver stunning, user-friendly designs that enhance interaction with intelligent systems.",
+    image: main, 
     twitter: "https://www.behance.net/divinechibueze", // Twitter URL for Wilson
   },
 ];
