@@ -1,5 +1,5 @@
 .accordion-container {
-    margin: 0 auto;
+    margin: 0px;
     width: 100%;
     padding: 6rem 0rem;
 }
@@ -57,7 +57,7 @@
 
 .accordion-container p {
     font-size: 1.6rem;
-    padding: 0px 16px;
+    padding: 0px 0px;
     margin-bottom: 1.5rem;
     color: #666;
     text-align: left;
@@ -72,14 +72,14 @@
 
     .accordion-container p {
         font-size: 1.3rem;
-        padding: 0px 16px;
+        padding: 0px 0px;
         font-weight: 600;
     }
 
     .accordion-container {
         margin: 0 auto;
         width: 100%;
-        padding: 3rem 1rem;
+        padding: 3rem 0rem;
     }
 
     .accordion-button {
@@ -89,7 +89,7 @@
 
     .accordion-content {
         font-size: 0.95rem;
-        padding: 0 16px 12px;
+        padding: 0 12px 12px;
     }
 
     .accordion-icon {
