@@ -1,13 +1,14 @@
-import Section from "../Section/Section";
-import img1 from "../../assets/images/projects/hensard.png";
-import cwai from "../../assets/images/projects/cwai.png";
-import pickups from "../../assets/images/projects/pickups.png";
-import srm from "../../assets/images/projects/srm.png";
+// import Section from "../Section/Section";
+// import img1 from "../../assets/images/projects/hensard.png";
+// import cwai from "../../assets/images/projects/cwai.png";
+// import pickups from "../../assets/images/projects/pickups.png";
+// import srm from "../../assets/images/projects/srm.png";
+import NewProjects from "../NewProjects/Projects";
 const OurProjectComponent = () => {
   // Function to handle the button click event and open the website
-  const openWebsite = (url: string) => {
-    window.open(url, "_blank"); // Opens the provided URL in a new tab
-  };
+  // const openWebsite = (url: string) => {
+  //   window.open(url, "_blank"); // Opens the provided URL in a new tab
+  // };
 
   return (
     <div
@@ -20,7 +21,8 @@ const OurProjectComponent = () => {
         padding: 0,
       }}
     >
-      {/* Hensard University Section */}
+      <NewProjects />
+      {/* 
       <Section
         title="Hensard University: A University website owned by former governor of Bayelsa State, Senator Henry Seriake Dickson"
         description="Hensard University provides innovative e-learning solutions designed to enhance the educational experience for students and faculty. 
@@ -32,7 +34,7 @@ const OurProjectComponent = () => {
         onButtonClick={() => openWebsite("https://hensarduniversity.edu.ng/")} // Pass the website URL for Hensard University
       />
 
-      {/* Touchpfy CRM Section */}
+
       <Section
         title="Touchpfy: A CRM for Businesses"
         description="Touchpfy is a cutting-edge customer relationship management (CRM) platform designed to help businesses optimize their customer service operations. 
@@ -47,8 +49,7 @@ const OurProjectComponent = () => {
         ctaBgColor="#FF7D13"
       />
 
-      {/* Chatwazobia AI + Games AI Section */}
-      <Section
+     <Section
         title="Chatwazobia AI: AI Chat & Games"
         description="Chatwazobia AI is an advanced platform that integrates AI-powered chat and translation services with an innovative Games AI feature. 
         It allows users to engage in natural conversations with an intelligent virtual assistant, receive real-time translations in multiple languages, and enjoy personalized gaming experiences. 
@@ -63,8 +64,7 @@ const OurProjectComponent = () => {
         ctaTextColor="#5FFF4D" // Pass the website URL for Chatwazobia AI
       />
 
-      {/* PickUp - Uber for Dispatch Riders Section */}
-      <Section
+   <Section
         title="PickUp: Uber for Dispatch Riders"
         description="PickUp is an innovative on-demand platform designed for dispatch riders, aiming to revolutionize the delivery industry. 
         Similar to Uber, PickUp connects riders with customers needing fast and efficient delivery services. 
@@ -77,7 +77,7 @@ const OurProjectComponent = () => {
         onButtonClick={() => openWebsite("https://www.pickupapp.com/")} // Placeholder link
         reverse={true}
         ctaBgColor="red"
-      />
+      /> */}
     </div>
   );
 };

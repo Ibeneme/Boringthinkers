@@ -1,11 +1,12 @@
-import AboutUsComponent from "../Components/About/About";
+
+import AboutUs from "../Components/AboutUs/AboutUs";
 import BlogHero from "../Components/BlogHero/BlogHero";
 
 const AboutUsPage = () => {
   return (
     <div>
       <BlogHero title="ABOUT US" />
-      <AboutUsComponent />
+      <AboutUs />
     </div>
   );
 };

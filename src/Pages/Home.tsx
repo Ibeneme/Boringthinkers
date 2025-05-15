@@ -1,13 +1,16 @@
 import Hero from "./Hero/Hero";
-import OurCompany from "./OurCompany/OurCompany";
-import AboutUsComponent from "../Components/About/About";
+import AboutUs from "../Components/AboutUs/AboutUs";
+import FAQPage from "../Components/Faqs/FAQPage";
+import AccordionSection from "../Components/AccordionSection/AccordionSection";
 
 const Home = () => {
   return (
     <div style={{ margin: 0, padding: 0 }}>
       <Hero />
-      <OurCompany />
-      <AboutUsComponent />
+      <AboutUs />
+      <AccordionSection />
+      <FAQPage />
+
     </div>
   );
 };

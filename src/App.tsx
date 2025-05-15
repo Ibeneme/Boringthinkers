@@ -9,6 +9,7 @@ import OurTeamPage from "./Pages/OurTeamPage";
 import CareerPage from "./Pages/CareersPage";
 import NotFound from "./Pages/NotFound";
 import Navbar from "./Components/Navbar/Navbar";
+import ProjectDetails from "./Components/NewProjects/ProjectDetails";
 
 function App() {
   return (
@@ -16,9 +17,16 @@ function App() {
       <ScrollToTop />
       <Navbar />
       <Routes>
+        <Route path="/projects/:id" element={<ProjectDetails />} />
+
         <Route path="/" element={<Home />} />
         <Route path="/about-us" element={<AboutUsPage />} />
-        <Route path="/projects" element={<OurProjectsPage />} />
+        <Route
+          path="/projects"
+          element={
+            <OurProjectsPage />
+          }
+        />
         <Route path="/team" element={<OurTeamPage />} />
         <Route path="/careers" element={<CareerPage />} />
         <Route path="*" element={<NotFound />} />
