@@ -8,7 +8,7 @@ import InfiniteCarousel from "./InfiniteCarousel";
 const Hero: React.FC = () => {
   // Function to open email client
   const handleSendMail = () => {
-    window.location.href = "mailto:boringthinkers@gmail.com";
+    window.location.href = "mailto:contact@boringthinkers.com";
   };
 
   return (

@@ -1,8 +1,8 @@
 import React from "react";
 import "./AboutUs.css";
-import childonglasses from  "../../assets/images/new/codeb.jpg"; // Replace with actual image path
-import pencils from "../../assets/images/new/codeb.jpg";;
-import crayons from"../../assets/images/new/codeb.jpg";
+import childonglasses from "../../assets/images/new/codeb.jpg"; // Replace with actual image path
+import pencils from "../../assets/images/new/codeb.jpg";
+import crayons from "../../assets/images/new/codeb.jpg";
 import AccordionSection from "../AccordionSection/AccordionSection";
 
 interface AboutUsProps {
@@ -24,26 +24,23 @@ const AboutUs: React.FC<AboutUsProps> = () => {
         <div className="about-text">
           <h3 style={{ color: "#023009" }}>Our Company</h3>
           <p>
-          Boring Thinkers specializes in building innovative software solutions
-          for companies and startups. We simplify complex processes, helping
-          businesses operate more efficiently with reliable, scalable, and user
-          friendly technology.
-          <br />
-          We believe that “boring” can be powerful by eliminating unnecessary
-          complexities, streamlining workflows, and focusing on what truly
-          matters. Our approach is simple: identify the problem, solve the
-          problem.
-          <br />
-          Our products are designed to empower businesses, automate tasks, and
-          drive growth while making day to day operations feel effortless. In
-          the end, we make software that works so seamlessly, it almost feels…
-          boring.   </p>
+            Boring Thinkers specializes in building innovative software
+            solutions for companies and startups. We simplify complex processes,
+            helping businesses operate more efficiently with reliable, scalable,
+            and user friendly technology.
+            <br /> <br />
+            We believe that “boring” can be powerful by eliminating unnecessary
+            complexities, streamlining workflows, and focusing on what truly
+            matters. Our approach is simple: identify the problem, solve the
+            problem.
+            <br /> <br />
+            Our products are designed to empower businesses, automate tasks, and
+            drive growth while making day to day operations feel effortless. In
+            the end, we make software that works so seamlessly, it almost feels…
+            boring.{" "}
+          </p>
         </div>
       </div>
-
-
-
-   
 
       {/* Our Mission */}
       <div className="about-section-reverse">
