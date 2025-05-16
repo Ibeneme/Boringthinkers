@@ -10,6 +10,7 @@ import CareerPage from "./Pages/CareersPage";
 import NotFound from "./Pages/NotFound";
 import Navbar from "./Components/Navbar/Navbar";
 import ProjectDetails from "./Components/NewProjects/ProjectDetails";
+import "./assets/fonts/fonts.css";
 
 function App() {
   return (

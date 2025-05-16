@@ -31,7 +31,7 @@ const sections = [
   //   ],
   // },
   {
-    title: "Web Development & Design",
+    title: "Web Development",
     items: [
       "Responsive Website Design",
       "Frontend Development (React, Vue)",
@@ -65,7 +65,7 @@ const sections = [
     ],
   },
   {
-    title: "Complex Server Development",
+    title: "Server Development",
     items: [
       "Scalable API Architecture",
       "Database Optimization & Management",

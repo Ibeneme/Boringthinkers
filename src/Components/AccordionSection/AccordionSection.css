@@ -67,11 +67,11 @@
 
 @media (max-width: 480px) {
     .accordion-title {
-        font-size: 1.6rem;
+        font-size: 1.2rem;
     }
 
     .accordion-container p {
-        font-size: 1.2rem;
+        font-size: 1rem;
         padding: 0px 0px;
         font-weight: 600;
     }
