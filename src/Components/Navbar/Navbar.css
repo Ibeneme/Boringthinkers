@@ -89,12 +89,14 @@
         color: #011404;
 
     }
+
     .nav-item-p {
         border-bottom: 0px solid #FFD000;
         border-radius: 0px;
         color: #011404;
 
     }
+
     .mode-arrow {
         display: inline-block;
         align-self: flex-end;
@@ -121,10 +123,7 @@
         padding-top: 48px;
         height: fit-content;
         padding-bottom: 64px;
-        /* border-bottom: 8px solid #ffff;
-        border-top: 8px solid #ffff; */
         max-height: 70vh;
-        /* Prevents overflowing */
         overflow-y: auto;
     }
 
