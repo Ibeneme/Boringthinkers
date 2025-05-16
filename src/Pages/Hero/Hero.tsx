@@ -3,7 +3,7 @@ import "./Hero.css";
 import { IoArrowForwardCircleSharp } from "react-icons/io5";
 import { FaStar } from "react-icons/fa";
 import logo from "../../assets/images/logo/white.png";
-import InfiniteCarousel from "./InfiniteCarousel";
+//import InfiniteCarousel from "./InfiniteCarousel";
 
 const Hero: React.FC = () => {
   // Function to open email client
@@ -49,7 +49,7 @@ const Hero: React.FC = () => {
           </p>
         </div>
       </div>
-      <InfiniteCarousel />
+      {/* <InfiniteCarousel /> */}
     </section>
   );
 };

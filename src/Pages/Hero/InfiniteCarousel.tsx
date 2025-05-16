@@ -29,20 +29,35 @@ const images = [
 ];
 
 const InfiniteCarousel: React.FC = () => {
+  const getRandomLightColor = () => {
+    const hue = Math.floor(Math.random() * 360);
+    return `hsl(${hue}, 90%, 85%)`; // pastel/light tone
+  };
+
   return (
     <div className="carousel-container">
       <div className="carousel-track">
         {[...images, ...images].map((item, index) => (
           <div key={index} className="carousel-card">
-            <div className="carousel-image-container">
-              <img
+            <div
+              className="carousel-image-container"
+              style={{
+                backgroundColor: getRandomLightColor(),
+                marginRight: 12,
+                borderRadius: 24,
+              }}
+            >
+              {/* <img
                 src={item.src}
                 alt={`carousel-img-${index}`}
                 className="carousel-image"
-              />
-              <div className="carousel-info">
-                <h3 className="carousel-title">{item.title}</h3>
-                <p className="carousel-text">{item.text}</p>
+              /> */}
+
+              <div className="carousel-image">
+                <div className="carousel-info">
+                  <h3 className="carousel-title">{item.title}</h3>
+                  <p className="carousel-text">{item.text}</p>
+                </div>
               </div>
             </div>
           </div>
