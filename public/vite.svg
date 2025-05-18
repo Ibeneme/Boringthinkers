@@ -1,12 +1,6 @@
-<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_139_97)">
-<rect x="396.653" y="456.301" width="500.599" height="83.9172" rx="41.9586" transform="rotate(-135 396.653 456.301)" fill="#FFD000"/>
-<rect x="241.946" y="483.563" width="319.885" height="83.9172" rx="41.9586" transform="rotate(-135 241.946 483.563)" fill="#FFD000"/>
-<rect x="423.916" y="301.593" width="319.885" height="83.9172" rx="41.9586" transform="rotate(-135 423.916 301.593)" fill="#FFD000"/>
-</g>
-<defs>
-<clipPath id="clip0_139_97">
-<rect width="500" height="500" fill="white"/>
-</clipPath>
-</defs>
+<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="30" height="30" fill="#023009"/>
+<rect x="19.8242" y="21.9326" width="17.8016" height="2.98414" rx="1.49207" transform="rotate(-135 19.8242 21.9326)" fill="#FFD000"/>
+<rect x="14.3223" y="22.9023" width="11.3752" height="2.98414" rx="1.49207" transform="rotate(-135 14.3223 22.9023)" fill="#FFD000"/>
+<rect x="20.793" y="16.4316" width="11.3752" height="2.98414" rx="1.49207" transform="rotate(-135 20.793 16.4316)" fill="#FFD000"/>
 </svg>
