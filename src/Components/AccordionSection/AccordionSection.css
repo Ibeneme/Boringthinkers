@@ -33,13 +33,24 @@
 }
 
 .accordion-icon {
-    font-size: 48px;
+    font-size: 56px;
     transform: rotate(0deg);
     transition: transform 0.3s ease;
+    color: #FFD000;
+    border: 1px solid #023009;
+    background-color: #023009;
+    border-radius: 50%;
+    padding: 4px
 }
 
 .accordion-icon.open {
     transform: rotate(90deg);
+    color: #fff;
+    border: 1px solid #023009;
+    background-color: #023009;
+    border-radius: 50%;
+    padding: 4px
+
 }
 
 
@@ -68,9 +79,10 @@
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 780px) {
     .accordion-title {
         font-size: 1.2rem;
+        font-weight: 600;
     }
 
     .accordion-container p {
@@ -96,7 +108,7 @@
     }
 
     .accordion-icon {
-        font-size: 32px;
+        font-size: 40px;
         transform: rotate(0deg);
         transition: transform 0.3s ease;
     }

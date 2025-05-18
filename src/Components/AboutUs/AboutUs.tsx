@@ -89,7 +89,7 @@ const AboutUs: React.FC<AboutUsProps> = () => {
             where technology seamlessly integrates into daily life, reducing
             complexity and allowing users to focus on what matters most. In
             clearer terms, we aim to create a society where complex activities
-            become so simple and boring to do." buttonText="Contact Us{" "}
+            become so simple and boring to do.
           </p>
         </div>
       </div>

@@ -56,11 +56,22 @@ const FAQPage: React.FC = () => {
         >
           <div className="faq-question" onClick={() => toggleFAQ(index)}>
             <h3 className="faq-title">{faq.question}</h3>
-            <span style={{ marginLeft: 12 }}>
+            <span
+              style={{
+                marginLeft: 12,
+                backgroundColor: "#023009",
+                border: "1px solid #023009",
+                borderRadius: "50%",
+                padding: 6,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
               {activeIndex === index ? (
                 <MinusIcon width={24} height={24} color={`#FFD000`} />
               ) : (
-                <AddIcon width={24} height={24} color={`#FFD000`} />
+                <AddIcon width={24} height={24} color={`#fff`} />
               )}
             </span>
           </div>
