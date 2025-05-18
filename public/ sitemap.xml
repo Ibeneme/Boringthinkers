@@ -8,21 +8,20 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
+  
   <url>
     <loc>https://www.boringthinkers.com/about-us</loc>
     <lastmod>2024-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
+  
   <url>
     <loc>https://www.boringthinkers.com/projects</loc>
     <lastmod>2024-07-30</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
 
   <url>
     <loc>https://www.boringthinkers.com/team</loc>
@@ -30,7 +29,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
+  
   <url>
     <loc>https://www.boringthinkers.com/careers</loc>
     <lastmod>2024-07-30</lastmod>
@@ -43,5 +42,12 @@
     <lastmod>2024-07-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.boringthinkers.com/404</loc>
+    <lastmod>2024-07-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
   </url>
 </urlset>
