@@ -28,7 +28,7 @@ const Careers: React.FC = () => {
           alt="Our Mission"
           style={{
             width: "100%",
-            borderRadius: 24,
+            borderRadius: 12,
             marginTop: 48,
             maxHeight: 400,
             objectFit:'cover'
