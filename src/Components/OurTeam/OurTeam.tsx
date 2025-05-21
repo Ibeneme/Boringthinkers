@@ -43,7 +43,8 @@ const teamMembers = [
     title: "Top Brand & Graphics Designer | UI/UX Designer",
     bio: "Divine is a seasoned Brand and Graphics Designer with over 4 years of experience in creating impactful visual identities. He also brings 2 years of expertise in UI/UX design, blending design aesthetics with user-centric functionality. His work combines creativity with technology to deliver stunning, user-friendly designs.",
     image: divineImage, // Replace with the actual image variable or path
-    twitter: "https://www.behance.net/divinechibueze", // Twitter URL for Wilson
+    twitter: "",
+    // twitter: "https://www.behance.net/divinechibueze", // Twitter URL for Wilson
   },
   // {
   //   name: "Divine Chris-Korie",
