@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import MinusIcon from "../../Components/Icons/MinusIcon";
-import AddIcon from "../../Components/Icons/AddIcon";
+import MinusIcon from "../Icons/MinusIcon";
+import AddIcon from "../Icons/AddIcon";
 import "./FAQPage.css"; // Import the CSS file
 
 const faqs = [
