@@ -4,7 +4,7 @@ import OurTeam from "../Components/OurTeam/OurTeam";
 const OurTeamPage = () => {
   return (
     <div>
-      <BlogHero title="Genuises" />
+      <BlogHero title={`Genuises"`} />
       <OurTeam />
     </div>
   );
