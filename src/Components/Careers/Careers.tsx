@@ -30,6 +30,8 @@ const Careers: React.FC = () => {
             width: "100%",
             borderRadius: 24,
             marginTop: 48,
+            maxHeight: 400,
+            objectFit:'cover'
           }}
         />
       </div>
