@@ -49,7 +49,7 @@ const teamMembers = [
   //   name: "Divine Chris-Korie",
   //   title: "Top UI Designer & AI Prompt Engineer",
   //   bio: "Divine is a seasoned Brand and Graphics Designer with over 4 years of experience in creating impactful visual identities. He also brings 2 years of expertise in UI/UX design and AI Prompt Engineering, seamlessly blending design aesthetics with user-centric functionality and cutting-edge AI technologies. His work combines creativity, design thinking, and AI-driven solutions to deliver stunning, user-friendly designs that enhance interaction with intelligent systems.",
-  //   image: main, 
+  //   image: main,
   //   twitter: "https://www.behance.net/divinechibueze", // Twitter URL for Wilson
   // },
 ];
@@ -84,44 +84,54 @@ const OurTeam: React.FC = () => {
 
   return (
     <section className="our-team">
-      <h2 className="section-header-teams">Our Team</h2>
-      <p className="section-paragraph-teams">Profiles of Key Team Members</p>
-      <div className="team-members">
-        {teamMembers.map((member, index) => (
-          <div
-            className="team-member"
-            key={index}
-            // ref={(el) => (overlayRefs.current[index] = el)}
-          >
-            <div className="team-member-image">
-              <img src={member.image} alt={member.name} />
-              <div className="team-member-bio">
+      <div
+        style={{
+          maxWidth: 1400,
+          alignItems: "center",
+          justifyContent: "center",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <h2 className="section-header-teams">Our Team</h2>
+        <p className="section-paragraph-teams">Profiles of Key Team Members</p>
+        <div className="team-members">
+          {teamMembers.map((member, index) => (
+            <div
+              className="team-member"
+              key={index}
+              // ref={(el) => (overlayRefs.current[index] = el)}
+            >
+              <div className="team-member-image">
+                <img src={member.image} alt={member.name} />
+                <div className="team-member-bio">
+                  <p>{member.bio}</p>
+                </div>
+              </div>
+              <div className="team-member-info">
+                <h3>{member.name}</h3>
+                <p>{member.title}</p>
+
+                {member.twitter && (
+                  <a
+                    href={member.twitter}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      backgroundColor: "#000",
+                      color: "#C4D92E",
+                      padding: `4px 12px`,
+                    }}
+                  >
+                    Get to Know
+                  </a>
+                )}
+
                 <p>{member.bio}</p>
               </div>
             </div>
-            <div className="team-member-info">
-              <h3>{member.name}</h3>
-              <p>{member.title}</p>
-
-              {member.twitter && (
-                <a
-                  href={member.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    backgroundColor: "#000",
-                    color: "#C4D92E",
-                    padding: `4px 12px`,
-                  }}
-                >
-                  Get to Know
-                </a>
-              )}
-
-              <p>{member.bio}</p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

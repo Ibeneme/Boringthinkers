@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import MinusIcon from "../Icons/MinusIcon";
 import AddIcon from "../Icons/AddIcon";
-import "./FAQPage.css"; // Import the CSS file
+import "./FAQPage.css";
 
 const faqs = [
   {
@@ -24,7 +24,7 @@ const faqs = [
     question:
       "How can I collaborate with Boring Thinkers Limited for my project?",
     answer:
-      "You can reach out to us via email at boring thinkers Limited@gmail.com or through our website. We will discuss your project needs, define the scope, and develop a customized solution that aligns with your vision.",
+      "You can reach out to us via email at contact@boringthinkers.com or through our website. We will discuss your project needs, define the scope, and develop a customized solution that aligns with your vision.",
   },
   {
     question:

@@ -1,5 +1,6 @@
 import React from "react";
 import "./Careers.css"; // Custom styles for this component
+import pencils from "../../assets/images/new/codeb.jpg";
 
 const Careers: React.FC = () => {
   return (
@@ -21,6 +22,16 @@ const Careers: React.FC = () => {
           Feel free to reach out to us, if you have any inquiries or would like
           to express your interest for future roles.
         </p>
+
+        <img
+          src={pencils}
+          alt="Our Mission"
+          style={{
+            width: "100%",
+            borderRadius: 24,
+            marginTop: 48,
+          }}
+        />
       </div>
     </section>
   );

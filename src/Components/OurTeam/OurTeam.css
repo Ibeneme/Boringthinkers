@@ -4,6 +4,11 @@
     padding: 80px 20px;
     text-align: center;
     padding-bottom: 160px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    
+
 }
 
 .section-header-teams {
@@ -25,10 +30,9 @@
 
 .team-members {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* Max 3 cards per row */
     gap: 20px;
 }
-
 .team-member {
     position: relative;
     background: #fff;

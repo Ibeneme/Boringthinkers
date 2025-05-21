@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./Projects.css";
 import main from "../../assets/imagesa/cw/cw_a.png";
 import oti from "../../assets/imagesa/oti/oti_a.png";
-import pay from "../../assets/imagesa/100/100_a.png";
+//import pay from "../../assets/imagesa/100/100_a.png";
 import cw_web from "../../assets/imagesa/cw_web/cw_web_a.png";
 import em from "../../assets/imagesa/em/em_a.png";
 import { IoArrowForwardCircleSharp } from "react-icons/io5";
@@ -16,13 +16,13 @@ const sampleProjects = [
     role: "A multilingual AI chatbot designed for African languages, featuring a seamless mobile interface for real-time conversations.",
     thumbnail: main,
   },
-  {
-    id: 2,
-    title: "100pay",
-    company: "100pay",
-    role: "A secure, intuitive payment platform for effortless local and international transactions by individuals and businesses.",
-    thumbnail: pay,
-  },
+  // {
+  //   id: 2,
+  //   title: "100pay",
+  //   company: "100pay",
+  //   role: "A secure, intuitive payment platform for effortless local and international transactions by individuals and businesses.",
+  //   thumbnail: pay,
+  // },
   {
     id: 3,
     title: "Chat Wazobia AI (Web)",
