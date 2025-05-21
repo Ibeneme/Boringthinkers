@@ -40,7 +40,7 @@
     background-attachment: scroll; /* Disable fixed background on mobile */
     background-position: center top;
     background-size: 100% auto; /* Ensures width is 100%, auto height */
-    height: auto; /* Let content define height */
+    height: 240px; /* Let content define height */
     padding: 60px 20px; /* Add spacing if needed */
   }
 
