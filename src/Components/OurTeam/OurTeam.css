@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     display: flex;
-    
+
 
 }
 
@@ -30,9 +30,11 @@
 
 .team-members {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Max 3 cards per row */
+    grid-template-columns: repeat(3, 1fr);
+    /* Max 3 cards per row */
     gap: 20px;
 }
+
 .team-member {
     position: relative;
     background: #fff;
@@ -118,6 +120,11 @@
 @media (max-width: 768px) {
     .section-header-teams {
         font-size: 36px;
+    }
+
+    .team-members {
+        grid-template-columns: 1fr;
+        /* 1 card per row on mobile */
     }
 
     .section-paragraph-teams {
