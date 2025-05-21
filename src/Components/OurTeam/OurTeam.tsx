@@ -21,7 +21,7 @@ const teamMembers = [
     twitter: "https://www.linkedin.com/in/reeves-akwa-97ab5b165/",
     name: "Reeves Akwa",
     title:
-      "Co-Founder | Python Developer | Backend Developer | Cloud Developer Lead",
+      "Python Developer | Backend Developer | Cloud Developer Lead",
     bio: "Reeves is a highly skilled Python Developer with strong expertise in backend development and cloud architecture. With a solid foundation in building scalable and efficient systems, he has taken the lead in numerous cloud projects and served as a key technical leader in the development team. He excels in creating robust backend infrastructures and optimizing cloud solutions.",
     image: reevesImage, // Replace with the actual image variable or path
   },
