@@ -34,3 +34,17 @@
   z-index: 1;
   font-family: var(--secondary-font);
 }
+
+@media (max-width: 768px) {
+  .blog-hero {
+    background-attachment: scroll; /* Disable fixed background on mobile */
+    background-position: center top;
+    background-size: 100% auto; /* Ensures width is 100%, auto height */
+    height: auto; /* Let content define height */
+    padding: 60px 20px; /* Add spacing if needed */
+  }
+
+  .blog-hero-title {
+    font-size: 2rem;
+  }
+}

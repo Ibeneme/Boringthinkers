@@ -5,7 +5,7 @@ import OurProjectComponent from "../Components/Projects/Projects";
 const OurProjectsPage = () => {
   return (
     <div>
-      <BlogHero title="OUR PROJECTS" />
+      <BlogHero title="OUR MOST RECENT PROJECTS" />
       <OurProjectComponent />
     </div>
   );

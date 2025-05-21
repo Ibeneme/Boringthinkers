@@ -53,7 +53,7 @@ const NewProjects: React.FC = () => {
   return (
     <section className="projects">
       <div className="projects-header">
-        <h2 className="section-title">Projects</h2>
+        <h2 className="section-title">Our Most Recent Projects</h2>
         <p className="section-description">
           A showcase of the designs and products I’ve worked on — from mobile
           apps to web dashboards. Each project reflects a unique challenge,
