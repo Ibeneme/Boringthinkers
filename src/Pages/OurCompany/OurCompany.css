@@ -20,7 +20,8 @@
     font-weight: bold;
     font-family: var(--primary-font);
     color: #011404;
-    margin-bottom: 12px
+    margin-bottom: 12px;
+    margin-top: 32px
 }
 
 .company-description {
