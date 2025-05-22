@@ -4,9 +4,13 @@ import "./SlidingPage.css";
 const SlidingPage: React.FC = () => {
   return (
     <div className="sliding-page">
-      <div className="scrolling-text">
-        {/* Repeat text multiple times for smooth infinite scroll */}
-        {"THE BORING THINKERS  ".repeat(20)}
+      <div className="sliding-track">
+        <span className="sliding-text">
+          {"THE BORING THINKERS  ".repeat(20)}
+        </span>
+        <span className="sliding-text">
+          {"THE BORING THINKERS  ".repeat(20)}
+        </span>
       </div>
     </div>
   );
