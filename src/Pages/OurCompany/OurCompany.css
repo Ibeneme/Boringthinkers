@@ -71,7 +71,7 @@
     .company-image {
         width: 100%;
         /* max-width: 800px; */
-        border-radius: 8px;
+        border-radius: 0px;
         object-fit: cover;
         margin-top: 12px
     }
