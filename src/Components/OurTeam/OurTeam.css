@@ -134,5 +134,11 @@
     /* Remove grayscale on mobile view */
     .team-member-image img {
         filter: grayscale(0%);
+        width: 100%;
+        height: 100%;
+        object-fit:cover;
+        /* transition: filter 0.3s ease-in-out; */
+        filter: grayscale(100%);
+
     }
 }

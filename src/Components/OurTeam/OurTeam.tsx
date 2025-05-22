@@ -8,52 +8,50 @@ import reevesImage from "../../assets/images/team/reeves.jpg";
 import ernestImage from "../../assets/images/team/ernest.png";
 //import bonaventureImage from "../../assets/images/team/me.jpeg";
 import wilson from "../../assets/images/team/mudi.jpg";
+
+
 const teamMembers = [
   {
     name: "Ibeneme Ikenna",
-    title: "Founder/CEO & Software Developer || Mobile App Developer",
-    bio: "Ibeneme Ikenna is the Founder and CEO of Boring Thinkers Limited, a software developer with over 5 years of experience specializing in Mobile applications as well as Fullstack MERN (MongoDB, Express, React, Node.js) websites and applications in React Native. He has a passion for building scalable applications and empowering others through technology.",
-    image: ibenemeImage, // Replace with the actual image variable or path
-    twitter: "https://x.com/Ibeneme_Ikenna", // Twitter URL for Ibeneme
+    title: "Founder & CEO | CTO | Mobile App Lead",
+    leadRole: "CEO, CTO & Mobile App Lead",
+    bio: "Founder of Boring Thinkers, Ikenna leads tech and mobile innovation with 5+ years building fast, scalable apps using MERN and React Native.",
+    image: ibenemeImage,
+    twitter: "https://x.com/Ibeneme_Ikenna",
   },
-
   {
-    twitter: "https://www.linkedin.com/in/reeves-akwa-97ab5b165/",
     name: "Reeves Akwa",
-    title:
-      "Python Developer | Backend Developer | Cloud Developer Lead",
-    bio: "Reeves is a highly skilled Python Developer with strong expertise in backend development and cloud architecture. With a solid foundation in building scalable and efficient systems, he has taken the lead in numerous cloud projects and served as a key technical leader in the development team. He excels in creating robust backend infrastructures and optimizing cloud solutions.",
-    image: reevesImage, // Replace with the actual image variable or path
+    title: "Python & Cloud Developer",
+    leadRole: "Cloud & Backend Lead",
+    bio: "Reeves architects cloud solutions and backend systems, powering stable, secure platforms across all projects.",
+    image: reevesImage,
+    twitter: "https://www.linkedin.com/in/reeves-akwa-97ab5b165/",
   },
   {
     name: "Wilson Ofiavwe",
-    title: "Sales and Marketing Specialist",
-    bio: "Wilson Ofiavwe is an accomplished Sales and Marketing Specialist with over 4 years of experience in crafting compelling brand identities and driving impactful marketing strategies. His expertise spans across both creative design and marketing, blending innovative visuals with data-driven strategies to elevate brand presence. With an additional 2 years of experience in UI/UX design, Wilson focuses on user-centric design while ensuring that his work not only stands out but also resonates with target audiences for maximum engagement and growth.",
-    image: wilson, // Replace with the actual image variable or path
-    twitter: "https://x.com/madebymudi", // Twitter URL for Wilson
+    title: "Sales & Marketing Specialist",
+    leadRole: "Sales Lead",
+    bio: "Wilson drives sales and branding with a creative edge, blending marketing insight and design to grow user engagement.",
+    image: wilson,
+    twitter: "https://x.com/madebymudi",
   },
   {
     name: "Ernest Nwankwo",
-    title: "Fullstack Developer | MERN Stack Specialist",
-    bio: "Ernest is a skilled Fullstack Developer with 3 years of experience specializing in the MERN stack (MongoDB, Express, React, Node.js). He is passionate about building modern, efficient web applications and has a strong foundation in both frontend and backend technologies. Ernest thrives in fast-paced environments, constantly learning new technologies and frameworks to improve his skills.",
-    image: ernestImage, // Replace with the actual image variable or path
+    title: "Fullstack Developer",
+    leadRole: "Web Development Lead",
+    bio: "Ernest crafts sleek, fullstack web apps with strong MERN expertise, ensuring seamless digital experiences.",
+    image: ernestImage,
   },
   {
     name: "Divine Chibueze",
-    title: "Top Brand & Graphics Designer | UI/UX Designer",
-    bio: "Divine is a seasoned Brand and Graphics Designer with over 4 years of experience in creating impactful visual identities. He also brings 2 years of expertise in UI/UX design, blending design aesthetics with user-centric functionality. His work combines creativity with technology to deliver stunning, user-friendly designs.",
-    image: divineImage, // Replace with the actual image variable or path
+    title: "Graphics & UI/UX Designer",
+    leadRole: "Design Lead",
+    bio: "Divine shapes bold, intuitive interfaces and brand visuals, guiding the design direction at Boring Thinkers.",
+    image: divineImage,
     twitter: "",
-    // twitter: "https://www.behance.net/divinechibueze", // Twitter URL for Wilson
   },
-  // {
-  //   name: "Divine Chris-Korie",
-  //   title: "Top UI Designer & AI Prompt Engineer",
-  //   bio: "Divine is a seasoned Brand and Graphics Designer with over 4 years of experience in creating impactful visual identities. He also brings 2 years of expertise in UI/UX design and AI Prompt Engineering, seamlessly blending design aesthetics with user-centric functionality and cutting-edge AI technologies. His work combines creativity, design thinking, and AI-driven solutions to deliver stunning, user-friendly designs that enhance interaction with intelligent systems.",
-  //   image: main,
-  //   twitter: "https://www.behance.net/divinechibueze", // Twitter URL for Wilson
-  // },
 ];
+
 
 const OurTeam: React.FC = () => {
   const overlayRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -94,26 +92,24 @@ const OurTeam: React.FC = () => {
           flexDirection: "column",
         }}
       >
-        <h2 className="section-header-teams">Our Team</h2>
+        <h2 className="section-header-teams">Our Team Leads</h2>
         <p className="section-paragraph-teams">Profiles of Key Team Members</p>
         <div className="team-members">
           {teamMembers.map((member, index) => (
-            <div
-              className="team-member"
-              key={index}
-              // ref={(el) => (overlayRefs.current[index] = el)}
-            >
+            <div className="team-member" key={index}>
               <div className="team-member-image">
                 <img src={member.image} alt={member.name} />
                 <div className="team-member-bio">
+                  <p>
+                    <strong>{member.leadRole}</strong>
+                  </p>
                   <p>{member.bio}</p>
                 </div>
               </div>
               <div className="team-member-info">
                 <h3>{member.name}</h3>
-                <p>{member.title}</p>
-
-                {member.twitter && (
+                <p>{member.leadRole}</p>
+                {/* {member.twitter && (
                   <a
                     href={member.twitter}
                     target="_blank"
@@ -121,13 +117,12 @@ const OurTeam: React.FC = () => {
                     style={{
                       backgroundColor: "#000",
                       color: "#C4D92E",
-                      padding: `4px 12px`,
+                      padding: "4px 12px",
                     }}
                   >
                     Get to Know
                   </a>
-                )}
-
+                )} */}
                 <p>{member.bio}</p>
               </div>
             </div>
