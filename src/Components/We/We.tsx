@@ -12,7 +12,7 @@ const sections = [
   {
     title: "You Dream, We Build.",
     description:
-      "We turn your boldest ideas into functional, beautiful, scalable digital products. Whether it's an app, a platform, or something that doesn't exist yet—if you can dream it, we can build it.",
+      "We turn your boldest ideas into functional, beautiful, scalable digital products. Whether it's an app, a platform, or something that doesn't exist yet if you can dream it, we can build it.",
     bgColor: "#DFFFDC",
     image: dream,
     textColor: "#121212",
@@ -38,7 +38,7 @@ const sections = [
   {
     title: "Speed, Security & Maintenance",
     description:
-      "We don’t disappear after launch. We stay proactive—monitoring, refining, and improving to ensure your product stays sharp and reliable over time. And we ship fast without compromising on security, privacy, or protection.",
+      "We don’t disappear after launch. We stay proactive monitoring, refining, and improving to ensure your product stays sharp and reliable over time. And we ship fast without compromising on security, privacy, or protection.",
     bgColor: "#FFEECB",
     image: mainb,
     textColor: "#121212",
