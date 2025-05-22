@@ -56,10 +56,25 @@
 /* Responsive adjustments */
 @media (max-width: 600px) {
     .flags-section {
+        display: flex;
         flex-direction: column;
         padding: 48px 16px;
         text-align: center;
     }
+
+    .flags-section-two {
+        display: flex;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 48px 12px;
+        width: 100%;
+        gap: 12px;
+
+    }
+
+
+
 
     .flags-title {
         max-width: 100%;
