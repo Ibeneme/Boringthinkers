@@ -148,9 +148,12 @@ const Footer: React.FC<FooterProps> = () => {
                 </a>
               </p>
             </div>
+            <br />
+            <br />
           </div>
 
           {/* Right Section */}
+
           <div className="footer-right">
             <Link to="/about-us" className="footer-link">
               About Us
