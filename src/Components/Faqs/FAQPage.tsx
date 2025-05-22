@@ -105,7 +105,17 @@ const FAQPage: React.FC = () => {
           </div>
           <span>
             {activeIndex === index && (
-              <p className="faq-answer">{faq.answer}</p>
+              <p className="faq-answer">
+                {faq?.answer?.split(" ").map((word, i) =>
+                  word.includes("contact@boringthinkers.com") ? (
+                    <span key={i} className="highlighted-email">
+                      {word}
+                    </span>
+                  ) : (
+                    <span key={i}>{word} </span>
+                  )
+                )}
+              </p>
             )}
           </span>{" "}
         </div>

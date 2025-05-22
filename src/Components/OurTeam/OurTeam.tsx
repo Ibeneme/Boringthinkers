@@ -9,10 +9,9 @@ import ernestImage from "../../assets/images/team/ernest.png";
 //import bonaventureImage from "../../assets/images/team/me.jpeg";
 import wilson from "../../assets/images/team/mudi.jpg";
 
-
 const teamMembers = [
   {
-    name: "Ibeneme Ikenna",
+    name: "Ibeneme, Benjamin-Ikenna",
     title: "Founder & CEO | CTO | Mobile App Lead",
     leadRole: "CEO, CTO & Mobile App Lead",
     bio: "Founder of Boring Thinkers, Ikenna leads tech and mobile innovation with 5+ years building fast, scalable apps using MERN and React Native.",
@@ -51,7 +50,6 @@ const teamMembers = [
     twitter: "",
   },
 ];
-
 
 const OurTeam: React.FC = () => {
   const overlayRefs = useRef<(HTMLDivElement | null)[]>([]);

@@ -18,7 +18,7 @@
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-  
+
 
 }
 
@@ -67,6 +67,17 @@
     margin: 0;
     font-size: 18px;
     color: #121212;
+}
+
+.highlighted-email {
+    /* background-color: #ffd000; */
+    color: #023009;
+    /* border-radius: 244px; */
+    /* padding: 6px 10px; */
+    margin: 0px 4px;
+    font-weight: 700;
+    text-decoration: underline;
+    /* border-bottom: 8px solid #ffd000; */
 }
 
 /* Answer styles */
