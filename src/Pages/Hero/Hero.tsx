@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
             <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStar />
           </span>
           <p style={{ fontSize: "16px", color: "#FFD000", margin: 0 }}>
-            Trusted by 3+ Companies
+            Trusted by 13+ Companies
           </p>
         </div>
       </div>

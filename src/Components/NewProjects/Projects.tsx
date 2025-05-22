@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import "./Projects.css";
 import main from "../../assets/imagesa/cw/cw_a.png";
@@ -7,6 +7,9 @@ import oti from "../../assets/imagesa/oti/oti_a.png";
 import cw_web from "../../assets/imagesa/cw_web/cw_web_a.png";
 import em from "../../assets/imagesa/em/em_a.png";
 import { IoArrowForwardCircleSharp } from "react-icons/io5";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 
 const sampleProjects = [
   {
@@ -49,13 +52,16 @@ const sampleProjects = [
 
 const NewProjects: React.FC = () => {
   const navigate = useNavigate();
+  useEffect(() => {
+    AOS.init({ duration: 500 });
+  }, []);
 
   return (
     <section className="projects">
       <div className="projects-header">
         <h2 className="section-title">Our Most Recent Projects 2024' - 25'</h2>
         <p className="section-description">
-          A showcase of the designs and products I’ve worked on — from mobile
+          A showcase of the designs and products I’ve worked on: from mobile
           apps to web dashboards. Each project reflects a unique challenge,
           creative solution, and collaborative effort.
         </p>
@@ -65,6 +71,7 @@ const NewProjects: React.FC = () => {
           <div
             key={project.id}
             className="project-card"
+            data-aos="zoom-out"
             onClick={() => navigate(`/projects/${project.id}`)}
           >
             <img src={project.thumbnail} alt={project.title} />
@@ -79,6 +86,7 @@ const NewProjects: React.FC = () => {
                   padding: `16px 14px`,
                   marginTop: 16,
                 }}
+                data-aos="zoom-out"
                 onClick={() => navigate(`/projects/${project.id}`)}
               >
                 <IoArrowForwardCircleSharp color="#fff" fontSize={24} />

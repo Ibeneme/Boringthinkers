@@ -47,7 +47,7 @@
 .about-image-first-div {
     flex: 1;
     padding: 12px;
-    background-color: #FFD000;
+    /* background-color: #FFD000; */
     border-radius: 24px;
     min-width: 280px;
     width: 100%;

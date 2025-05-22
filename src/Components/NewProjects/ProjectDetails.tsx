@@ -70,7 +70,9 @@ import oti_b from "../../assets/imagesa/em/oti_b.png";
 import oti_c from "../../assets/imagesa/em/oti_c.png";
 import oti_d from "../../assets/imagesa/em/oti_d.png";
 import oti_e from "../../assets/imagesa/em/oti_e.png";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const sampleProjects = [
   {
@@ -219,10 +221,6 @@ const sampleProjects = [
     },
     images: [cw_web_a, cw_web_b, cw_web_c, cw_web_d],
   },
-
-
-
-
 ];
 
 const ProjectDetails = () => {
@@ -231,6 +229,9 @@ const ProjectDetails = () => {
   const project = sampleProjects.find((p) => p.id === parseInt(id!));
 
   if (!project) return <p style={{ padding: 40 }}>Project not found.</p>;
+  useEffect(() => {
+    AOS.init({ duration: 500 });
+  }, []);
 
   return (
     <section className="project-details">
@@ -242,18 +243,19 @@ const ProjectDetails = () => {
         src={project.thumbnail}
         alt={project.title}
         className="project-banner"
+        data-aos="zoom-out"
       />
       <div className="details-content">
         <h2>{project.title}</h2>
         <p>{project.role}</p>
         {project.description.map((paragraph, index) => (
-          <p key={index} className="paragraph">
+          <p key={index} className="paragraph" data-aos="zoom-out">
             {paragraph}
           </p>
         ))}
 
         {project.images && project.images.length > 0 && (
-          <div className="project-images">
+          <div className="project-images" >
             {project.images.map((image, index) => (
               <img
                 key={index}
@@ -261,6 +263,7 @@ const ProjectDetails = () => {
                 alt={`Project Image ${index + 1}`}
                 className="project-banner"
                 style={{ marginTop: 12 }}
+                data-aos="zoom-out"
               />
             ))}
           </div>
@@ -276,6 +279,7 @@ const ProjectDetails = () => {
               padding: `48px 16px`,
               flexDirection: "column",
             }}
+            data-aos="zoom-out"
           >
             {project.links.website && (
               <a

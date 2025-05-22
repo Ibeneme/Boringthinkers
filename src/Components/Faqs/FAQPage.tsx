@@ -70,7 +70,6 @@ const FAQPage: React.FC = () => {
 
   return (
     <div className="faq-container">
-
       <h1 className="faq-header">Frequently Asked Questions</h1>
       <p className="faq-subtext">
         Get answers to some of the most common questions about our services. If
@@ -81,13 +80,9 @@ const FAQPage: React.FC = () => {
         <div
           key={index}
           className={`faq-item ${activeIndex === index ? "active" : ""}`}
-          data-aos="zoom-out"
+          // data-aos={activeIndex !== index ? "zoom-out" : ''}
         >
-          <div
-            className="faq-question"
-            onClick={() => toggleFAQ(index)}
- 
-          >
+          <div className="faq-question" onClick={() => toggleFAQ(index)}>
             <h3 className="faq-title">{faq.question}</h3>
             <span
               style={{

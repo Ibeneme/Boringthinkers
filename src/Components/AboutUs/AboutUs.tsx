@@ -5,8 +5,9 @@ import "./AboutUs.css";
 
 import childonglasses from "../../assets/images/new/codeb.jpg";
 import pencils from "../../assets/images/new/codeb.jpg";
-import crayons from "../../assets/images/new/codeb.jpg";
+//import crayons from "../../assets/images/new/codeb.jpg";
 import AccordionSection from "../AccordionSection/AccordionSection";
+// import OurCompany from "../../Pages/OurCompany/OurCompany";
 
 interface AboutUsProps {
   showCta?: boolean;
@@ -19,8 +20,9 @@ const AboutUs: React.FC<AboutUsProps> = () => {
 
   return (
     <section className="about-page">
+      {/* <OurCompany /> */}
       {/* Who We Are */}
-      <div className="about-section">
+      {/* <div className="about-section">
         <div className="about-image-first-div" data-aos="zoom-out">
           <div className="about-image">
             <img src={crayons} alt="Our Company" />
@@ -48,7 +50,7 @@ const AboutUs: React.FC<AboutUsProps> = () => {
             boring.
           </p>
         </div>
-      </div>
+      </div> */}
 
       {/* Our Mission */}
       <div className="about-section-reverse" data-aos="zoom-out">

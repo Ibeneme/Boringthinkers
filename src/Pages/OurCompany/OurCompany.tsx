@@ -1,44 +1,57 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "./OurCompany.css";
-import companyImage from "../../assets/images/snips/panka.jpg"; // Replace with actual image path
+import crayons from "../../assets/images/new/codeb.jpg";
 import { IoArrowForwardCircleSharp } from "react-icons/io5";
 
 const OurCompany: React.FC = () => {
+  useEffect(() => {
+    AOS.init({ duration: 500 });
+  }, []);
+
   const handleSendMail = () => {
-    window.location.href = "mailto:boringthinkers@gmail.com";
+    window.location.href = "mailto:contact@boringthinkers.com";
   };
 
   return (
     <section className="company-container">
-      <div className="company-content">
-        <h1 className="company-title">OUR COMPANY</h1>
-        <p className="company-description">
-          Boring Thinkers specializes in building innovative software solutions
-          for companies and startups. We simplify complex processes, helping
-          businesses operate more efficiently with reliable, scalable, and user
-          friendly technology.
+      <div className="company-content" data-aos="zoom-out">
+        <h1 className="company-title">Our Company</h1>
+        <p className="company-description" data-aos="zoom-out">
+          Boring Thinkers is not your typical software development company,
+          we’re a creative powerhouse built for startups and future-focused
+          businesses.
           <br />
-          We believe that “boring” can be powerful by eliminating unnecessary
-          complexities, streamlining workflows, and focusing on what truly
-          matters. Our approach is simple: identify the problem, solve the
-          problem.
           <br />
-          Our products are designed to empower businesses, automate tasks, and
-          drive growth while making day to day operations feel effortless. In
-          the end, we make software that works so seamlessly, it almost feels…
-          boring.
+          We don’t just write code; we craft digital experiences, solve complex
+          problems, and bring bold ideas to life.
+          <br />
+          <br />
+          From MVPs to enterprise platforms, we help visionary founders and
+          teams turn their concepts into scalable, intuitive, and beautiful
+          products.
+          <br />
+          <br />
+          Our approach is lean, collaborative, and insanely driven by purpose.
+          Whether you’re building from scratch or evolving something big, we
+          bring the speed of a startup and the quality of a top-tier company.
+          <br />
+          <br />
+          At Boring Thinkers, we believe in challenging the boring. We build
+          fast. We think deep. We deliver smart
         </p>
         <br />
-        <div>
+        <div data-aos="zoom-out">
           <button onClick={handleSendMail} className="cta">
             Send us a Mail
             <IoArrowForwardCircleSharp color="#011404" fontSize={48} />
           </button>
         </div>
       </div>
-      <div className="company-image-container">
+      <div className="company-image-container" data-aos="zoom-out">
         <img
-          src={companyImage}
+          src={crayons}
           alt="Boring Thinkers Team"
           className="company-image"
         />
