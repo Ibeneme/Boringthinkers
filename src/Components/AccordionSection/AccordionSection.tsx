@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoArrowBackCircleSharp } from "react-icons/io5";
 import "./AccordionSection.css"; // 👈 Import the CSS file
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const sections = [
   {
@@ -81,13 +83,19 @@ const AccordionSection = () => {
   const toggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
-
+  useEffect(() => {
+    AOS.init({ duration: 500 });
+  }, []);
   return (
     <div className="accordion-container">
       <p>Our Services</p>
       {sections.map((section, index) => (
         <div key={index} className="accordion-item">
-          <button onClick={() => toggle(index)} className="accordion-button">
+          <button
+            onClick={() => toggle(index)}
+            className="accordion-button"
+            data-aos="zoom-out"
+          >
             <span className="accordion-title">{section.title}</span>
             <IoArrowBackCircleSharp
               className={`accordion-icon ${openIndex === index ? "open" : ""}`}

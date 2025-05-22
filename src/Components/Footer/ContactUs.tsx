@@ -1,71 +1,61 @@
-// import "./ContactUs.css";
+import React from "react";
+import "./ContactUs.css";
+import { FaEnvelope, FaWhatsapp } from "react-icons/fa";
+import { IoArrowForwardCircleSharp } from "react-icons/io5";
 
-// const ContactUs = () => {
-//   return (
-//     <section className="contact-us">
-//       <br /> <br />
-//       <h3 className="contact-us-title" style={{ fontSize: 24 }}>
-//         CONTACT US
-//       </h3>
-//       <br />
-//       <p
-//         className="contact-us-description"
-//         style={{
-//           backgroundColor: "#ffffff22",
-//           padding: 12,
-//           borderRadius: 12,
-//           margin: 6,
-//         }}
-//       >
-//         <strong style={{ color: "#fff" }}>Address:</strong> 181-A Odili Road,
-//         Trans Amadi, Port Harcourt, Rivers State.
-//       </p>
-//       <p
-//         style={{
-//           backgroundColor: "#ffffff22",
-//           padding: 12,
-//           borderRadius: 12,
-//           margin: 6,
-//         }}
-//         className="contact-us-description"
-//       >
-//         <strong style={{ color: "#fff" }}>Contact Number:</strong> +234 902 766
-//         1296
-//       </p>
-//       <p
-//         style={{
-//           backgroundColor: "#ffffff22",
-//           padding: 12,
-//           borderRadius: 12,
-//           margin: 6,
-//         }}
-//         className="contact-us-description"
-//       >
-//         <strong style={{ color: "#fff" }}>Email:</strong>{" "}
-//         <a style={{ color: "#fff" }} href="mailto:admin@westhova.com">
-//           admin@westhova.com
-//         </a>
-//       </p>
-//       <br /> <br />
-//       <p className="contact-us-description">
-//         Have questions, need assistance, or want to learn more about our
-//         services? We’d love to hear from you! Whether it's about our energy
-//         solutions, oilfield services, or any inquiries you may have, feel free
-//         to reach out to our team. We are committed to providing top-notch
-//         support and ensuring you get the best solutions tailored to your needs.
-//       </p>
-//       <br />
-//       <a
-//         style={{ textAlign: "center", width: "fit-content" }}
-//         href="mailto:admin@westhova.com"
-//         className="contact-us-button"
-//       >
-//         Email Us
-//       </a>
-//       <br />
-//       <br />
-//     </section>
-//   );
-// };
+const ContactUs: React.FC = () => {
+  return (
+    <section className="contact-section">
+      <div className="contact-container">
+        <h1 className="contact-title">Reach Out to Us</h1>
+        <p className="contact-description">
+          We're here to help you innovate. Reach out to discuss your next big
+          project or to learn how our tailored software solutions can accelerate
+          your business.
+        </p>
 
-// export default ContactUs;
+        <div className="contact-buttons">
+          <a
+            href="mailto:contact@boringthinkers.com"
+            className="contact-button mail-button"
+          >
+            <span
+              style={{
+                flexDirection: "row",
+                display: "flex",
+                justifyContent: "center",
+                gap: 12,
+              }}
+            >
+              <FaEnvelope className="contact-icon" />
+              Send a Mail
+            </span>
+            <IoArrowForwardCircleSharp className="arrow-icon" />
+          </a>
+
+          <a
+            href="https://wa.me/2348120710198"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-button whatsapp-button"
+          >
+            <span
+              style={{
+                flexDirection: "row",
+                display: "flex",
+                justifyContent: "center",
+                gap: 12,
+              }}
+            >
+              <FaWhatsapp className="contact-icon" />
+              Chat on WhatsApp
+            </span>
+            <IoArrowForwardCircleSharp className="arrow-icon" />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ContactUs;

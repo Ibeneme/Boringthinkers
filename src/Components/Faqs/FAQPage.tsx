@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MinusIcon from "../Icons/MinusIcon";
 import AddIcon from "../Icons/AddIcon";
 import "./FAQPage.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const faqs = [
   {
@@ -20,6 +22,27 @@ const faqs = [
     answer:
       "We develop solutions for various industries, including fintech, e-commerce, logistics, education, and AI-driven applications. Our team is flexible and can tailor software to meet the unique needs of any sector.",
   },
+  {
+    question: "Do you have a platform for clients to track their projects?",
+    answer:
+      "Yes! We’ve built our own custom software specifically for managing and tracking client projects. Once onboarded, clients receive secure login credentials to access real-time updates about their project’s progress, milestones, team activity, and more. This ensures full visibility and accountability throughout the development process.",
+  },
+  {
+    question: "What kind of customer support do you offer?",
+    answer:
+      "We provide dedicated and top-quality customer support through multiple channels, including email, WhatsApp, and in-app messaging. Our team is always ready to respond promptly, solve issues, and ensure a smooth experience for our clients.",
+  },
+  {
+    question: "Do you offer flexible payment plans?",
+    answer:
+      "Yes, we offer flexible payment structures tailored to our clients’ needs. Whether it's milestone-based, monthly subscriptions, or phased payments, we adapt to ensure affordability and alignment with project goals.",
+  },
+  {
+    question: "Can I do equity-based business with Boring Thinkers Limited?",
+    answer:
+      "Yes, we’re open to equity and cash-based partnerships for select clients and startups. We’re happy to discuss hybrid business models that align incentives and create long-term value for both sides.",
+  },
+
   {
     question:
       "How can I collaborate with Boring Thinkers Limited for my project?",
@@ -41,8 +64,13 @@ const FAQPage: React.FC = () => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
+  useEffect(() => {
+    AOS.init({ duration: 500 });
+  }, []);
+
   return (
     <div className="faq-container">
+
       <h1 className="faq-header">Frequently Asked Questions</h1>
       <p className="faq-subtext">
         Get answers to some of the most common questions about our services. If
@@ -53,8 +81,13 @@ const FAQPage: React.FC = () => {
         <div
           key={index}
           className={`faq-item ${activeIndex === index ? "active" : ""}`}
+          data-aos="zoom-out"
         >
-          <div className="faq-question" onClick={() => toggleFAQ(index)}>
+          <div
+            className="faq-question"
+            onClick={() => toggleFAQ(index)}
+ 
+          >
             <h3 className="faq-title">{faq.question}</h3>
             <span
               style={{

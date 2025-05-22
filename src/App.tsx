@@ -11,6 +11,7 @@ import NotFound from "./Pages/NotFound";
 import Navbar from "./Components/Navbar/Navbar";
 import ProjectDetails from "./Components/NewProjects/ProjectDetails";
 import "./assets/fonts/fonts.css";
+import HowWeWorkPage from "./Pages/HowWeWorkPage";
 
 function App() {
   return (
@@ -22,12 +23,8 @@ function App() {
 
         <Route path="/" element={<Home />} />
         <Route path="/about-us" element={<AboutUsPage />} />
-        <Route
-          path="/projects"
-          element={
-            <OurProjectsPage />
-          }
-        />
+        <Route path="/projects" element={<OurProjectsPage />} />
+        <Route path="/how-we-work" element={<HowWeWorkPage />} />
         <Route path="/team" element={<OurTeamPage />} />
         <Route path="/careers" element={<CareerPage />} />
         <Route path="*" element={<NotFound />} />
