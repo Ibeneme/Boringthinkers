@@ -15,7 +15,9 @@ const Home = () => {
       <OurCompany />
       <SlidingPage />
       <We />
-      <AccordionSection />
+      <div style={{ padding: 16, width: "100vw" }}>
+        <AccordionSection />
+      </div>
       {/* <AccordionSection /> */}
       <FAQPage />
     </div>
