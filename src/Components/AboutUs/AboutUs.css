@@ -60,7 +60,7 @@
     border-radius: 24px;
     object-fit: cover;
     height: 100%;
-        /* transform: rotate(-8deg); */
+    /* transform: rotate(-8deg); */
 }
 
 .about-text {
@@ -92,8 +92,8 @@
     .about-section-reverse {
         flex-direction: column-reverse;
         padding: 20px 16px;
-        border-radius: 36px;
-        margin: 32px 0px;
+        border-radius: 0px;
+        margin: -48px 0px;
         padding-bottom: 36px;
     }
 

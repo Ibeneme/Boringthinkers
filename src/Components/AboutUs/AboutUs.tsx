@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./AboutUs.css";
-
-import childonglasses from "../../assets/images/new/codeb.jpg";
-import pencils from "../../assets/images/new/codeb.jpg";
+//childonglasses
+import pencils from "../../assets/images/about/b.jpg";
+import childonglasses from "../../assets/images/about/a.jpg";
 //import crayons from "../../assets/images/new/codeb.jpg";
 import AccordionSection from "../AccordionSection/AccordionSection";
 // import OurCompany from "../../Pages/OurCompany/OurCompany";

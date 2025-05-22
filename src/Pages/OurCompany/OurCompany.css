@@ -47,8 +47,11 @@
     max-height: 600px
 }
 
-/* Mobile Styles */
+
 @media (max-width: 768px) {
+    .company-container {
+        padding-bottom: -16px
+    }
 
     .company-content {
         margin-top: 12px;
@@ -68,7 +71,7 @@
     .company-image {
         width: 100%;
         /* max-width: 800px; */
-        border-radius: 16px;
+        border-radius: 8px;
         object-fit: cover;
         margin-top: 12px
     }
