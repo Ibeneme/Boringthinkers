@@ -12,6 +12,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background-color: aquamarine;
   /* Ensure no overflow issues */
 }
 
@@ -41,7 +42,6 @@
     background-position: center top;
     background-size: 100% auto; /* Ensures width is 100%, auto height */
     height: 240px; /* Let content define height */
-    padding: 60px 20px; /* Add spacing if needed */
     margin-top: 58px;
   }
 

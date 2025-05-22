@@ -5,29 +5,6 @@
     padding: 120px 24px
 }
 
-@media (max-width:726px) {
-
-    .footer {
-        padding: 16px 16px;
-        background-color: #011404;
-        padding-top: 64px
-    }
-
-    .footer-bottom {
-
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        padding-bottom: 120px
-    }
-
-    .footer-content {
-        display: flex;
-        flex-direction: column;
-
-        gap: 48px
-    }
-}
 
 .footer-content {
     display: flex;

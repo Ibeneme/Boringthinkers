@@ -12,6 +12,17 @@
   --secondary-color: #f0a500;
 }
 
+/* index.css or App.css */
+
+
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
 * {
   margin: 0;
   padding: 0;
