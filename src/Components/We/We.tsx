@@ -22,17 +22,17 @@ const sections = [
     description:
       "Simplicity meets elegance. We design with the user in mind, blending clean interfaces with deep usability to create intuitive, memorable digital experiences.",
 
-    bgColor: "#E8DEFF",
-    image: design,
+    bgColor: "#FFE2E9",
+    image: main,
     textColor: "#121212",
   },
   {
     title: "Our Build Style",
     description:
       "Code that works and scales. Our engineering approach is modular, clean, and tested with a focus on performance, flexibility, and future-proof architecture.",
+    bgColor: "#E8DEFF",
+    image: design,
 
-    bgColor: "#FFE2E9",
-    image: main,
     textColor: "#121212", // <-- index 2
   },
   {
