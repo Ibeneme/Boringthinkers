@@ -1,5 +1,5 @@
 import dream from "../../../src/assets/images/we/dream.png";
-import design from "../../../src/assets/images/we/design.png";
+import design from "../../../src/assets/images/we/designa.png";
 import main from "../../../src/assets/images/we/main.png";
 import mainb from "../../../src/assets/images/we/mainb.png";
 

@@ -1,15 +1,14 @@
-import React , {useEffect} from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Projects.css";
 import main from "../../assets/imagesa/cw/cw_a.png";
 import oti from "../../assets/imagesa/oti/oti_a.png";
-//import pay from "../../assets/imagesa/100/100_a.png";
+import pay from "../../assets/imagesa/100/100_a.png";
 import cw_web from "../../assets/imagesa/cw_web/cw_web_a.png";
-import em from "../../assets/imagesa/em/em_a.png";
+//import em from "../../assets/imagesa/em/em_a.png";
 import { IoArrowForwardCircleSharp } from "react-icons/io5";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
 
 const sampleProjects = [
   {
@@ -19,13 +18,13 @@ const sampleProjects = [
     role: "A multilingual AI chatbot designed for African languages, featuring a seamless mobile interface for real-time conversations.",
     thumbnail: main,
   },
-  // {
-  //   id: 2,
-  //   title: "100pay",
-  //   company: "100pay",
-  //   role: "A secure, intuitive payment platform for effortless local and international transactions by individuals and businesses.",
-  //   thumbnail: pay,
-  // },
+  {
+    id: 2,
+    title: "100pay",
+    company: "100pay",
+    role: "A secure, intuitive payment platform for effortless local and international transactions by individuals and businesses.",
+    thumbnail: pay,
+  },
   {
     id: 3,
     title: "Chat Wazobia AI (Web)",
@@ -33,13 +32,13 @@ const sampleProjects = [
     role: "The web version of Chat Wazobia AI with a responsive UI that supports rich, multilingual interactions across African dialects.",
     thumbnail: cw_web,
   },
-  {
-    id: 4,
-    title: "Emperor Guild Studios",
-    company: "Emperor Guild Studios",
-    role: "A bold and immersive brand identity crafted for a creative studio, blending futuristic design with storytelling elegance.",
-    thumbnail: em,
-  },
+  // {
+  //   id: 4,
+  //   title: "Emperor Guild Studios",
+  //   company: "Emperor Guild Studios",
+  //   role: "A bold and immersive brand identity crafted for a creative studio, blending futuristic design with storytelling elegance.",
+  //   thumbnail: em,
+  // },
   {
     id: 5,
     title: "OTI Signals",
@@ -47,7 +46,6 @@ const sampleProjects = [
     role: "A trading signal platform with a sharp, data-driven UI, built to help users make informed trading decisions with ease.",
     thumbnail: oti,
   },
-
 ];
 
 const NewProjects: React.FC = () => {
@@ -59,7 +57,9 @@ const NewProjects: React.FC = () => {
   return (
     <section className="projects">
       <div className="projects-header">
-        <h2 className="section-title">Our Most Recent Projects 2024' - 25'</h2>
+        <h2 className="section-title">
+          Our (4) Most Recent Projects 2024' - 25'
+        </h2>
         <p className="section-description">
           A showcase of the designs and products I’ve worked on: from mobile
           apps to web dashboards. Each project reflects a unique challenge,
@@ -105,6 +105,8 @@ const NewProjects: React.FC = () => {
           </div>
         ))}
       </div>
+
+    
     </section>
   );
 };
