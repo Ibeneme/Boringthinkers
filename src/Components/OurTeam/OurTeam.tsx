@@ -5,7 +5,7 @@ import ibenemeImage from "../../assets/images/team/me.jpeg";
 import divineImage from "../../assets/images/team/divine.jpg";
 //import main from "../../assets/images/main.jpg";
 import reevesImage from "../../assets/images/team/reeves.jpg";
-import ernestImage from "../../assets/images/team/ernest.png";
+//import ernestImage from "../../assets/images/team/ernest.png";
 //import bonaventureImage from "../../assets/images/team/me.jpeg";
 import wilson from "../../assets/images/team/mudi.jpg";
 
@@ -34,13 +34,13 @@ const teamMembers = [
     image: wilson,
     twitter: "https://x.com/madebymudi",
   },
-  {
-    name: "Ernest Nwankwo",
-    title: "Fullstack Developer",
-    leadRole: "Web Development Lead",
-    bio: "Ernest crafts sleek, fullstack web apps with strong MERN expertise, ensuring seamless digital experiences.",
-    image: ernestImage,
-  },
+  // {
+  //   name: "Ernest Nwankwo",
+  //   title: "Fullstack Developer",
+  //   leadRole: "Web Development Lead",
+  //   bio: "Ernest crafts sleek, fullstack web apps with strong MERN expertise, ensuring seamless digital experiences.",
+  //   image: ernestImage,
+  // },
   {
     name: "Divine Chibueze",
     title: "Graphics & UI/UX Designer",
