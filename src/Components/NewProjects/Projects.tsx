@@ -5,7 +5,7 @@ import main from "../../assets/imagesa/cw/cw_a.png";
 import oti from "../../assets/imagesa/oti/oti_a.png";
 import pay from "../../assets/imagesa/100/100_a.png";
 import cw_web from "../../assets/imagesa/cw_web/cw_web_a.png";
-//import em from "../../assets/imagesa/em/em_a.png";
+import em from "../../assets/imagesa/em/em_a.png";
 import { IoArrowForwardCircleSharp } from "react-icons/io5";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -32,13 +32,13 @@ const sampleProjects = [
     role: "The web version of Chat Wazobia AI with a responsive UI that supports rich, multilingual interactions across African dialects.",
     thumbnail: cw_web,
   },
-  // {
-  //   id: 4,
-  //   title: "Emperor Guild Studios",
-  //   company: "Emperor Guild Studios",
-  //   role: "A bold and immersive brand identity crafted for a creative studio, blending futuristic design with storytelling elegance.",
-  //   thumbnail: em,
-  // },
+  {
+    id: 4,
+    title: "Emperor Guild Studios",
+    company: "Emperor Guild Studios",
+    role: "A bold and immersive brand identity crafted for a creative studio, blending futuristic design with storytelling elegance.",
+    thumbnail: em,
+  },
   {
     id: 5,
     title: "OTI Signals",
@@ -105,8 +105,6 @@ const NewProjects: React.FC = () => {
           </div>
         ))}
       </div>
-
-    
     </section>
   );
 };
