@@ -20,7 +20,6 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/projects/:id" element={<ProjectDetails />} />
-
         <Route path="/" element={<Home />} />
         <Route path="/about-us" element={<AboutUsPage />} />
         <Route path="/projects" element={<OurProjectsPage />} />
