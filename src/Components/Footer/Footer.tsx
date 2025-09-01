@@ -1,5 +1,12 @@
 import { Link } from "react-router-dom";
-import { FaEnvelope, FaPhone, FaWhatsapp } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaPhone,
+  FaWhatsapp,
+  FaLinkedin,
+  FaTwitter,
+  FaInstagram,
+} from "react-icons/fa";
 import logo from "../../assets/images/logo/vite.png";
 import "./Footer.css";
 import ContactUs from "./ContactUs";
@@ -34,24 +41,17 @@ const Footer: React.FC<FooterProps> = () => {
               make life easier, not harder.
             </p>
 
-            {/* ✅ Email Links with Icons */}
+            {/* ✅ Email + Contact */}
             <div className="footer-emails">
-              <p
-                style={{
-                  alignItems: "center",
-                  display: "flex",
-                  gap: 8,
-                }}
-              >
+              <p style={{ alignItems: "center", display: "flex", gap: 8 }}>
                 <span
                   style={{
                     backgroundColor: "#FFD00024",
                     borderRadius: 12,
                     padding: 12,
+                    display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    display: "flex",
-                    width: "fit-content",
                   }}
                 >
                   <FaEnvelope style={{ color: "#FFD000" }} />
@@ -64,51 +64,36 @@ const Footer: React.FC<FooterProps> = () => {
                 </a>
               </p>
               <br />
-              <p
-                style={{
-                  alignItems: "center",
-                  display: "flex",
-                  gap: 8,
-                }}
-              >
+              <p style={{ alignItems: "center", display: "flex", gap: 8 }}>
                 <span
                   style={{
                     backgroundColor: "#FFD00024",
                     borderRadius: 12,
                     padding: 12,
+                    display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    display: "flex",
-                    width: "fit-content",
                   }}
                 >
                   <FaEnvelope style={{ color: "#FFD000" }} />
                 </span>{" "}
                 <a
-                  href="mailto:admin@boringthinkers.com"
+                  href="mailto:Admin@boringthinkers.com"
                   style={{ color: "#FFD000" }}
                 >
                   Admin@boringthinkers.com
                 </a>
               </p>
               <br />
-
-              <p
-                style={{
-                  alignItems: "center",
-                  display: "flex",
-                  gap: 8,
-                }}
-              >
+              <p style={{ alignItems: "center", display: "flex", gap: 8 }}>
                 <span
                   style={{
                     backgroundColor: "#FFD00024",
                     borderRadius: 12,
                     padding: 12,
+                    display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    display: "flex",
-                    width: "fit-content",
                   }}
                 >
                   <FaPhone style={{ color: "#FFD000" }} />
@@ -118,22 +103,15 @@ const Footer: React.FC<FooterProps> = () => {
                 </a>
               </p>
               <br />
-              <p
-                style={{
-                  alignItems: "center",
-                  display: "flex",
-                  gap: 8,
-                }}
-              >
+              <p style={{ alignItems: "center", display: "flex", gap: 8 }}>
                 <span
                   style={{
-                    backgroundColor: "#25D36624", // WhatsApp green tint
+                    backgroundColor: "#25D36624",
                     borderRadius: 12,
                     padding: 12,
+                    display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    display: "flex",
-                    width: "fit-content",
                   }}
                 >
                   <FaWhatsapp style={{ color: "#25D366" }} />
@@ -148,12 +126,42 @@ const Footer: React.FC<FooterProps> = () => {
                 </a>
               </p>
             </div>
-            <br />
+
+            {/* ✅ Social Links */}
+            <div
+              className="footer-socials"
+              style={{ marginTop: 36, display: "flex", gap: 16 }}
+            >
+              <a
+                href="https://www.linkedin.com/company/boring-thinkers"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "#fff", fontSize: 24 }}
+              >
+                <FaLinkedin />
+              </a>
+              <a
+                href="https://x.com/BoringThinkers"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "#fff", fontSize: 24 }}
+              >
+                <FaTwitter />
+              </a>
+              <a
+                href="https://www.instagram.com/boringthinkers/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "#fff", fontSize: 24 }}
+              >
+                <FaInstagram />
+              </a>
+            </div>
+
             <br />
           </div>
 
           {/* Right Section */}
-
           <div className="footer-right">
             <Link to="/about-us" className="footer-link">
               About Us
@@ -161,9 +169,6 @@ const Footer: React.FC<FooterProps> = () => {
             <Link to="/projects" className="footer-link">
               Our Projects
             </Link>
-            {/* <Link to="/team" className="footer-link">
-              Our Team
-            </Link> */}
             <Link to="/careers" className="footer-link">
               Careers
             </Link>
