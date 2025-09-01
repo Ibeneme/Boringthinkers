@@ -161,9 +161,9 @@ const Footer: React.FC<FooterProps> = () => {
             <Link to="/projects" className="footer-link">
               Our Projects
             </Link>
-            <Link to="/team" className="footer-link">
+            {/* <Link to="/team" className="footer-link">
               Our Team
-            </Link>
+            </Link> */}
             <Link to="/careers" className="footer-link">
               Careers
             </Link>
