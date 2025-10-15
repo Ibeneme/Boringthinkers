@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import {
   FaEnvelope,
-  FaPhone,
-  FaWhatsapp,
+  // FaPhone,
+  // FaWhatsapp,
   FaLinkedin,
   FaTwitter,
   FaInstagram,
@@ -85,7 +85,7 @@ const Footer: React.FC<FooterProps> = () => {
                 </a>
               </p>
               <br />
-              <p style={{ alignItems: "center", display: "flex", gap: 8 }}>
+              {/* <p style={{ alignItems: "center", display: "flex", gap: 8 }}>
                 <span
                   style={{
                     backgroundColor: "#FFD00024",
@@ -102,8 +102,8 @@ const Footer: React.FC<FooterProps> = () => {
                   (+234) 812 071 0198
                 </a>
               </p>
-              <br />
-              <p style={{ alignItems: "center", display: "flex", gap: 8 }}>
+              <br /> */}
+              {/* <p style={{ alignItems: "center", display: "flex", gap: 8 }}>
                 <span
                   style={{
                     backgroundColor: "#25D36624",
@@ -124,7 +124,7 @@ const Footer: React.FC<FooterProps> = () => {
                 >
                   WhatsApp Chat
                 </a>
-              </p>
+              </p> */}
             </div>
 
             {/* ✅ Social Links */}
