@@ -1,6 +1,6 @@
 import React from "react";
 import "./ContactUs.css";
-import { FaEnvelope, FaWhatsapp } from "react-icons/fa";
+import { FaEnvelope,  } from "react-icons/fa";
 import { IoArrowForwardCircleSharp } from "react-icons/io5";
 
 const ContactUs: React.FC = () => {
@@ -33,7 +33,7 @@ const ContactUs: React.FC = () => {
             <IoArrowForwardCircleSharp className="arrow-icon" />
           </a>
 
-          <a
+          {/* <a
             href="https://wa.me/2348120710198"
             target="_blank"
             rel="noopener noreferrer"
@@ -51,7 +51,7 @@ const ContactUs: React.FC = () => {
               Chat on WhatsApp
             </span>
             <IoArrowForwardCircleSharp className="arrow-icon" />
-          </a>
+          </a> */}
         </div>
       </div>
     </section>
