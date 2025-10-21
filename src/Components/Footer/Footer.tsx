@@ -6,6 +6,8 @@ import {
   FaLinkedin,
   FaTwitter,
   FaInstagram,
+  FaPhone,
+  FaWhatsapp,
 } from "react-icons/fa";
 import logo from "../../assets/images/logo/vite.png";
 import "./Footer.css";
@@ -85,6 +87,47 @@ const Footer: React.FC<FooterProps> = () => {
                 </a>
               </p>
               <br />
+              <p style={{ alignItems: "center", display: "flex", gap: 8 }}>
+                <span
+                  style={{
+                    backgroundColor: "#FFD00024",
+                    borderRadius: 12,
+                    padding: 12,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <FaPhone style={{ color: "#FFD000" }} />
+                </span>{" "}
+                <a href="tel:+2348120710198" style={{ color: "#FFD000" }}>
+                  (+234) 812 071 0198
+                </a>
+              </p>
+              <br />
+              <p style={{ alignItems: "center", display: "flex", gap: 8 }}>
+                <span
+                  style={{
+                    backgroundColor: "#25D36624",
+                    borderRadius: 12,
+                    padding: 12,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <FaWhatsapp style={{ color: "#25D366" }} />
+                </span>{" "}
+                <a
+                  href="https://wa.me/2348120710198"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "#25D366" }}
+                >
+                  WhatsApp Chat
+                </a>
+              </p>
+
               {/* <p style={{ alignItems: "center", display: "flex", gap: 8 }}>
                 <span
                   style={{
