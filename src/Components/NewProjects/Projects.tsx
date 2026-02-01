@@ -2,15 +2,81 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Projects.css";
 import main from "../../assets/imagesa/cw/cw_a.png";
-import oti from "../../assets/imagesa/oti/oti_a.png";
 import pay from "../../assets/imagesa/100/100_a.png";
 import cw_web from "../../assets/imagesa/cw_web/cw_web_a.png";
-import em from "../../assets/imagesa/em/em_a.png";
+
 import { IoArrowForwardCircleSharp } from "react-icons/io5";
 import AOS from "aos";
+import nexus from "../../assets/projects/nexus.png";
+import padiman from "../../assets/projects/padiman.png";
+import zaeda from "../../assets/projects/zaeda.png";
+import pickars from "../../assets/projects/pickars.png";
+import bulkup from "../../assets/projects/bulkup.png";
+import kraft from "../../assets/projects/kraft.png";
+import yare from "../../assets/projects/yare.png";
+
 import "aos/dist/aos.css";
 
 const sampleProjects = [
+  {
+    id: 9,
+    title: "CloneKraft",
+    company: "CloneKraft",
+    role: "A digital brand site featuring modern UI, deep color themes, smooth transitions, and a stunning presentation of the CloneKraft identity.",
+    thumbnail: kraft,
+    link: "https://www.clonekraft.com/",
+  },
+  {
+    id: 9,
+    title: "Yare Heights",
+    company: "Yare Heights",
+    role: "A polished academic website for Yare Heights Learning Hub featuring structured content, smooth animations, and an inspiring presentation of the institution.",
+    thumbnail: yare,
+    link: "https://www.yareheightlearninghub.com/",
+  },
+
+  {
+    id: 2,
+    title: "Pickars",
+    company: "Pickars",
+    role: "A courier logistics platform for fast and reliable bike deliveries.",
+    thumbnail: pickars,
+    link: "https://www.pickars.com",
+  },
+  {
+    id: 3,
+    title: "Bulkupdata",
+    company: "Bulkupdata",
+    role: "Airtime and data top-up platform for individuals and SMEs.",
+    thumbnail: bulkup,
+    link: "https://www.bulkupdata.com",
+  },
+
+  {
+    id: 4,
+    title: "Padiman Route",
+    company: "Padiman Route",
+    role: "Modern property and housing management platform.",
+    thumbnail: padiman,
+    link: "https://www.padimanroute.com",
+  },
+  {
+    id: 5,
+    title: "Nexus Music Publishing",
+    company: "Nexus Music",
+    role: "A digital-first music publishing platform empowering creators.",
+    thumbnail: nexus,
+    link: "https://nexusmusicpublishing.com/",
+  },
+  {
+    id: 6,
+    title: "Zaeda Oracle",
+    company: "Zaeda Oracle",
+    role: "A strategic consulting and digital solutions company.",
+    thumbnail: zaeda,
+    link: "https://zaedaoracle.com/",
+  },
+
   {
     id: 1,
     title: "Chat Wazobia AI (Mobile)",
@@ -31,20 +97,6 @@ const sampleProjects = [
     company: "Chat Wazobia AI",
     role: "The web version of Chat Wazobia AI with a responsive UI that supports rich, multilingual interactions across African dialects.",
     thumbnail: cw_web,
-  },
-  {
-    id: 4,
-    title: "Emperor Guild Studios",
-    company: "Emperor Guild Studios",
-    role: "A bold and immersive brand identity crafted for a creative studio, blending futuristic design with storytelling elegance.",
-    thumbnail: em,
-  },
-  {
-    id: 5,
-    title: "OTI Signals",
-    company: "OTI Tech",
-    role: "A trading signal platform with a sharp, data-driven UI, built to help users make informed trading decisions with ease.",
-    thumbnail: oti,
   },
 ];
 
