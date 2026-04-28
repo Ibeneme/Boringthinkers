@@ -1,85 +1,106 @@
+import React from "react";
+import { motion } from "framer-motion";
 import dream from "../../../src/assets/images/we/dream.png";
 import design from "../../../src/assets/images/we/designa.png";
 import main from "../../../src/assets/images/we/main.png";
 import mainb from "../../../src/assets/images/we/mainb.png";
 
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import "./We.css";
-
 const sections = [
   {
     title: "You Dream, We Build.",
     description:
-      "We turn your boldest ideas into functional, beautiful, scalable digital products. Whether it's an app, a platform, or something that doesn't exist yet if you can dream it, we can build it.",
-    bgColor: "#DFFFDC",
+      "We turn your boldest ideas into functional, beautiful, scalable digital products. If you can dream it, we can build it.",
+    bgColor: "bg-[#DFFFDC]",
     image: dream,
-    textColor: "#121212",
   },
   {
     title: "Our Design Style",
     description:
-      "Simplicity meets elegance. We design with the user in mind, blending clean interfaces with deep usability to create intuitive, memorable digital experiences.",
-
-    bgColor: "#FFE2E9",
+      "Simplicity meets elegance. We blend clean interfaces with deep usability to create intuitive, memorable digital experiences.",
+    bgColor: "bg-[#FFE2E9]",
     image: main,
-    textColor: "#121212",
   },
   {
     title: "Our Build Style",
     description:
-      "Code that works and scales. Our engineering approach is modular, clean, and tested with a focus on performance, flexibility, and future-proof architecture.",
-    bgColor: "#E8DEFF",
+      "Code that works and scales. Our engineering approach is modular, clean, and tested with a focus on future-proof architecture.",
+    bgColor: "bg-[#E8DEFF]",
     image: design,
-
-    textColor: "#121212", // <-- index 2
   },
   {
-    title: "Speed, Security & Maintenance",
+    title: "Speed & Security",
     description:
-      "We don’t disappear after launch. We stay proactive monitoring, refining, and improving to ensure your product stays sharp and reliable over time. And we ship fast without compromising on security, privacy, or protection.",
-    bgColor: "#FFEECB",
+      "Proactive monitoring and refining. We ship fast without compromising on security, privacy, or long-term protection.",
+    bgColor: "bg-[#FFEECB]",
     image: mainb,
-    textColor: "#121212",
   },
 ];
 
 const We: React.FC = () => {
-  useEffect(() => {
-    AOS.init({ duration: 600 });
-  }, []);
-
   return (
-    <div className="vision-page">
-      <div className="vision-grid">
+    <div className="w-full bg-white pt-[120px]">
+      {/* Heavy Header Section */}
+      <div className="px-6 md:px-20 mb-24">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex items-center gap-4 mb-10"
+        >
+          <div className="w-2 h-2 bg-[#050505] rounded-full" />
+          <span className="text-[#050505] text-[11px] font-black uppercase tracking-[0.6em]">
+            Capabilities
+          </span>
+        </motion.div>
+
+        <h2 className="text-6xl md:text-[10rem] font-black text-[#050505] tracking-[-0.08em] uppercase leading-[0.8]">
+          ENGINEERING <br />
+          <span className="text-[#000]">EXCELLENCE.</span>
+        </h2>
+      </div>
+
+      {/* Full-Bleed Color Block Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2">
         {sections.map((section, index) => (
-          <section
-            className="vision-section"
-            style={{
-              backgroundColor: section.bgColor,
-              color: section.textColor,
-            }}
+          <motion.section
             key={index}
-            data-aos="fade-up"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className={`${section.bgColor} p-12 md:p-24 flex flex-col justify-between items-start group min-h-[650px] relative`}
           >
-            <div className="vision-section-content">
+            {/* Top Image Layout */}
+            <div className="w-full h-80 mb-16 overflow-hidden flex items-center justify-center">
               <img
                 src={section.image}
                 alt={section.title}
-                className="vision-image"
+                className="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-700 ease-in-out"
               />
-              <h2 className="vision-title" style={{ color: section.textColor }}>
+            </div>
+
+            {/* Bottom Content Layout */}
+            <div className="w-full">
+              <span className="text-[11px] font-black uppercase tracking-widest text-[#050505]/30 mb-4 block">
+                Protocol 0{index + 1}
+              </span>
+
+              <h2 className="text-4xl md:text-6xl font-black text-[#050505] uppercase tracking-tighter mb-8 leading-[0.9]">
                 {section.title}
               </h2>
-              <p
-                className="vision-description"
-                style={{ color: section.textColor }}
-              >
+
+              <p className="text-[#050505] text-xl font-bold leading-tight max-w-sm tracking-tight">
                 {section.description}
               </p>
             </div>
-          </section>
+
+            {/* Subtle Text Decoration */}
+            <div className="absolute bottom-8 right-8 overflow-hidden pointer-events-none hidden lg:block">
+              <span className="text-9xl font-black text-[#050505]/5 uppercase tracking-tighter leading-none translate-y-8 block">
+                {section.title.split(" ")[0]}
+              </span>
+            </div>
+          </motion.section>
         ))}
       </div>
     </div>

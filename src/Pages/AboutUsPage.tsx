@@ -1,6 +1,6 @@
 import AboutUs from "../Components/AboutUs/AboutUs";
 import BlogHero from "../Components/BlogHero/BlogHero";
-import We from "../Components/We/We";
+// import We from "../Components/We/We";
 import OurCompany from "./OurCompany/OurCompany";
 
 const AboutUsPage = () => {
@@ -9,7 +9,7 @@ const AboutUsPage = () => {
       <BlogHero title={`The "Boring" Thinkers`} />
       <OurCompany />
       <AboutUs />
-      <We />
+      {/* <We /> */}
     </div>
   );
 };

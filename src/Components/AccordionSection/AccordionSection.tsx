@@ -1,8 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { IoArrowBackCircleSharp } from "react-icons/io5";
-import "./AccordionSection.css"; // 👈 Import the CSS file
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const sections = [
   {
@@ -17,62 +15,49 @@ const sections = [
   {
     title: "UX/UI Designs",
     items: [
-      "User Research and Analysis",
-      "Wireframing and Prototyping",
-      "User Interface Design",
-      "User Experience Testing",
-      "Responsive Design Solutions",
+      "User Research",
+      "Wireframing & Prototyping",
+      "Interface Design",
+      "UX Testing",
+      "Responsive Solutions",
     ],
   },
-  // {
-  //   title: "Motion & Animation",
-  //   items: [
-  //     "Motion Graphics Design",
-  //     "Animated Explainer Videos",
-  //     "Interactive Presentations",
-  //   ],
-  // },
   {
     title: "Web Development",
     items: [
-      "Responsive Website Design",
-      "Frontend Development (React, Vue)",
-      "Backend Development (Node.js, PHP)",
-      "Content Management Systems (WordPress, etc.)",
+      "Frontend (React, Vue)",
+      "Backend (Node.js, Go)",
+      "CMS Solutions",
+      "E-commerce Architecture",
     ],
   },
   {
     title: "Mobile App Development",
     items: [
-      "Cross-Platform App Development (React Native, Flutter)",
-      "iOS & Android Native Development",
-      "App Store Deployment & Optimization",
+      "Cross-Platform (React Native)",
+      "iOS & Android Native",
+      "Deployment & Optimization",
     ],
   },
   {
     title: "Software Development",
-    items: [
-      "Custom Software Solutions",
-      "Enterprise Applications",
-      "SaaS Product Development",
-    ],
+    items: ["Custom Solutions", "Enterprise Apps", "SaaS Product Build"],
   },
   {
     title: "AI Models Development",
     items: [
-      "Custom AI/ML Model Training",
-      "Natural Language Processing",
-      "Computer Vision Applications",
-      "AI Integration into Apps",
+      "Custom Model Training",
+      "NLP & Vision",
+      "Neural Network Integration",
     ],
   },
   {
     title: "Server Development",
     items: [
       "Scalable API Architecture",
-      "Database Optimization & Management",
-      "Microservices and Cloud Infrastructure",
-      "Real-Time Systems (Sockets, Queues)",
+      "Database Optimization",
+      "Microservices",
+      "Cloud Infrastructure",
     ],
   },
 ];
@@ -80,36 +65,94 @@ const sections = [
 const AccordionSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const toggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-  useEffect(() => {
-    AOS.init({ duration: 500 });
-  }, []);
   return (
-    <div className="accordion-container">
-      <p>Our Services</p>
-      {sections.map((section, index) => (
-        <div key={index} className="accordion-item">
-          <button
-            onClick={() => toggle(index)}
-            className="accordion-button"
-            data-aos="zoom-out"
-          >
-            <span className="accordion-title">{section.title}</span>
-            <IoArrowBackCircleSharp
-              className={`accordion-icon ${openIndex === index ? "open" : ""}`}
-            />
-          </button>
-          {openIndex === index && (
-            <ul className="accordion-content">
-              {section.items.map((item, idx) => (
-                <li key={idx}>{item}</li>
-              ))}
-            </ul>
-          )}
-        </div>
-      ))}
+    <div className="max-w-6xl mx-auto py-24 px-6 bg-white">
+      {/* Section Header */}
+      <div className="mb-16">
+        <span className="text-[#FFD000] text-[10px] font-black uppercase tracking-[0.4em] block mb-2">
+          Expertise
+        </span>
+        <h2 className="text-4xl md:text-6xl font-black text-[#050505] tracking-tighter">
+          WHAT WE <span className="opacity-30">DO.</span>
+        </h2>
+      </div>
+
+      <div className="border-t border-black/5">
+        {sections.map((section, index) => {
+          const isOpen = openIndex === index;
+
+          return (
+            <div
+              key={index}
+              className="border-b border-black/5 overflow-hidden"
+            >
+              <button
+                onClick={() => setOpenIndex(isOpen ? null : index)}
+                className="w-full py-8 md:py-12 flex items-center justify-between group text-left outline-none transition-all duration-500"
+              >
+                <div className="flex items-center gap-6 md:gap-12">
+                  <span
+                    className={`text-sm font-mono transition-colors duration-500 ${
+                      isOpen ? "text-[#FFD000]" : "text-black/20"
+                    }`}
+                  >
+                    0{index + 1}
+                  </span>
+                  <span
+                    className={`text-2xl md:text-5xl font-black uppercase tracking-tighter transition-all duration-500 
+                    ${
+                      isOpen
+                        ? "text-[#050505] translate-x-4"
+                        : "text-black/40 group-hover:text-black group-hover:translate-x-2"
+                    }
+                  `}
+                  >
+                    {section.title}
+                  </span>
+                </div>
+
+                <motion.div
+                  animate={{ rotate: isOpen ? -90 : 180 }}
+                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                  className={`${
+                    isOpen
+                      ? "text-[#FFD000]"
+                      : "text-black/10 group-hover:text-black/30"
+                  }`}
+                >
+                  <IoArrowBackCircleSharp size={48} />
+                </motion.div>
+              </button>
+
+              <AnimatePresence>
+                {isOpen && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <div className="pb-12 pl-16 md:pl-32 grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {section.items.map((item, idx) => (
+                        <motion.div
+                          key={idx}
+                          initial={{ x: -20, opacity: 0 }}
+                          animate={{ x: 0, opacity: 1 }}
+                          transition={{ delay: idx * 0.05 }}
+                          className="flex items-center gap-3 text-[#050505] font-bold text-lg"
+                        >
+                          <div className="w-1.5 h-1.5 rounded-full bg-[#FFD000]" />
+                          {item}
+                        </motion.div>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

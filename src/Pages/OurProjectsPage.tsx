@@ -1,12 +1,12 @@
 
 import BlogHero from "../Components/BlogHero/BlogHero";
-import OurProjectComponent from "../Components/Projects/Projects";
+import NewProjects from "../Components/NewProjects/Projects";
 
 const OurProjectsPage = () => {
   return (
     <div>
-      <BlogHero title={`2024" - 25`} />
-      <OurProjectComponent />
+      <BlogHero title={`Our Works`} />
+      <NewProjects />
     </div>
   );
 };
