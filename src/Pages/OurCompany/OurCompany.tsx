@@ -115,6 +115,7 @@ const OurCompany: React.FC = () => {
             />
           </motion.div>
 
+
           {/* Solid Information Plate */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
