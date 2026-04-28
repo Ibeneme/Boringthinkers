@@ -6,10 +6,8 @@
   --primary-font: "Lufga", Arial, sans-serif;
   /* --secondary-font: 'Podkova', serif; */
   --secondary-font: "Lufga", Arial, sans-serif;
-  --bg-color: #ffffff;
-  --text-color: #333;
-  --primary-color: #515FDF;
-  --secondary-color: #f0a500;
+  --bg-color: #011404;
+
 }
 
 /* index.css or App.css */
@@ -31,8 +29,7 @@ body {
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
+
 }
 
 p,

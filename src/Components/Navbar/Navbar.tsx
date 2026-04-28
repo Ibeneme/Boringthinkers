@@ -8,12 +8,21 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const currentPath = window.location.pathname;
 
-  // Handle scroll effect for the "Floating" look
+  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Prevent scrolling when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isOpen]);
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -23,24 +32,28 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-[100] px-6 py-8 transition-all duration-500">
+    <header
+      className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${
+        scrolled ? "py-4" : "py-8"
+      } px-4 md:px-6`}
+    >
       <nav
-        className={`max-w-6xl mx-auto transition-all duration-500 ease-in-out px-8 rounded-full border flex items-center justify-between
+        className={`max-w-6xl mx-auto transition-all duration-500 ease-in-out px-6 md:px-8 rounded-full border flex items-center justify-between relative z-[120]
           ${
             scrolled
-              ? "h-20 bg-[#011404] backdrop-blur-xl border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
+              ? "h-16 md:h-20 bg-[#011404]/90 backdrop-blur-xl border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
               : "h-20 bg-[#011404] border-transparent"
           }`}
       >
         {/* Brand Logo */}
         <a
           href="/"
-          className="relative z-[110] transition-transform hover:scale-105 active:scale-95"
+          className="relative z-[130] transition-transform hover:scale-105 active:scale-95"
         >
           <img src={logo} alt="Logo" className="h-5 md:h-6 object-contain" />
         </a>
 
-        {/* Desktop Navigation - Minimalist Pill Style */}
+        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-2">
           {navItems.map(({ name, path }) => {
             const isActive = currentPath === path;
@@ -61,7 +74,7 @@ const Navbar = () => {
           })}
         </div>
 
-        {/* Action Button (Desktop Only) */}
+        {/* Desktop Action Button */}
         <a
           href="mailto:contact@boringthinkers.com"
           className="hidden md:block bg-white text-[#011404] px-6 py-2 rounded-full text-xs font-black uppercase tracking-wider hover:bg-[#FFD000] transition-colors"
@@ -69,31 +82,32 @@ const Navbar = () => {
           Start a Project
         </a>
 
-        {/* Mobile Toggle - Minimalist Custom Icon */}
+        {/* Mobile Toggle */}
         <button
-          className="md:hidden relative z-[110] text-white p-2"
+          className="md:hidden relative z-[130] text-white p-2 focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle Menu"
         >
           {isOpen ? (
             <AiOutlineClose size={28} className="animate-spin-once" />
           ) : (
-            <div className="space-y-1.5">
+            <div className="space-y-1.5 flex flex-col items-end">
               <div className="w-8 h-0.5 bg-white rounded-full"></div>
-              <div className="w-5 h-0.5 bg-[#FFD000] rounded-full ml-auto"></div>
+              <div className="w-5 h-0.5 bg-[#FFD000] rounded-full"></div>
             </div>
           )}
         </button>
 
-        {/* Mobile Menu - Full Screen Kinetic Overlay */}
+        {/* Mobile Menu Overlay */}
         <div
-          className={`fixed inset-0 bg-[#011404] transition-all duration-700 ease-[cubic-bezier(0.85,0,0.15,1)] ${
+          className={`fixed inset-0 bg-[#011404] z-[110] flex flex-col justify-center transition-all duration-700 ease-[cubic-bezier(0.85,0,0.15,1)] ${
             isOpen
-              ? "clip-path-open opacity-100"
-              : "clip-path-closed opacity-0 pointer-events-none"
+              ? "clip-path-open opacity-100 visible"
+              : "clip-path-closed opacity-0 invisible"
           }`}
         >
-          <div className="flex flex-col justify-center items-start h-full px-12 space-y-8">
-            <p className="text-[#FFD000] text-sm font-bold uppercase tracking-[0.3em] mb-4">
+          <div className="flex flex-col items-start px-10 md:px-20 space-y-6 md:space-y-8 w-full">
+            <p className="text-[#FFD000] text-xs md:text-sm font-bold uppercase tracking-[0.3em] mb-2">
               Navigation
             </p>
             {navItems.map(({ name, path }, index) => (
@@ -101,33 +115,44 @@ const Navbar = () => {
                 key={name}
                 href={path}
                 onClick={() => setIsOpen(false)}
-                className="group flex items-center gap-6 overflow-hidden"
-                style={{ transitionDelay: `${index * 100}ms` }}
+                className="group flex items-center gap-4 md:gap-6"
+                style={{
+                  transitionDelay: isOpen ? `${index * 100}ms` : "0ms",
+                  transform: isOpen ? "translateX(0)" : "translateX(-20px)",
+                  transition: "all 0.5s ease",
+                }}
               >
-                <span className="text-white/20 text-2xl font-mono">
+                <span className="text-white/20 text-xl md:text-2xl font-mono">
                   0{index + 1}
                 </span>
                 <span
-                  className={`text-5xl md:text-7xl font-black uppercase transition-all duration-500 group-hover:italic group-hover:translate-x-4 ${
+                  className={`text-4xl md:text-7xl font-black uppercase transition-all duration-500 group-hover:italic ${
                     currentPath === path ? "text-[#FFD000]" : "text-white"
                   }`}
                 >
                   {name}
                 </span>
                 <FaArrowRightLong
-                  className="text-[#FFD000] opacity-0 -translate-x-10 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500"
+                  className="text-[#FFD000] hidden md:block opacity-0 -translate-x-10 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500"
                   size={32}
                 />
               </a>
             ))}
+
+            {/* Mobile Action Button inside menu */}
+            <a
+              href="mailto:contact@boringthinkers.com"
+              className="mt-8 bg-[#FFD000] text-[#011404] px-8 py-4 rounded-full text-sm font-black uppercase tracking-widest"
+            >
+              Start a Project
+            </a>
           </div>
         </div>
       </nav>
 
-      {/* Required CSS for the kinetic effect - Add to your globals.css */}
       <style>{`
-        .clip-path-closed { clip-path: circle(0% at 100% 0%); }
-        .clip-path-open { clip-path: circle(150% at 100% 0%); }
+        .clip-path-closed { clip-path: circle(0% at 90% 5%); }
+        .clip-path-open { clip-path: circle(150% at 90% 5%); }
         @keyframes spin-once { from { transform: rotate(0deg); } to { transform: rotate(90deg); } }
         .animate-spin-once { animation: spin-once 0.3s ease-out; }
       `}</style>
