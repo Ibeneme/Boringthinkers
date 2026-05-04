@@ -83,16 +83,8 @@ const ContactUs: React.FC = () => {
       {/* Identification Bar */}
       <div className="mt-32 pt-8 border-t-[1px] border-[#011404]/10 flex flex-wrap justify-between items-center gap-6">
         <span className="text-[10px] font-black text-[#011404]/40 uppercase tracking-[1em]">
-          Boring Thinkers Ltd // Port Harcourt
+          Boring Thinkers Limited
         </span>
-        <div className="flex gap-8">
-          <span className="text-[10px] font-black text-[#011404] uppercase tracking-widest">
-            System: Stable
-          </span>
-          <span className="text-[10px] font-black text-[#011404] uppercase tracking-widest">
-            Build: 2026.04
-          </span>
-        </div>
       </div>
     </section>
   );

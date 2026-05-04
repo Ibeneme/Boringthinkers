@@ -1,15 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { IoArrowForwardCircleSharp } from "react-icons/io5";
+import { FiChevronsRight } from "react-icons/fi";
+
+// Asset Imports (Keeping your existing paths)
 
 // Asset Imports (Keeping your existing paths)
 // import main from "../../assets/imagesa/cw/cw_a.png";
 // import pay from "../../assets/imagesa/100/100_a.png";
 // import cw_web from "../../assets/imagesa/cw_web/cw_web_a.png";
-// import nexus from "../../assets/projects/nexus.png";
+import nexus from "../../assets/projects/nexus.png";
 //import padiman from "../../assets/projects/padiman.png";
-// import zaeda from "../../assets/projects/zaeda.png";
+import zaeda from "../../assets/projects/zaeda.png";
 import pickars from "../../assets/projects/pickars.png";
 import bulkup from "../../assets/projects/bulkup.png";
 import kraft from "../../assets/projects/kraft.png";
@@ -41,13 +43,13 @@ const sampleProjects = [
   //   role: "Property Management",
   //   thumbnail: padiman,
   // },
-  // { id: 5, title: "Nexus Music", role: "Music Publishing", thumbnail: nexus },
-  // {
-  //   id: 6,
-  //   title: "Zaeda Oracle",
-  //   role: "Strategic Consulting",
-  //   thumbnail: zaeda,
-  // },
+  { id: 5, title: "Nexus Music", role: "Music Publishing", thumbnail: nexus },
+  {
+    id: 6,
+    title: "Zaeda Oracle",
+    role: "Legal Company",
+    thumbnail: zaeda,
+  },
   // {
   //   id: 1,
   //   title: "Chat Wazobia AI",
@@ -62,7 +64,6 @@ const sampleProjects = [
   //   thumbnail: cw_web,
   // },
 ];
-
 const NewProjects: React.FC = () => {
   const navigate = useNavigate();
 
@@ -111,15 +112,15 @@ const NewProjects: React.FC = () => {
             onClick={() => navigate(`/projects/${project.id}`)}
             className="group cursor-pointer"
           >
-            {/* Image Container */}
-            <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-gray-100 mb-6">
+            {/* Image Container (Strictly No Border Radius) */}
+            <div className="relative aspect-[16/10] overflow-hidden bg-gray-100 mb-6 rounded-none">
               <img
                 src={project.thumbnail}
                 alt={project.title}
-                className="absolute inset-0 w-full h-full object-cover  group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                className="absolute inset-0 w-full h-full object-cover rounded-none group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
               />
               {/* Subtle hover overlay */}
-              <div className="absolute inset-0 bg-[#050505]/0 group-hover:bg-[#050505]/5 transition-colors duration-500" />
+              <div className="absolute inset-0 bg-[#050505]/0 group-hover:bg-[#050505]/5 transition-colors duration-500 rounded-none" />
             </div>
 
             {/* Project Details */}
@@ -128,17 +129,15 @@ const NewProjects: React.FC = () => {
                 <p className="text-[#FFD000] text-[10px] font-black uppercase tracking-widest mb-1">
                   {project.role}
                 </p>
-                <h3 className="text-3xl font-black text-[#050505] tracking-tight  transition-all">
+                <h3 className="text-3xl font-black text-[#050505] tracking-tight transition-all">
                   {project.title}
                 </h3>
               </div>
 
-              <motion.div
-                whileHover={{ rotate: -45 }}
-                className="text-[#050505] opacity-20 group-hover:opacity-100 transition-opacity"
-              >
-                <IoArrowForwardCircleSharp size={48} />
-              </motion.div>
+              {/* Minimal Chevron Icon */}
+              <div className="text-[#050505] opacity-20 group-hover:opacity-100 transition-opacity p-2">
+                <FiChevronsRight size={36} />
+              </div>
             </div>
           </motion.div>
         ))}

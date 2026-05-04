@@ -1,40 +1,40 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const privacySections = [
+const securitySections = [
   {
-    title: "Data Collection",
+    title: "Codebase Security",
     description:
-      "We collect minimal operational data necessary for software development. This includes client-provided specs, codebase references, and basic project communications. We do not harvest or buy third-party user data.",
+      "All repositories are strictly isolated with automated dependency scanning enabled. We use rigorous static and dynamic application security testing (SAST/DAST) in our CI/CD pipelines to intercept vulnerabilities long before production.",
   },
   {
-    title: "Data Processing",
+    title: "Data Encryption",
     description:
-      "Your project data is purely used to build, optimize, and maintain custom solutions. We analyze workflow data internally to speed up code reviews, improve system testing, and ensure structural scalability.",
+      "Your data is fully encrypted at rest and in transit. We enforce end-to-end TLS 1.3 encryption across all communication networks, and use AES-256 standards for persistent disk storage.",
   },
   {
-    title: "Data Protection",
+    title: "Access Controls",
     description:
-      "We implement high-grade industrial encryption and secure microservices architecture. Your digital assets, source code, and configurations are isolated within strict access-control protocols.",
+      "Access to client systems operates on a strict Principle of Least Privilege (PoLP). Team access requires mandatory hardware-backed multi-factor authentication (MFA) and is continuously logged in immutable audit trails.",
   },
   {
-    title: "Third-Party Scope",
+    title: "Infrastructure & Isolation",
     description:
-      "We do not sell, rent, or trade your data. Any metadata shared with specialized third-party cloud tools (e.g., Vercel, AWS, GitHub) is bound strictly by enterprise-level non-disclosure agreements.",
+      "We build on secure microservices architecture and isolate staging, testing, and production environments. Server configurations are maintained via Infrastructure as Code (IaC) to prevent manual configuration drift.",
   },
   {
-    title: "Client Controls",
+    title: "Continuous Monitoring",
     description:
-      "You retain absolute ownership of your intellectual property. At any point, you may request full code audits, total structural export, or complete removal of any operational project metadata from our servers.",
+      "Our system alerts are integrated directly with round-the-clock monitoring networks. We track application access patterns, server anomalies, and incoming traffic to shut down potential threats instantly.",
   },
   {
-    title: "System Updates",
+    title: "Third-Party Compliance",
     description:
-      "This policy may be amended to reflect new regulatory compliance or security updates. Changes will be instantly active, with historical revisions tracked with total transparency.",
+      "Any third-party provider or cloud service integrated into your system is vetted through strict compliance reviews. We work exclusively with tier-1 enterprise platforms that guarantee SOC2 and ISO 27001 compliance.",
   },
 ];
 
-const PrivacyPolicy: React.FC = () => {
+const SecurityPage: React.FC = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -69,7 +69,7 @@ const PrivacyPolicy: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             className="text-6xl md:text-[10rem] font-black text-[#050505] leading-[0.8] tracking-[-0.07em] uppercase"
           >
-            PRIVACY <br /> POLICY.
+            SECURITY <br /> ARCHITECTURE.
           </motion.h2>
 
           <motion.p
@@ -78,9 +78,8 @@ const PrivacyPolicy: React.FC = () => {
             transition={{ delay: 0.3 }}
             className="mt-12 max-w-xl text-xl font-black text-[#050505] uppercase tracking-tighter leading-tight"
           >
-            Boring Thinkers Limited takes security seriously. We handle client
-            data, intellectual property, and system infrastructure with total
-            transparency.
+            A high-standard blueprint of systemic defenses, zero-trust policies,
+            and deployment safeguards designed to keep your IP protected.
           </motion.p>
         </div>
 
@@ -92,7 +91,7 @@ const PrivacyPolicy: React.FC = () => {
           viewport={{ once: true }}
           className="grid grid-cols-1 gap-0"
         >
-          {privacySections.map((section, index) => (
+          {securitySections.map((section, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
@@ -128,7 +127,7 @@ const PrivacyPolicy: React.FC = () => {
           className="mt-24 p-12 bg-[#FFD000] inline-block origin-left rounded-none"
         >
           <p className="text-[#050505] font-black text-2xl uppercase tracking-tighter leading-none">
-            Infrastructure Secure. Protocols Active.
+            Zero trust enforced. Your architecture is secure.
           </p>
         </motion.div>
       </div>
@@ -136,4 +135,4 @@ const PrivacyPolicy: React.FC = () => {
   );
 };
 
-export default PrivacyPolicy;
+export default SecurityPage;

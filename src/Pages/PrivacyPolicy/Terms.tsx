@@ -1,40 +1,40 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const privacySections = [
+const termsSections = [
   {
-    title: "Data Collection",
+    title: "Scope of Service",
     description:
-      "We collect minimal operational data necessary for software development. This includes client-provided specs, codebase references, and basic project communications. We do not harvest or buy third-party user data.",
+      "Boring Thinkers Limited delivers digital product design, custom software architecture, and infrastructure scaling. All milestones, sprint outputs, and technical scopes are strictly dictated by individual Master Services Agreements (MSA).",
   },
   {
-    title: "Data Processing",
+    title: "Intellectual Property",
     description:
-      "Your project data is purely used to build, optimize, and maintain custom solutions. We analyze workflow data internally to speed up code reviews, improve system testing, and ensure structural scalability.",
+      "Upon final clearance of all agreed payments, complete ownership of the custom code, digital assets, and system deployment architecture transfers directly to the client. Boring Thinkers retains rights only to its pre-existing core libraries.",
   },
   {
-    title: "Data Protection",
+    title: "Client Obligations",
     description:
-      "We implement high-grade industrial encryption and secure microservices architecture. Your digital assets, source code, and configurations are isolated within strict access-control protocols.",
+      "Clients must provide clear product specifications, access to third-party dashboards when necessary, and swift feedback during testing phases. Delays in access or milestone approvals directly affect the original launch timeline.",
   },
   {
-    title: "Third-Party Scope",
+    title: "Payment Terms",
     description:
-      "We do not sell, rent, or trade your data. Any metadata shared with specialized third-party cloud tools (e.g., Vercel, AWS, GitHub) is bound strictly by enterprise-level non-disclosure agreements.",
+      "Billing operates on fixed-price tiers, milestone-based installments, or retainer cycles. Unpaid invoices past 14 business days trigger automatic system-level hold protocols on all active engineering and design sprints.",
   },
   {
-    title: "Client Controls",
+    title: "Termination & Exits",
     description:
-      "You retain absolute ownership of your intellectual property. At any point, you may request full code audits, total structural export, or complete removal of any operational project metadata from our servers.",
+      "Either party may pause or terminate engagement with a written notice of 30 days. Upon exit, any unbilled development hours or completed milestones will be invoiced and delivered immediately.",
   },
   {
-    title: "System Updates",
+    title: "Liability & Warranty",
     description:
-      "This policy may be amended to reflect new regulatory compliance or security updates. Changes will be instantly active, with historical revisions tracked with total transparency.",
+      "We build robust, scalable architecture. However, Boring Thinkers Limited is not liable for upstream outages or security vulnerabilities originating from external third-party infrastructure tools (e.g., AWS, GCP, Cloudflare).",
   },
 ];
 
-const PrivacyPolicy: React.FC = () => {
+const TermsOfService: React.FC = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -69,7 +69,7 @@ const PrivacyPolicy: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             className="text-6xl md:text-[10rem] font-black text-[#050505] leading-[0.8] tracking-[-0.07em] uppercase"
           >
-            PRIVACY <br /> POLICY.
+            TERMS OF <br /> SERVICE.
           </motion.h2>
 
           <motion.p
@@ -78,9 +78,8 @@ const PrivacyPolicy: React.FC = () => {
             transition={{ delay: 0.3 }}
             className="mt-12 max-w-xl text-xl font-black text-[#050505] uppercase tracking-tighter leading-tight"
           >
-            Boring Thinkers Limited takes security seriously. We handle client
-            data, intellectual property, and system infrastructure with total
-            transparency.
+            Rules of engagement, technical obligations, and intellectual
+            property ownership definitions for Boring Thinkers Limited.
           </motion.p>
         </div>
 
@@ -92,7 +91,7 @@ const PrivacyPolicy: React.FC = () => {
           viewport={{ once: true }}
           className="grid grid-cols-1 gap-0"
         >
-          {privacySections.map((section, index) => (
+          {termsSections.map((section, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
@@ -128,7 +127,7 @@ const PrivacyPolicy: React.FC = () => {
           className="mt-24 p-12 bg-[#FFD000] inline-block origin-left rounded-none"
         >
           <p className="text-[#050505] font-black text-2xl uppercase tracking-tighter leading-none">
-            Infrastructure Secure. Protocols Active.
+            Terms Confirmed. Ready to Build.
           </p>
         </motion.div>
       </div>
@@ -136,4 +135,4 @@ const PrivacyPolicy: React.FC = () => {
   );
 };
 
-export default PrivacyPolicy;
+export default TermsOfService;

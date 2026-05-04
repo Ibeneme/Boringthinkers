@@ -12,6 +12,9 @@ import Navbar from "./Components/Navbar/Navbar";
 import ProjectDetails from "./Components/NewProjects/ProjectDetails";
 import "./assets/fonts/fonts.css";
 import HowWeWorkPage from "./Pages/HowWeWorkPage";
+import TermsOfService from "./Pages/PrivacyPolicy/Terms";
+import SecurityPage from "./Pages/PrivacyPolicy/Security";
+import StartProjectPage from "./Pages/StartProjectPage";
 
 function App() {
   return (
@@ -26,12 +29,29 @@ function App() {
         <Route path="/how-we-work" element={<HowWeWorkPage />} />
         <Route path="/team" element={<OurTeamPage />} />
         <Route path="/careers" element={<CareerPage />} />
+        <Route path="/start-a-project" element={<StartProjectPage />} />
         <Route path="*" element={<NotFound />} />
         <Route
           path="/privacy-policy"
           element={
             <div style={{ backgroundColor: "#011404" }}>
               <PrivacyPolicy />
+            </div>
+          }
+        />
+        <Route
+          path="/terms-and-conditions"
+          element={
+            <div style={{ backgroundColor: "#011404" }}>
+              <TermsOfService />
+            </div>
+          }
+        />
+        <Route
+          path="/security"
+          element={
+            <div style={{ backgroundColor: "#011404" }}>
+              <SecurityPage />
             </div>
           }
         />

@@ -52,7 +52,7 @@ const HowWeWorkComponent: React.FC = () => {
     <section className="bg-white pt-[180px] pb-24 px-6 md:px-20 min-h-screen">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <div className="mb-32">
+        {/* <div className="mb-32">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -81,7 +81,7 @@ const HowWeWorkComponent: React.FC = () => {
             We architect solutions that solve real problems through
             transparency, creativity, and measurable results.
           </motion.p>
-        </div>
+        </div> */}
 
         {/* Steps Section - Structural List */}
         <motion.div

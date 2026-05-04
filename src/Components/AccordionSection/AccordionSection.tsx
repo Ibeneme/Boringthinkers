@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { IoArrowBackCircleSharp } from "react-icons/io5";
+import { FiChevronsRight } from "react-icons/fi";
 
 const sections = [
   {
@@ -93,7 +93,7 @@ const AccordionSection = () => {
                 <div className="flex items-center gap-6 md:gap-12">
                   <span
                     className={`text-sm font-mono transition-colors duration-500 ${
-                      isOpen ? "text-[#FFD000]" : "text-black/20"
+                      isOpen ? "text-[#FFD000]" : "text-black"
                     }`}
                   >
                     0{index + 1}
@@ -103,7 +103,7 @@ const AccordionSection = () => {
                     ${
                       isOpen
                         ? "text-[#050505] translate-x-4"
-                        : "text-black/40 group-hover:text-black group-hover:translate-x-2"
+                        : "text-black group-hover:text-black"
                     }
                   `}
                   >
@@ -111,17 +111,16 @@ const AccordionSection = () => {
                   </span>
                 </div>
 
-                <motion.div
-                  animate={{ rotate: isOpen ? -90 : 180 }}
-                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  className={`${
+                {/* Arrow Container with Dark Green Background & 2px Border Radius */}
+                <div
+                  className={`flex items-center justify-center p-3 rounded-[12px] transition-all duration-500 bg-[#0A2F1D] ${
                     isOpen
-                      ? "text-[#FFD000]"
-                      : "text-black/10 group-hover:text-black/30"
+                      ? "text-[#FFD000] translate-x--2"
+                      : "text-white group-hover:text-white"
                   }`}
                 >
-                  <IoArrowBackCircleSharp size={48} />
-                </motion.div>
+                  <FiChevronsRight size={24} />
+                </div>
               </button>
 
               <AnimatePresence>
@@ -141,7 +140,8 @@ const AccordionSection = () => {
                           transition={{ delay: idx * 0.05 }}
                           className="flex items-center gap-3 text-[#050505] font-bold text-lg"
                         >
-                          <div className="w-1.5 h-1.5 rounded-full bg-[#FFD000]" />
+                          {/* Square marker */}
+                          <div className="w-2 h-2 rounded-none bg-[#FFD000] shrink-0" />
                           {item}
                         </motion.div>
                       ))}

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   FaEnvelope,
   FaLinkedin,
@@ -19,6 +19,7 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = () => {
   const currentYear = new Date().getFullYear();
 
+  const navigate = useNavigate();
   return (
     <section className="bg-[#011404]">
       <ContactUs />
@@ -65,7 +66,7 @@ const Footer: React.FC<FooterProps> = () => {
 
           {/* Contact Bento Box - Takes up 4 columns */}
           <div className="lg:col-span-4 grid grid-cols-1 gap-4">
-            <div className="p-6 rounded-3xl bg-white/5 border border-white/10 hover:border-[#FFD000]/30 transition-colors group">
+            <div className="p-6 rounded-[12px] bg-white/5 border border-white/10 hover:border-[#FFD000]/30 transition-colors group">
               <p className="text-[#FFD000] text-xs font-black uppercase tracking-widest mb-4">
                 Get in Touch
               </p>
@@ -112,7 +113,7 @@ const Footer: React.FC<FooterProps> = () => {
           </div>
 
           {/* Quick Links - Takes up 3 columns */}
-          <div className="lg:col-span-3 p-8 rounded-3xl bg-[#FFD000] text-[#011404]">
+          <div className="lg:col-span-3 p-8 rounded-[12px] bg-[#FFD000] text-[#011404]">
             <p className="font-black uppercase tracking-widest text-xs mb-6 opacity-60">
               Sitemap
             </p>
@@ -142,8 +143,18 @@ const Footer: React.FC<FooterProps> = () => {
             All rights reserved.
           </p>
           <div className="flex gap-8 text-xs font-bold uppercase tracking-widest text-gray-500">
-            <span className="hover:text-white cursor-pointer">Terms</span>
-            <span className="hover:text-white cursor-pointer">Security</span>
+            <span
+              className="hover:text-white cursor-pointer"
+              onClick={() => navigate("/terms-and-conditions")}
+            >
+              Terms
+            </span>
+            <span
+              onClick={() => navigate("/security")}
+              className="hover:text-white cursor-pointer"
+            >
+              Security
+            </span>
           </div>
         </div>
       </footer>
