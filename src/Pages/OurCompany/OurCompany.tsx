@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, useScroll, useTransform, Variants } from "framer-motion"; // Added Variants
-import { IoArrowForwardCircleSharp } from "react-icons/io5";
+import { FiChevronsRight } from "react-icons/fi";
 import crayons from "../../assets/images/new/codeb.jpg";
 
 const OurCompany: React.FC = () => {
@@ -86,15 +86,12 @@ const OurCompany: React.FC = () => {
                 className="group flex items-center justify-between w-full max-w-md py-8 px-0 border-b-2 border-[#011404] hover:border-[#FFD000] transition-colors duration-300"
               >
                 <div className="flex flex-col text-left">
-                  <span className="text-[10px] font-black uppercase tracking-[0.5em] text-[#011404]/30 mb-2">
-                    Action
-                  </span>
                   <span className="text-4xl font-black text-[#011404] uppercase tracking-tighter">
                     Send a Mail
                   </span>
                 </div>
-                <IoArrowForwardCircleSharp
-                  size={64}
+                <FiChevronsRight
+                  size={28}
                   className="text-[#011404] transition-transform duration-500 group-hover:text-[#FFD000] group-hover:translate-x-2"
                 />
               </button>
@@ -114,7 +111,6 @@ const OurCompany: React.FC = () => {
               className="absolute inset-0 w-full h-full object-cover"
             />
           </motion.div>
-
 
           {/* Solid Information Plate */}
           <motion.div

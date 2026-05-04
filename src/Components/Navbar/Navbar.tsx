@@ -52,7 +52,7 @@ const Navbar = () => {
           className={`max-w-6xl mx-auto transition-all duration-500 ease-in-out px-6 md:px-8 rounded-full border flex items-center justify-between relative z-[120]
             ${
               scrolled
-                ? "h-16 bg-[#011404]/90 backdrop-blur-xl border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
+                ? "h-16 bg-[#011404] border-white/10 "
                 : "h-20 bg-[#011404] border-transparent"
             }`}
         >
@@ -143,7 +143,7 @@ const Navbar = () => {
                 0{index + 1}
               </span>
               <span
-                className={`text-3xl md:text-6xl font-black uppercase tracking-tight transition-all duration-500 group-hover:italic break-words ${
+                className={`text-3xl md:text-6xl font-black uppercase tracking-tight transition-all duration-500 break-words ${
                   currentPath === path ? "text-[#FFD000]" : "text-white"
                 }`}
               >
