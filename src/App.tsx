@@ -15,6 +15,8 @@ import HowWeWorkPage from "./Pages/HowWeWorkPage";
 import TermsOfService from "./Pages/PrivacyPolicy/Terms";
 import SecurityPage from "./Pages/PrivacyPolicy/Security";
 import StartProjectPage from "./Pages/StartProjectPage";
+import BlogPage from "./Pages/BlogPage";
+import BlogDetailsPage from "./Pages/BlogDetailPage";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
       <Routes>
         <Route path="/projects/:id" element={<ProjectDetails />} />
         <Route path="/" element={<Home />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:id" element={<BlogDetailsPage />} />
         <Route path="/about-us" element={<AboutUsPage />} />
         <Route path="/projects" element={<OurProjectsPage />} />
         <Route path="/how-we-work" element={<HowWeWorkPage />} />

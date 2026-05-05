@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, Variants } from "framer-motion"; // Added Variants type
 import { ArrowUpRight } from "lucide-react";
+//import logo from "../../assets/images/logo/white.png";
 
 const Hero: React.FC = () => {
   const handleSendMail = () => {
@@ -33,11 +34,23 @@ const Hero: React.FC = () => {
         }}
         className="relative z-10 flex flex-col items-center w-full max-w-4xl text-center"
       >
+        {/* <img
+          src={logo}
+          alt="BoringThinkers"
+          className="h-32 object-contain mb-4"
+        /> */}
         {/* Minimal Marker */}
-        <motion.div
+        {/* <motion.div
           variants={item}
           className="mb-10 w-8 h-[2px] bg-[#FFD000]"
-        />
+        /> */}
+
+        <motion.div variants={item} className="mb-8 flex items-center gap-4">
+          <span className="text-[10px] uppercase tracking-[0.4em] text-[#FFD000] font-black">
+            Est. 2024
+          </span>
+          <div className="w-12 h-[1px] bg-[#FFD000]" />
+        </motion.div>
 
         {/* Scaled-Down Structural Headline */}
         <div className="mb-14">
@@ -54,7 +67,10 @@ const Hero: React.FC = () => {
             THINKERS
           </motion.h1>
         </div>
-
+        {/* <motion.div
+          variants={item}
+          className="mb-10 w-8 h-[2px] bg-[#FFD000]"
+        /> */}
         {/* Direct Statement */}
         <motion.div variants={item} className="max-w-md">
           <p className="text-lg md:text-xl font-black uppercase tracking-tight leading-tight text-white/60">
