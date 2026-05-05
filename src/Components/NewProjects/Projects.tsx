@@ -24,7 +24,7 @@ const sampleProjects: Project[] = [
     title: "CloneKraft",
     role: "Digital Brand Identity",
     thumbnail: kraft,
-    url: "http://clonekraft.com/",
+    url: "http://www.clonekraft.com/",
   },
   {
     id: 92,
