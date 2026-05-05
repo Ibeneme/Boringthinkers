@@ -86,7 +86,7 @@ const NewProjects: React.FC = () => {
             className="text-6xl md:text-8xl font-black text-[#050505] tracking-tighter leading-[0.85]"
           >
             THE <br />
-            <span className="text-[#FFD000]">PORTFOLIO.</span>
+            <span className="text-[#050505]">PORTFOLIO.</span>
           </motion.h2>
 
           <motion.p
