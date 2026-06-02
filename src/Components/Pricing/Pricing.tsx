@@ -1,68 +1,144 @@
 import React from "react";
+import { type Variants, motion } from "framer-motion";
 import { ArrowUpRight, Check } from "lucide-react";
 
 const PricingComponent: React.FC = () => {
   const handleSendMail = () =>
     (window.location.href = "mailto:contact@boringthinkers.com");
 
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.12 },
+    },
+  };
+  
+  const cardVariants: Variants = {
+    hidden: { opacity: 0, y: 60 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      // Using a standard easing string or an array is now explicitly permitted
+      transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } 
+    },
+  };
+
   const renderFeatures = (features: string[]) => (
-    <ul className="space-y-4 mb-10 flex-1">
-      {features.map((f, i) => (
+    <ul className="space-y-5 mb-12 flex-1">
+      {features.map((feature, i) => (
         <li
           key={i}
-          className="flex items-start text-white text-sm font-bold uppercase tracking-tight leading-snug"
+          className="flex items-start gap-4 text-white/90 text-[15px] font-medium leading-snug group-hover:text-white transition-colors"
         >
-          <Check size={18} className="text-[#FFD000] mr-3 mt-0.5 shrink-0" />
-          {f}
+          <div className="mt-1 w-5 h-5 rounded bg-[#FFD000]/10 flex items-center justify-center shrink-0">
+            <Check size={14} className="text-[#FFD000]" />
+          </div>
+          {feature}
         </li>
       ))}
     </ul>
   );
 
   const Section = ({ title, plans }: { title: string; plans: any[] }) => (
-    <div className="mb-32">
-      <h2 className="text-5xl font-black uppercase text-[#011404] mb-16 border-l-8 border-[#011404] pl-6">
-        {title}
-      </h2>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {plans.map((p) => (
-          <div
-            key={p.title}
-            className="bg-[#011404] p-10 flex flex-col border-4 border-[#011404] hover:border-[#FFD000] transition-colors duration-300"
+    <div className="mb-28 md:mb-36">
+      <motion.div
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        className="mb-16 md:mb-20"
+      >
+        <div className="flex items-center gap-4 mb-6">
+          <div className="w-12 h-[3px] bg-[#FFD000]" />
+          <span className="text-[#011404] text-xs font-black uppercase tracking-[0.6em]">
+            Tiers
+          </span>
+        </div>
+        <h2 className="text-5xl md:text-7xl font-black text-[#011404] leading-[0.85] tracking-[-0.06em] uppercase">
+          {title}
+        </h2>
+      </motion.div>
+
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
+        {plans.map((plan, _) => (
+          <motion.div
+            key={plan.title}
+            variants={cardVariants}
+            whileHover={{ y: -12 }}
+            className="group bg-[#011404] p-10 md:p-12 flex flex-col border border-[#011404] hover:border-[#FFD000] transition-all duration-500 rounded-none"
           >
-            <span className="text-[#FFD000] text-[10px] font-black uppercase tracking-[0.3em] mb-4">
-              {p.tagline}
-            </span>
-            <h3 className="text-white text-3xl font-black uppercase mb-1">
-              {p.title}
-            </h3>
-            <p className="text-[#FFD000] text-4xl font-black mb-10">
-              {p.price}
-            </p>
-            {renderFeatures(p.features)}
-            <button
+            <div className="mb-8">
+              <span className="inline-block text-[#FFD000] text-[10px] font-black uppercase tracking-[0.4em] mb-3">
+                {plan.tagline}
+              </span>
+              <h3 className="text-white text-4xl font-black uppercase tracking-tighter mb-1">
+                {plan.title}
+              </h3>
+              <p className="text-[#FFD000] text-5xl font-black tracking-tighter">
+                {plan.price}
+              </p>
+            </div>
+
+            {renderFeatures(plan.features)}
+
+            <motion.button
               onClick={handleSendMail}
-              className="w-full py-5 bg-[#FFD000] text-[#011404] font-black uppercase text-center flex items-center justify-center gap-3 hover:bg-white transition-colors duration-300 mt-auto"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.985 }}
+              className="mt-auto w-full py-6 bg-[#FFD000] text-[#011404] font-black uppercase text-lg tracking-widest flex items-center justify-center gap-3 hover:bg-white transition-all duration-300 group-hover:shadow-xl"
             >
-              Select Investment <ArrowUpRight size={20} />
-            </button>
-          </div>
+              Let's Get Started
+              <ArrowUpRight
+                size={24}
+                className="group-hover:rotate-45 transition-transform"
+              />
+            </motion.button>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 
   return (
-    <section className="bg-[#fff] py-32 px-6 md:px-20 font-sans">
-      <div className="max-w-[1500px] mx-auto">
-        <div className="mb-24">
-          <p className="text-[#011404] font-black uppercase tracking-[0.5em] mb-6">
-            Let's Build
-          </p>
-          <h1 className="text-[5rem] md:text-[7rem] font-black uppercase text-[#011404] leading-[0.9]">
-            PRICING PLANS
+    <section className="bg-white pt-[140px] md:pt-[180px] pb-24 px-6 md:px-20 font-sans min-h-screen">
+      <div className="max-w-7xl mx-auto">
+        {/* Hero Header */}
+        <div className="mb-24 md:mb-32">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex items-center gap-4 mb-8"
+          >
+            <div className="w-12 h-[3px] bg-[#FFD000]" />
+            <span className="text-[#011404] text-[11px] font-black uppercase tracking-[0.6em]">
+              Transparent Pricing
+            </span>
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="text-6xl sm:text-7xl md:text-[9.5rem] font-black text-[#011404] leading-[0.82] tracking-[-0.07em] uppercase"
+          >
+            PRICING
             <br />
-          </h1>
+            PLANS
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="mt-8 max-w-2xl text-xl md:text-2xl font-bold text-[#011404] tracking-tight leading-tight"
+          >
+            Serious builds. Serious numbers. No fluff.
+          </motion.p>
         </div>
 
         {/* Software Development Systems */}
@@ -174,7 +250,7 @@ const PricingComponent: React.FC = () => {
           ]}
         />
 
-        {/* New Fintech Software Section */}
+        {/* Fintech Software Solutions */}
         <Section
           title="Fintech Software Solutions"
           plans={[
@@ -233,7 +309,7 @@ const PricingComponent: React.FC = () => {
           ]}
         />
 
-        {/* Static Web Infrastructure */}
+        {/* Static Websites */}
         <Section
           title="Static Websites"
           plans={[
@@ -292,7 +368,7 @@ const PricingComponent: React.FC = () => {
         />
 
         {/* SEO & Growth Engine */}
-        <Section
+        {/* <Section
           title="SEO & Growth Engine"
           plans={[
             {
@@ -349,7 +425,7 @@ const PricingComponent: React.FC = () => {
           ]}
         />
 
-        {/* Social Media Orchestration */}
+
         <Section
           title="Social Media Management"
           plans={[
@@ -405,7 +481,7 @@ const PricingComponent: React.FC = () => {
               ],
             },
           ]}
-        />
+        /> */}
       </div>
     </section>
   );
