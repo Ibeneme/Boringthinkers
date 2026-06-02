@@ -367,7 +367,7 @@ const PricingComponent: React.FC = () => {
           ]}
         />
         <Section
-          title="SEO & Growth Engine"
+          title="SEO Setup & Management"
           plans={[
             {
               tagline: "Visibility",
