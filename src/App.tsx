@@ -17,6 +17,7 @@ import SecurityPage from "./Pages/PrivacyPolicy/Security";
 import StartProjectPage from "./Pages/StartProjectPage";
 import BlogPage from "./Pages/BlogPage";
 import BlogDetailsPage from "./Pages/BlogDetailPage";
+import PricingPage from "./Pages/PricingPage";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/projects/:id" element={<ProjectDetails />} />
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<BlogPage />} />
+        <Route path="/pricing" element={<PricingPage />} />
         <Route path="/blog/:id" element={<BlogDetailsPage />} />
         <Route path="/about-us" element={<AboutUsPage />} />
         <Route path="/projects" element={<OurProjectsPage />} />

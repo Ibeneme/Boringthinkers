@@ -3,11 +3,16 @@ import { motion } from "framer-motion";
 
 interface PageHeroProps {
   title: string;
+  bgColor?: string; // New optional prop
 }
 
-const PageHero: React.FC<PageHeroProps> = ({ title }) => {
+const PageHero: React.FC<PageHeroProps> = ({ title, bgColor = "#FFD000" }) => {
   return (
-    <section className="relative pt-44 pb-32 px-6 md:px-20 bg-[#FFD000] overflow-hidden">
+    // Applied the bgColor prop here
+    <section 
+      className="relative pt-44 pb-32 px-6 md:px-20 overflow-hidden"
+      style={{ backgroundColor: bgColor }}
+    >
       {/* Structural Grain Overlay */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:20px_20px]" />
 

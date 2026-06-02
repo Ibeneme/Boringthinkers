@@ -35,6 +35,7 @@ const Navbar = () => {
     { name: "blog", path: "/blog" },
     { name: "Projects", path: "/projects" },
     { name: "How We Work", path: "/how-we-work" },
+    { name: "Pricing", path: "/pricing" },
   ];
 
   const handleNavigation = (path: string) => {
