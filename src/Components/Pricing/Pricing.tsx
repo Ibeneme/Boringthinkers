@@ -13,14 +13,14 @@ const PricingComponent: React.FC = () => {
       transition: { staggerChildren: 0.12 },
     },
   };
-  
+
   const cardVariants: Variants = {
     hidden: { opacity: 0, y: 60 },
     visible: {
       opacity: 1,
       y: 0,
       // Using a standard easing string or an array is now explicitly permitted
-      transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } 
+      transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
     },
   };
 
@@ -366,7 +366,62 @@ const PricingComponent: React.FC = () => {
             },
           ]}
         />
-
+        <Section
+          title="SEO & Growth Engine"
+          plans={[
+            {
+              tagline: "Visibility",
+              title: "Basic",
+              price: "₦250k/mo",
+              features: [
+                "Deep Keyword Intelligence",
+                "On-Page Tactical SEO",
+                "Meta Data Optimization",
+                "Site Velocity Correction",
+                "Monthly Growth Analytics",
+                "Competitor Market Review",
+                "Broken Backlink Recovery",
+                "Sitemap Submission Flow",
+                "Image Alt-Tag Automation",
+                "Google Business Listing",
+              ],
+            },
+            {
+              tagline: "Authority",
+              title: "Pro",
+              price: "₦600k/mo",
+              features: [
+                "Long-term Content Strategy",
+                "Authority Backlink Acquisition",
+                "Full Technical SEO Audit",
+                "Schema Markup Implementation",
+                "Content Gap Identification",
+                "Localized Search Dominance",
+                "Conversion Path Tracking",
+                "Search Console Management",
+                "Monthly Strategy Consulting",
+                "Rank Progression Reporting",
+              ],
+            },
+            {
+              tagline: "Domination",
+              title: "Enterprise",
+              price: "Custom",
+              features: [
+                "Global Market Strategy",
+                "Off-Page Authority Building",
+                "PR Link Acquisition Suite",
+                "Deep Technical Infrastructure",
+                "Predictive Trend Analytics",
+                "Conversion Rate Engineering",
+                "Dedicated Account Executive",
+                "Brand Sentiment Management",
+                "Custom Performance Portal",
+                "Ongoing Strategy Syncing",
+              ],
+            },
+          ]}
+        />
         {/* SEO & Growth Engine */}
         {/* <Section
           title="SEO & Growth Engine"
