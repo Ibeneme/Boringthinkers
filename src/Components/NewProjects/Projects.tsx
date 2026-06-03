@@ -4,7 +4,7 @@ import { FiChevronsRight, FiExternalLink } from "react-icons/fi";
 
 // Asset Imports
 import nexus from "../../assets/projects/nexus.png";
-import zaeda from "../../assets/projects/zaeda.png";
+//import zaeda from "../../assets/projects/zaeda.png";
 import pickars from "../../assets/projects/pickars.png";
 import bulkup from "../../assets/projects/bulkup.png";
 import kraft from "../../assets/projects/kraft.png";
@@ -54,13 +54,13 @@ const sampleProjects: Project[] = [
     thumbnail: nexus,
     url: "https://www.nexusmusicpublishing.com/",
   },
-  {
-    id: 6,
-    title: "Zaeda Oracle",
-    role: "Legal Company",
-    thumbnail: zaeda,
-    url: "https://zaedaoracle.com/",
-  },
+  // {
+  //   id: 6,
+  //   title: "Zaeda Oracle",
+  //   role: "Legal Company",
+  //   thumbnail: zaeda,
+  //   url: "https://zaedaoracle.com/",
+  // },
 ];
 
 const NewProjects: React.FC = () => {
