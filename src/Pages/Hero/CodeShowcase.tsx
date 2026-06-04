@@ -1,16 +1,7 @@
 import fintech from "../../assets/images/codes/fintech.png";
 import uber from "../../assets/images/codes/uber.png";
 import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  Send,
-  CreditCard,
-  CheckCircle,
-  Calendar,
-  ListTodo,
-  Clock,
-  User,
-} from "lucide-react";
+
 
 const Showcase = () => {
   return (

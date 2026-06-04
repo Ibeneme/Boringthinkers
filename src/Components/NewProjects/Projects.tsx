@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
+import { ArrowDownRight } from "lucide-react";
 
 // Asset Imports
 import nexus from "../../assets/projects/nexus.png";
@@ -8,7 +9,6 @@ import pickars from "../../assets/projects/pickars.png";
 import bulkup from "../../assets/projects/bulkup.png";
 import kraft from "../../assets/projects/kraft.png";
 import yare from "../../assets/projects/yare.png";
-import { ArrowDownRight } from "lucide-react";
 
 interface Project {
   id: number;
@@ -75,17 +75,15 @@ const NewProjects: React.FC = () => {
             </div>
           </motion.div>
           <h2 className="text-[#0A2F1D] text-7xl md:text-9xl font-extrabold tracking-tighter leading-none">
-            Recent
-            <br />
-            <h2 className="text-[#0A2F1D]">Projects.</h2>
+            Recent <br /> Projects.
           </h2>
         </div>
-        <p className="max-w-xs text-sm font-medium text-gray-500 leading-relaxed">
-          Design-led engineering for scalable digital products. 2024—2026.
+        <p className="max-w-md text-[18px] font-medium text-gray-500 leading-relaxed">
+          Design-led engineering for scalable digital products. 2025—2026.
         </p>
       </div>
 
-      {/* Projects Grid  011404*/}
+      {/* Projects Grid */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24">
         {sampleProjects.map((project, index) => (
           <motion.a
@@ -107,21 +105,18 @@ const NewProjects: React.FC = () => {
                 alt={project.title}
                 className="w-full h-full object-cover transition-all duration-1000 scale-100 group-hover:scale-105"
               />
-              {/* Overlay Arrow */}
               <div className="absolute top-6 left-6 bg-[#050505] text-white p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <FiArrowUpRight size={24} />
               </div>
             </div>
 
-            <div className="flex justify-between items-start">
-              <div>
-                <span className="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">
-                  0{index + 1} / {project.role}
-                </span>
-                <h3 className="text-3xl font-bold tracking-tight">
-                  {project.title}
-                </h3>
-              </div>
+            <div>
+              <span className="block text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">
+                0{index + 1} / {project.role}
+              </span>
+              <h3 className="text-3xl font-bold tracking-tight text-[#0A2F1D] uppercase">
+                {project.title}
+              </h3>
             </div>
           </motion.a>
         ))}

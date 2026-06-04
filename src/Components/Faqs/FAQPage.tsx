@@ -50,8 +50,8 @@ const FAQPage: React.FC = () => {
           <span className="text-[#050505] text-[10px] font-black uppercase tracking-[0.6em] mb-4 block">
             Information Base
           </span>
-          <h1 className="text-5xl md:text-[8rem] font-black text-[#050505] tracking-[-0.07em] uppercase leading-[0.8]">
-            QUESTIONS.
+          <h1 className="text-5xl md:text-[8rem] font-black text-[#050505] tracking-[-0.07em] leading-[0.8]">
+            Questions.
           </h1>
         </motion.div>
 
