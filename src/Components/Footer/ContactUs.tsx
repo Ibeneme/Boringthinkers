@@ -56,7 +56,7 @@ const ContactUs: React.FC = () => {
         >
           <a
             href="mailto:contact@boringthinkers.com"
-            className="group relative flex flex-col items-start justify-between p-12 bg-[#011404] min-w-[320px] md:min-w-[450px] min-h-[300px] transition-all duration-500 hover:bg-black"
+            className="group relative flex flex-col items-start justify-between p-12 bg-[#011404] min-w-[320px] md:min-w-[450px] min-h-[300px] rounded-[48px] transition-all duration-500 hover:bg-black"
           >
             <div className="w-full flex justify-between items-start">
               <span className="text-[#FFD000] text-[10px] font-black uppercase tracking-[0.4em]">

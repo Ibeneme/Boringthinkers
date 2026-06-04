@@ -78,13 +78,17 @@ const Hero: React.FC = () => {
         <motion.div variants={item} className="mt-20 w-full max-w-[280px]">
           <button
             onClick={handleSendMail}
-            className="w-full flex items-center justify-between px-8 py-6 bg-[#FFD000] text-[#011404] font-black uppercase tracking-[0.2em] text-xs group transition-all"
+            className="w-full flex items-center justify-between pl-6 pr-3 py-3 bg-[#FFD000] rounded-[48px] text-[#011404] font-black uppercase tracking-[0.2em] text-xs group transition-all"
           >
             <span>Contact Us</span>
-            <ArrowUpRight
-              size={18}
-              className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
-            />
+
+            {/* Arrow Wrapper */}
+            <div className="bg-white p-3 rounded-full text-[#011404] group-hover:bg-[#011404] group-hover:text-[#FFD000] transition-colors duration-300">
+              <ArrowUpRight
+                size={18}
+                className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+              />
+            </div>
           </button>
         </motion.div>
       </motion.div>
