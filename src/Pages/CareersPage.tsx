@@ -1,11 +1,10 @@
-
 import BlogHero from "../Components/BlogHero/BlogHero";
 import Careers from "../Components/Careers/Careers";
 
 const CareerPage = () => {
   return (
     <div>
-      <BlogHero title="CAREERS" />
+      <BlogHero title="Careers" />
       <Careers />
     </div>
   );

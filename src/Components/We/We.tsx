@@ -7,30 +7,30 @@ import mainb from "../../../src/assets/images/we/mainb.png";
 
 const sections = [
   {
-    title: "You Dream, We Build.",
+    title: "Dream, We Build.",
     description:
-      "We turn your boldest ideas into functional, beautiful, scalable digital products. If you can dream it, we can build it.",
+      "We take your biggest ideas and turn them into real, easy-to-use digital tools. Whatever you have in mind, we have the skills to bring it to life.",
     bgColor: "bg-[#DFFFDC]",
     image: dream,
   },
   {
-    title: "Our Design Style",
+    title: "How We Design",
     description:
-      "Simplicity meets elegance. We blend clean interfaces with deep usability to create intuitive, memorable digital experiences.",
+      "We believe in keeping things simple and beautiful. We focus on making sure our apps and websites are clean, look great, and are very easy for your customers to use.",
     bgColor: "bg-[#FFE2E9]",
     image: main,
   },
   {
-    title: "Our Build Style",
+    title: "How We Build",
     description:
-      "Code that works and scales. Our engineering approach is modular, clean, and tested with a focus on future-proof architecture.",
+      "We write code that is organized, reliable, and built to last. Our goal is to create technology that works perfectly today and can easily grow with your business tomorrow.",
     bgColor: "bg-[#E8DEFF]",
     image: design,
   },
   {
-    title: "Speed & Security",
+    title: "Fast & Secure",
     description:
-      "Proactive monitoring and refining. We ship fast without compromising on security, privacy, or long-term protection.",
+      "We work quickly to get your project launched without ever cutting corners. We keep a close eye on everything to make sure your data stays safe and your site stays secure.",
     bgColor: "bg-[#FFEECB]",
     image: mainb,
   },
@@ -47,15 +47,15 @@ const We: React.FC = () => {
           viewport={{ once: true }}
           className="flex items-center gap-4 mb-10"
         >
-          <div className="w-2 h-2 bg-[#050505] rounded-full" />
-          <span className="text-[#050505] text-[11px] font-black uppercase tracking-[0.6em]">
+          <div className="w-2 h-2 bg-[#011404] rounded-full" />
+          <span className="text-[#011404] text-[11px] font-black uppercase tracking-[0.6em]">
             Capabilities
           </span>
         </motion.div>
 
-        <h2 className="text-6xl md:text-[10rem] font-black text-[#050505] tracking-[-0.08em] uppercase leading-[0.8]">
-          ENGINEERING <br />
-          <span className="text-[#000]">EXCELLENCE.</span>
+        <h2 className="text-6xl md:text-[10rem] font-black text-[#011404] tracking-[-0.08em]  leading-[0.8]">
+          Engineering <br />
+          <span className="text-[#011404]">Excellence.</span>
         </h2>
       </div>
 
@@ -68,7 +68,7 @@ const We: React.FC = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className={`${section.bgColor} p-12 md:p-24 flex flex-col justify-between items-start group min-h-[650px] relative`}
+            className={`${section.bgColor} p-12 md:p-24 flex flex-col justify-between items-start group min-h-[680px] relative`}
           >
             {/* Top Image Layout */}
             <div className="w-full h-80 mb-16 overflow-hidden flex items-center justify-center">
@@ -81,22 +81,22 @@ const We: React.FC = () => {
 
             {/* Bottom Content Layout */}
             <div className="w-full">
-              <span className="text-[11px] font-black uppercase tracking-widest text-[#050505]/30 mb-4 block">
-                Protocol 0{index + 1}
+              <span className="text-[11px] font-black uppercase tracking-widest text-[#011404]/30 mb-4 block">
+                {/* Protocol 0{index + 1} */}
               </span>
 
-              <h2 className="text-4xl md:text-6xl font-black text-[#050505] uppercase tracking-tighter mb-8 leading-[0.9]">
+              <h2 className="text-4xl md:text-6xl font-black text-[#011404]  tracking-tighter mb-8 leading-[0.9]">
                 {section.title}
               </h2>
 
-              <p className="text-[#050505] text-xl font-bold leading-tight max-w-sm tracking-tight">
+              <p className="text-[#011404] text-xl leading-tight max-w-sm tracking-tight">
                 {section.description}
               </p>
             </div>
 
             {/* Subtle Text Decoration */}
             <div className="absolute bottom-8 right-8 overflow-hidden pointer-events-none hidden lg:block">
-              <span className="text-9xl font-black text-[#050505]/5 uppercase tracking-tighter leading-none translate-y-8 block">
+              <span className="text-9xl font-black text-[#011404]/5  tracking-tighter leading-none translate-y-8 block">
                 {section.title.split(" ")[0]}
               </span>
             </div>

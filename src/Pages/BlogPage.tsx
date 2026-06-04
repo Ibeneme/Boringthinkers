@@ -5,7 +5,7 @@ import BlogComponent from "../Components/BlogHero/BlogComponent";
 const BlogPage = () => {
   return (
     <div>
-      <BlogHero title={`The "Boring" Blog`} />
+      <BlogHero title={`"Boring" Blog`} />
       <BlogComponent />
     </div>
   );

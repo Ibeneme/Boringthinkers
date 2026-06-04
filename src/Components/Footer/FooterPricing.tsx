@@ -84,11 +84,11 @@ const FooterPricing: React.FC = () => {
               Service Packages
             </span>
           </div>
-          <h2 className="text-6xl md:text-[8rem] font-black text-[#011404] leading-[0.8] tracking-[-0.07em] uppercase mb-10">
-            SMART <br />
-            PLANS.
+          <h2 className="text-6xl md:text-[8rem] font-black text-[#011404] leading-[0.8] tracking-[-0.07em] mb-10">
+            Simple <br />
+            Packages.
           </h2>
-          <p className="max-w-2xl text-xl md:text-2xl text-[#011404] font-black uppercase tracking-tight leading-tight">
+          <p className="max-w-2xl text-xl md:text-2xl text-[#011404] font-black tracking-tight leading-tight">
             Strategic systems, growth marketing and digital products designed to
             accelerate ambitious brands.
           </p>
@@ -110,7 +110,7 @@ const FooterPricing: React.FC = () => {
               <span className="text-[#FFD000] text-[10px] font-black uppercase tracking-[0.4em]">
                 {plan.category}
               </span>
-              <h3 className="text-white text-4xl font-black uppercase mt-8">
+              <h3 className="text-white text-4xl font-black  mt-8">
                 {plan.title}
               </h3>
               <div className="my-10">
@@ -157,7 +157,7 @@ const FooterPricing: React.FC = () => {
             </span>
             <div className="bg-[#011404] p-10">
               <div className="border-b border-white/10 pb-8 mb-8">
-                <h3 className="text-white text-3xl font-black uppercase mb-4">
+                <h3 className="text-white text-3xl font-black  mb-4">
                   Basic SEO
                 </h3>
                 <p className="text-[#FFD000] text-5xl font-black">₦150,000</p>

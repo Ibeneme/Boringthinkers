@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   FaEnvelope,
   FaLinkedin,
@@ -11,150 +11,120 @@ import {
 import logo from "../../assets/images/logo/vite.png";
 import ContactUs from "./ContactUs";
 
-interface FooterProps {
-  hideContactUs?: boolean;
-  showContactUs?: boolean;
-}
-
-const Footer: React.FC<FooterProps> = () => {
+const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
-  const navigate = useNavigate();
   return (
-    <section className="bg-[#011404]">
+    <section className="bg-[#011404] text-white">
       <ContactUs />
 
-      <footer className="max-w-7xl mx-auto px-6 pb-12 mt-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          {/* Brand & Mission - Takes up 5 columns */}
-          <div className="lg:col-span-5 space-y-8">
-            <img
-              src={logo}
-              alt="BoringThinkers"
-              className="h-8 object-contain"
-            />
-            <p className="text-gray-400 text-lg leading-relaxed max-w-md">
-              At Boring Thinkers, we transform complex challenges into simple,
-              intuitive solutions. We believe technology should make life
-              easier, not harder.
-            </p>
+      <footer className="max-w-7xl mx-auto px-6 py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          {/* Brand & Mission */}
+          <div className="lg:col-span-5 flex flex-col justify-between">
+            <div className="space-y-8">
+              <img src={logo} alt="BoringThinkers" className="h-10 w-auto" />
+              <p className="text-white/40 text-lg leading-relaxed max-w-sm">
+                Software Development Company For Startups and businesses{" "}
+              </p>
+            </div>
 
-            {/* Social Pill */}
-            <div className="flex items-center gap-4 p-2 bg-white/5 border border-white/10 rounded-full w-fit">
+            <div className="flex gap-3 mt-12">
               {[
                 {
-                  icon: <FaLinkedin />,
-                  link: "https://linkedin.com/company/boring-thinkers",
+                  icon: FaLinkedin,
+                  link: "https://www.linkedin.com/company/boring-thinkers/",
                 },
-                { icon: <FaTwitter />, link: "https://x.com/BoringThinkers" },
+                { icon: FaTwitter, link: "https://x.com/BoringThinkers" },
                 {
-                  icon: <FaInstagram />,
-                  link: "https://instagram.com/boringthinkers/",
+                  icon: FaInstagram,
+                  link: "https://www.instagram.com/boringthinkers",
                 },
-              ].map((social, i) => (
+              ].map((social, i) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={i}
+                    href={social.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-4 rounded-full bg-white/5 hover:bg-[#FFD000] hover:text-[#011404] transition-all"
+                  >
+                    <Icon size={16} />
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Contact Bento Box */}
+          <div className="lg:col-span-4 bg-white/[0.03] p-8 rounded-2xl border border-white/5">
+            <h4 className="text-[15px] font-black font-black   text-[#FFD000] mb-8">
+              Contact Us
+            </h4>
+            <div className="space-y-6">
+              {[
+                {
+                  icon: FaEnvelope,
+                  label: "Contact@boringthinkers.com",
+                  href: "mailto:Contact@boringthinkers.com",
+                },
+                {
+                  icon: FaPhone,
+                  label: "(+234) 812 071 0198",
+                  href: "tel:+2348120710198",
+                },
+                {
+                  icon: FaWhatsapp,
+                  label: "Live WhatsApp Chat",
+                  href: "https://wa.me/2348120710198",
+                },
+              ].map((item, i) => (
                 <a
                   key={i}
-                  href={social.link}
-                  target="_blank"
-                  className="p-3 text-white hover:text-[#FFD000] hover:bg-white/10 rounded-full transition-all"
+                  href={item.href}
+                  className="flex items-center gap-4 group"
                 >
-                  {social.icon}
+                  <div className="p-3 bg-white/5 rounded-lg text-white group-hover:bg-[#FFD000] group-hover:text-[#011404] transition-all">
+                    <item.icon size={14} />
+                  </div>
+                  <span className="text-sm font-medium opacity-70 group-hover:opacity-100">
+                    {item.label}
+                  </span>
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Contact Bento Box - Takes up 4 columns */}
-          <div className="lg:col-span-4 grid grid-cols-1 gap-4">
-            <div className="p-6 rounded-[12px] bg-white/5 border border-white/10 hover:border-[#FFD000]/30 transition-colors group">
-              <p className="text-[#FFD000] text-xs font-black uppercase tracking-widest mb-4">
-                Get in Touch
-              </p>
-
-              <div className="space-y-4">
-                <a
-                  href="mailto:Contact@boringthinkers.com"
-                  className="flex items-center gap-4 text-white hover:text-[#FFD000] transition-colors"
-                >
-                  <div className="p-3 rounded-xl bg-[#FFD000]/10 text-[#FFD000]">
-                    <FaEnvelope />
-                  </div>
-                  <span className="text-sm font-medium">
-                    Contact@boringthinkers.com
-                  </span>
-                </a>
-
-                <a
-                  href="tel:+2348120710198"
-                  className="flex items-center gap-4 text-white hover:text-[#FFD000] transition-colors"
-                >
-                  <div className="p-3 rounded-xl bg-[#FFD000]/10 text-[#FFD000]">
-                    <FaPhone />
-                  </div>
-                  <span className="text-sm font-medium">
-                    (+234) 812 071 0198
-                  </span>
-                </a>
-
-                <a
-                  href="https://wa.me/2348120710198"
-                  target="_blank"
-                  className="flex items-center gap-4 text-[#25D366] hover:brightness-110 transition-all"
-                >
-                  <div className="p-3 rounded-xl bg-[#25D366]/10">
-                    <FaWhatsapp />
-                  </div>
-                  <span className="text-sm font-bold uppercase tracking-tighter">
-                    Live WhatsApp Chat
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Quick Links - Takes up 3 columns */}
-          <div className="lg:col-span-3 p-8 rounded-[12px] bg-[#FFD000] text-[#011404]">
-            <p className="font-black uppercase tracking-widest text-xs mb-6 opacity-60">
-              Sitemap
-            </p>
-            <div className="flex flex-col gap-4">
-              {[
-                { name: "About Us", path: "/about-us" },
-                { name: "Our Projects", path: "/projects" },
-                { name: "Careers", path: "/careers" },
-                { name: "Privacy Policy", path: "/privacy-policy" },
-              ].map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  className="text-xl font-black hover:translate-x-2 transition-transform inline-block"
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
+          {/* Sitemap Block */}
+          <div className="lg:col-span-3 bg-[#FFD000] text-[#011404] p-8 rounded-2xl flex flex-col justify-between">
+            <h4 className="font-black text-[15px] font-black ">Quick Links</h4>
+            <nav className="flex flex-col gap-5 mt-8">
+              {["About Us", "Our Projects", "Careers", "Privacy"].map(
+                (link) => (
+                  <Link
+                    key={link}
+                    to={`/${link.toLowerCase().replace(" ", "-")}`}
+                    className="text-2xl font-black tracking-tighter hover:translate-x-2 transition-transform"
+                  >
+                    {link}
+                  </Link>
+                )
+              )}
+            </nav>
           </div>
         </div>
 
         {/* Footer Bottom */}
-        <div className="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-500 text-sm font-medium">
-            © {currentYear} <span className="text-white">BoringThinkers</span>.
-            All rights reserved.
-          </p>
-          <div className="flex gap-8 text-xs font-bold uppercase tracking-widest text-gray-500">
-            <span
-              className="hover:text-white cursor-pointer"
-              onClick={() => navigate("/terms-and-conditions")}
-            >
+        <div className="mt-20 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[15px] font-black uppercase  text-white/30">
+          <p>© {currentYear} Boring Thinkers Limited. All rights reserved.</p>
+          <div className="flex gap-8">
+            <Link to="/terms-and-conditions" className="hover:text-[#FFD000]">
               Terms
-            </span>
-            <span
-              onClick={() => navigate("/security")}
-              className="hover:text-white cursor-pointer"
-            >
+            </Link>
+            <Link to="/security" className="hover:text-[#FFD000]">
               Security
-            </span>
+            </Link>
           </div>
         </div>
       </footer>

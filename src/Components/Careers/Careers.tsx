@@ -52,23 +52,23 @@ const Careers: React.FC = () => {
           >
             <div className="w-12 h-[3px] bg-[#FFD000]" />
             <span className="text-[#050505] text-[11px] font-black uppercase tracking-[0.6em]">
-              The Protocol
+              THE BIG TEAM
             </span>
           </motion.div>
 
           <motion.h2
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-6xl md:text-[10rem] font-black text-[#050505] leading-[0.8] tracking-[-0.07em] uppercase"
+            className="text-6xl md:text-[10rem] font-black text-[#050505] leading-[0.8] tracking-[-0.07em] "
           >
-            JOIN THE <br /> TEAM.
+            Join the <br /> Team.
           </motion.h2>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="mt-12 max-w-xl text-xl font-black text-[#050505] uppercase tracking-tighter leading-tight"
+            className="mt-12 max-w-xl text-xl font-black text-[#050505]  tracking-tighter "
           >
             We are always seeking exceptional talent to build clean,
             frictionless digital experiences for next-generation products.

@@ -31,16 +31,16 @@ const ContactUs: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-6xl md:text-[8rem] font-black text-[#011404] leading-[0.8] tracking-[-0.07em] uppercase mb-12"
+            className="text-6xl md:text-[8rem] font-black text-[#011404] leading-[0.8] tracking-[-0.07em]  mb-12"
           >
-            REACH <br /> OUT.
+            Reach <br /> Out.
           </motion.h2>
 
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-[#011404] text-xl md:text-2xl font-black uppercase tracking-tighter leading-tight"
+            className="text-[#011404] text-xl md:text-2xl font-black tracking-tighter leading-tight"
           >
             Discuss your next big project or learn how our systems can
             accelerate your business growth.
@@ -60,7 +60,7 @@ const ContactUs: React.FC = () => {
           >
             <div className="w-full flex justify-between items-start">
               <span className="text-[#FFD000] text-[10px] font-black uppercase tracking-[0.4em]">
-                Official Channel
+                Official Mail
               </span>
               <ArrowUpRight
                 className="text-[#FFD000] group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500"
@@ -69,11 +69,11 @@ const ContactUs: React.FC = () => {
             </div>
 
             <div className="mt-auto">
-              <span className="text-white text-3xl md:text-5xl font-black uppercase tracking-tighter block mb-2">
+              <span className="text-white text-3xl md:text-5xl font-black  tracking-tighter block mb-2">
                 Send a Mail
               </span>
-              <span className="text-[#FFD000] text-sm font-bold tracking-widest opacity-60">
-                CONTACT@BORINGTHINKERS.COM
+              <span className="text-[#FFD000] text-[20px] font-bold ">
+                contact@boringthinkers.com
               </span>
             </div>
           </a>

@@ -19,11 +19,11 @@ const FlagsRow: React.FC = () => {
         <div className="flex flex-col items-center md:items-start gap-4">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-[#011404]" />
-            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#011404]/40">
+            <span className="text-[10px] font-black  tracking-[0.4em] text-[#011404]/40">
               Our Clients’
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-black text-[#011404] uppercase tracking-tighter leading-none">
+          <h2 className="text-4xl md:text-5xl font-black text-[#011404]  tracking-tighter leading-none">
             Our Clients’ <br /> <span className="opacity-30">Countries.</span>
           </h2>
         </div>
@@ -42,7 +42,7 @@ const FlagsRow: React.FC = () => {
                 style={{
                   width: "56px",
                   height: "auto",
-               //   filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.05))",
+                  //   filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.05))",
                 }}
                 title={name}
               />

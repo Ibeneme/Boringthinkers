@@ -23,9 +23,9 @@ const PageHero: React.FC<PageHeroProps> = ({ title, bgColor = "#FFD000" }) => {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
           {/* Minimal Vertical Marker */}
-          <div className="w-1 h-12 bg-[#050505] mb-12" />
+          <div className="w-1 h-12 bg-[#011404] mb-12" />
 
-          <h1 className="text-6xl md:text-[13rem] font-black text-[#050505] leading-[0.75] tracking-[-0.08em] uppercase break-words">
+          <h1 className="text-6xl md:text-[13rem] font-black text-[#011404] leading-[0.8] tracking-[-0.06em]  break-words">
             {title.split(" ").map((word, i) => (
               <span key={i} className="block">
                 {word}

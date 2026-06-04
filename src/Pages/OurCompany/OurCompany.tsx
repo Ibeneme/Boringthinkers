@@ -47,21 +47,21 @@ const OurCompany: React.FC = () => {
           >
             {/* Structural Marker */}
             <motion.div variants={itemVariants} className="mb-12">
-              <span className="text-[#011404] text-[11px] font-black uppercase tracking-[0.6em] border-b-4 border-[#FFD000] pb-1">
+              <span className="text-[#011404] uppercase text-[11px] font-black  tracking-[0.6em] border-b-4 border-[#FFD000] pb-1">
                 Since 2025
               </span>
             </motion.div>
 
             <motion.h1
               variants={itemVariants}
-              className="text-6xl md:text-9xl font-black text-[#011404] tracking-[-0.06em] mb-12 leading-[0.8]"
+              className="text-6xl md:text-9xl uppercase font-black text-[#011404] tracking-[-0.06em] mb-12 leading-[0.8]"
             >
-              NOT JUST <br />
-              CODE.
+              Not Just <br />
+              Code.
             </motion.h1>
 
             <motion.div variants={itemVariants} className="space-y-12">
-              <p className="text-2xl font-black text-[#011404] leading-tight uppercase tracking-tighter">
+              <p className="text-2xl font-black text-[#011404] leading-tight  tracking-tighter">
                 Boring Thinkers is a creative powerhouse built for visionary
                 startups.
               </p>
@@ -74,7 +74,7 @@ const OurCompany: React.FC = () => {
 
               <div className="flex items-center gap-4 py-6 border-y border-gray-100">
                 <span className="w-3 h-3 bg-[#FFD000] rounded-full" />
-                <p className="text-xl font-black text-[#011404] uppercase tracking-tighter">
+                <p className="text-xl font-black text-[#011404]  tracking-tighter">
                   Build fast. Think deep. Deliver smart.
                 </p>
               </div>
@@ -86,7 +86,7 @@ const OurCompany: React.FC = () => {
                 className="group flex items-center justify-between w-full max-w-md py-8 px-0 border-b-2 border-[#011404] hover:border-[#FFD000] transition-colors duration-300"
               >
                 <div className="flex flex-col text-left">
-                  <span className="text-4xl font-black text-[#011404] uppercase tracking-tighter">
+                  <span className="text-4xl font-black text-[#011404]  tracking-tighter">
                     Send a Mail
                   </span>
                 </div>
@@ -118,10 +118,10 @@ const OurCompany: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             className="absolute bottom-0 left-0 p-12 bg-[#FFD000] text-[#011404] w-full lg:max-w-md z-30"
           >
-            <p className="font-black text-xs uppercase tracking-[0.3em] mb-4">
+            <p className="font-black text-xs  tracking-[0.3em] mb-4">
               Strategic Execution
             </p>
-            <h3 className="font-black text-2xl uppercase leading-[0.9] tracking-tighter">
+            <h3 className="font-black text-2xl  leading-[0.9] tracking-tighter">
               We analyze the DNA of your business before writing a line of code.
             </h3>
           </motion.div>

@@ -19,7 +19,6 @@ const PricingComponent: React.FC = () => {
     visible: {
       opacity: 1,
       y: 0,
-      // Using a standard easing string or an array is now explicitly permitted
       transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
     },
   };
@@ -50,11 +49,11 @@ const PricingComponent: React.FC = () => {
       >
         <div className="flex items-center gap-4 mb-6">
           <div className="w-12 h-[3px] bg-[#FFD000]" />
-          <span className="text-[#011404] text-xs font-black uppercase tracking-[0.6em]">
+          <span className="text-[#0A2F1D] text-xs font-black uppercase tracking-[0.6em]">
             Tiers
           </span>
         </div>
-        <h2 className="text-5xl md:text-7xl font-black text-[#011404] leading-[0.85] tracking-[-0.06em] uppercase">
+        <h2 className="text-5xl md:text-7xl font-black text-[#0A2F1D] leading-[0.85] tracking-[-0.06em] ">
           {title}
         </h2>
       </motion.div>
@@ -71,13 +70,13 @@ const PricingComponent: React.FC = () => {
             key={plan.title}
             variants={cardVariants}
             whileHover={{ y: -12 }}
-            className="group bg-[#011404] p-10 md:p-12 flex flex-col border border-[#011404] hover:border-[#FFD000] transition-all duration-500 rounded-none"
+            className="group bg-[#0A2F1D] p-8 md:p-10 flex flex-col border border-[#0A2F1D] hover:border-[#FFD000] transition-all duration-500 rounded-[49px]"
           >
             <div className="mb-8">
               <span className="inline-block text-[#FFD000] text-[10px] font-black uppercase tracking-[0.4em] mb-3">
                 {plan.tagline}
               </span>
-              <h3 className="text-white text-4xl font-black uppercase tracking-tighter mb-1">
+              <h3 className="text-white text-4xl font-black  tracking-tighter mb-1">
                 {plan.title}
               </h3>
               <p className="text-[#FFD000] text-5xl font-black tracking-tighter">
@@ -86,18 +85,19 @@ const PricingComponent: React.FC = () => {
             </div>
 
             {renderFeatures(plan.features)}
-
             <motion.button
               onClick={handleSendMail}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.985 }}
-              className="mt-auto w-full py-6 bg-[#FFD000] text-[#011404] font-black uppercase text-lg tracking-widest flex items-center justify-center gap-3 hover:bg-white transition-all duration-300 group-hover:shadow-xl"
+              className="mt-auto w-full py-4 px-6 pr-3 bg-[#FFD000] text-[#0A2F1D] font-black uppercase text-[14px] tracking-widest flex items-center justify-between transition-all duration-300 rounded-[64px] group"
             >
-              Let's Get Started
-              <ArrowUpRight
-                size={24}
-                className="group-hover:rotate-45 transition-transform"
-              />
+              <span>Let's Get Started</span>
+              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+                <ArrowUpRight
+                  size={20}
+                  className="text-[#0A2F1D] group-hover:rotate-45 transition-transform duration-300"
+                />
+              </div>
             </motion.button>
           </motion.div>
         ))}
@@ -108,7 +108,6 @@ const PricingComponent: React.FC = () => {
   return (
     <section className="bg-white pt-[140px] md:pt-[180px] pb-24 px-6 md:px-20 font-sans min-h-screen">
       <div className="max-w-7xl mx-auto">
-        {/* Hero Header */}
         <div className="mb-24 md:mb-32">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -116,7 +115,7 @@ const PricingComponent: React.FC = () => {
             className="flex items-center gap-4 mb-8"
           >
             <div className="w-12 h-[3px] bg-[#FFD000]" />
-            <span className="text-[#011404] text-[11px] font-black uppercase tracking-[0.6em]">
+            <span className="text-[#0A2F1D] text-[11px] font-black uppercase tracking-[0.6em]">
               Transparent Pricing
             </span>
           </motion.div>
@@ -124,24 +123,22 @@ const PricingComponent: React.FC = () => {
           <motion.h1
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-6xl sm:text-7xl md:text-[9.5rem] font-black text-[#011404] leading-[0.82] tracking-[-0.07em] uppercase"
+            className="text-6xl sm:text-7xl md:text-[9.5rem] font-black text-[#0A2F1D] leading-[0.82] tracking-[-0.07em] "
           >
-            PRICING
+            Pricing
             <br />
-            PLANS
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="mt-8 max-w-2xl text-xl md:text-2xl font-bold text-[#011404] tracking-tight leading-tight"
+            className="mt-8 max-w-2xl text-xl md:text-2xl font-bold text-[#0A2F1D] tracking-tight leading-tight"
           >
             Serious builds. Serious numbers. No fluff.
           </motion.p>
         </div>
 
-        {/* Software Development Systems */}
         <Section
           title="Software Development Systems"
           plans={[
@@ -250,7 +247,6 @@ const PricingComponent: React.FC = () => {
           ]}
         />
 
-        {/* Fintech Software Solutions */}
         <Section
           title="Fintech Software Solutions"
           plans={[
@@ -309,7 +305,6 @@ const PricingComponent: React.FC = () => {
           ]}
         />
 
-        {/* Static Websites */}
         <Section
           title="Static Websites"
           plans={[
@@ -422,121 +417,6 @@ const PricingComponent: React.FC = () => {
             },
           ]}
         />
-        {/* SEO & Growth Engine */}
-        {/* <Section
-          title="SEO & Growth Engine"
-          plans={[
-            {
-              tagline: "Visibility",
-              title: "Basic",
-              price: "₦250k/mo",
-              features: [
-                "Deep Keyword Intelligence",
-                "On-Page Tactical SEO",
-                "Meta Data Optimization",
-                "Site Velocity Correction",
-                "Monthly Growth Analytics",
-                "Competitor Market Review",
-                "Broken Backlink Recovery",
-                "Sitemap Submission Flow",
-                "Image Alt-Tag Automation",
-                "Google Business Listing",
-              ],
-            },
-            {
-              tagline: "Authority",
-              title: "Pro",
-              price: "₦600k/mo",
-              features: [
-                "Long-term Content Strategy",
-                "Authority Backlink Acquisition",
-                "Full Technical SEO Audit",
-                "Schema Markup Implementation",
-                "Content Gap Identification",
-                "Localized Search Dominance",
-                "Conversion Path Tracking",
-                "Search Console Management",
-                "Monthly Strategy Consulting",
-                "Rank Progression Reporting",
-              ],
-            },
-            {
-              tagline: "Domination",
-              title: "Enterprise",
-              price: "Custom",
-              features: [
-                "Global Market Strategy",
-                "Off-Page Authority Building",
-                "PR Link Acquisition Suite",
-                "Deep Technical Infrastructure",
-                "Predictive Trend Analytics",
-                "Conversion Rate Engineering",
-                "Dedicated Account Executive",
-                "Brand Sentiment Management",
-                "Custom Performance Portal",
-                "Ongoing Strategy Syncing",
-              ],
-            },
-          ]}
-        />
-
-
-        <Section
-          title="Social Media Management"
-          plans={[
-            {
-              tagline: "Presence",
-              title: "Basic",
-              price: "₦200k/mo",
-              features: [
-                "4-Channel Platform Setup",
-                "3 Weekly Content Drops",
-                "Custom Graphic Assets",
-                "Bio-Link Optimization",
-                "Community Engagement",
-                "Hashtag Intelligence",
-                "Automated Content Calendar",
-                "Active Moderation Flow",
-                "Performance Analytics",
-                "Brand Voice Verification",
-              ],
-            },
-            {
-              tagline: "Engagement",
-              title: "Premium",
-              price: "₦500k/mo",
-              features: [
-                "Daily Audience Engagement",
-                "Cinematic Video Editing",
-                "Ad Campaign Administration",
-                "Direct Support Management",
-                "Strategic Influencer Outreach",
-                "Professional Copywriting",
-                "Social Trend Analysis",
-                "Content Pillar Definition",
-                "Crisis Mitigation Logic",
-                "Quarterly Strategy Review",
-              ],
-            },
-            {
-              tagline: "Empire",
-              title: "Enterprise",
-              price: "Custom",
-              features: [
-                "Full Scale Campaign Logic",
-                "Viral Content Engineering",
-                "Professional Video Production",
-                "Paid Media Spend Budgeting",
-                "AI Audience Data Parsing",
-                "Influencer Partnership Core",
-                "Real-time Live Streaming",
-                "Dedicated Growth Strategist",
-                "Market Expansion Roadmap",
-                "Detailed ROI Attribution",
-              ],
-            },
-          ]}
-        /> */}
       </div>
     </section>
   );

@@ -5,7 +5,7 @@ import PricingComponent from "../Components/Pricing/Pricing";
 const PricingPage = () => {
   return (
     <div>
-      <BlogHero title={` "Creative Builders"`} />
+      <BlogHero title={` "Creative Building"`} />
       <PricingComponent />
       <FooterPricing />
       {/* <We /> */}

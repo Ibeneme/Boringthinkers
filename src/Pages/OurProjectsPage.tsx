@@ -5,7 +5,7 @@ import NewProjects from "../Components/NewProjects/Projects";
 const OurProjectsPage = () => {
   return (
     <div>
-      <BlogHero title={`Our Works`} />
+      <BlogHero title={`Recent Buildings`} />
       <NewProjects />
     </div>
   );

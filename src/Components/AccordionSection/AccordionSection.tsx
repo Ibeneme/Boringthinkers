@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiChevronsRight } from "react-icons/fi";
+import { FiChevronRight } from "react-icons/fi";
+import { ArrowDownRight } from "lucide-react";
 
 const sections = [
   {
@@ -67,84 +68,103 @@ const AccordionSection = () => {
 
   return (
     <div className="max-w-6xl mx-auto py-24 px-6 bg-white">
-      {/* Section Header */}
-      <div className="mb-16">
-        <span className="text-[#FFD000] text-[10px] font-black uppercase tracking-[0.4em] block mb-2">
-          Expertise
-        </span>
-        <h2 className="text-4xl md:text-6xl font-black text-[#050505] tracking-tighter">
-          WHAT WE <span className="opacity-30">DO.</span>
+      <div className="mb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="inline-flex items-center mb-8 gap-4 bg-[#0A2F1D] py-2 pl-6 pr-2 rounded-full border border-[#FFD000]/10"
+        >
+          <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#FFD000]">
+            OUR EXPERTISE
+          </span>
+          <div className="bg-[#FFD000] p-2.5 rounded-full text-[#011404]">
+            <ArrowDownRight size={16} strokeWidth={3} />
+          </div>
+        </motion.div>
+
+        <h2 className="text-5xl md:text-7xl font-black text-[#050505] tracking-tighter leading-none">
+          WHAT WE <span className="opacity-20">DO.</span>
         </h2>
       </div>
 
-      <div className="border-t border-black/5">
+      <div className="border-t border-black/10">
         {sections.map((section, index) => {
           const isOpen = openIndex === index;
+          const formattedNumber = String(index + 1).padStart(2, "0");
 
           return (
-            <div
-              key={index}
-              className="border-b border-black/5 overflow-hidden"
-            >
+            <div key={index} className="border-b border-black/10 group">
               <button
                 onClick={() => setOpenIndex(isOpen ? null : index)}
-                className="w-full py-8 md:py-12 flex items-center justify-between group text-left outline-none transition-all duration-500"
+                aria-expanded={isOpen}
+                aria-controls={`panel-${index}`}
+                id={`button-${index}`}
+                className="w-full py-10 md:py-14 flex items-center justify-between text-left outline-none"
               >
-                <div className="flex items-center gap-6 md:gap-12">
+                <div className="flex items-center gap-8 md:gap-16">
                   <span
-                    className={`text-sm font-mono transition-colors duration-500 ${
-                      isOpen ? "text-[#FFD000]" : "text-black"
+                    className={`font-mono text-sm transition-all duration-500 ${
+                      isOpen
+                        ? "text-[#FFD000]"
+                        : "text-black/40 group-hover:text-black/70"
                     }`}
                   >
-                    0{index + 1}
+                    {formattedNumber}
                   </span>
+
                   <span
-                    className={`text-2xl md:text-5xl font-black uppercase tracking-tighter transition-all duration-500 
-                    ${
-                      isOpen
-                        ? "text-[#050505] translate-x-4"
-                        : "text-black group-hover:text-black"
-                    }
-                  `}
+                    className={`text-3xl md:text-5xl font-black tracking-[-0.02em] transition-all duration-500 ${
+                      isOpen ? "text-[#050505]" : "text-black"
+                    }`}
                   >
                     {section.title}
                   </span>
                 </div>
 
-                {/* Arrow Container with Dark Green Background & 2px Border Radius */}
                 <div
-                  className={`flex items-center justify-center p-3 rounded-[12px] transition-all duration-500 bg-[#0A2F1D] ${
+                  className={`w-11 h-11 md:w-14 md:h-14 flex items-center justify-center rounded-2xl border transition-all duration-500 ${
                     isOpen
-                      ? "text-[#FFD000] translate-x--2"
-                      : "text-white group-hover:text-white"
+                      ? "bg-[#050505] border-[#050505] text-white"
+                      : "bg-white border-black/10 group-hover:border-black/30"
                   }`}
                 >
-                  <FiChevronsRight size={24} />
+                  <motion.div
+                    animate={{ rotate: isOpen ? 90 : 0 }}
+                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <FiChevronRight size={28} />
+                  </motion.div>
                 </div>
               </button>
 
-              <AnimatePresence>
+              <AnimatePresence initial={false}>
                 {isOpen && (
                   <motion.div
+                    id={`panel-${index}`}
+                    role="region"
+                    aria-labelledby={`button-${index}`}
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                    className="overflow-hidden"
                   >
-                    <div className="pb-12 pl-16 md:pl-32 grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {section.items.map((item, idx) => (
-                        <motion.div
-                          key={idx}
-                          initial={{ x: -20, opacity: 0 }}
-                          animate={{ x: 0, opacity: 1 }}
-                          transition={{ delay: idx * 0.05 }}
-                          className="flex items-center gap-3 text-[#050505] font-bold text-lg"
-                        >
-                          {/* Square marker */}
-                          <div className="w-2 h-2 rounded-none bg-[#FFD000] shrink-0" />
-                          {item}
-                        </motion.div>
-                      ))}
+                    <div className="pl-16 md:pl-28 pb-14">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
+                        {section.items.map((item, idx) => (
+                          <motion.div
+                            key={idx}
+                            initial={{ x: -30, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{ delay: idx * 0.04 }}
+                            className="flex items-start gap-4 text-[#050505] text-[17px] font-medium"
+                          >
+                            <div className="w-1.5 h-1.5 mt-2.5 rounded-full bg-[#FFD000] flex-shrink-0" />
+                            <span>{item}</span>
+                          </motion.div>
+                        ))}
+                      </div>
                     </div>
                   </motion.div>
                 )}

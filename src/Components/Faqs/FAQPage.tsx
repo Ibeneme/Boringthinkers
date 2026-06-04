@@ -74,7 +74,7 @@ const FAQPage: React.FC = () => {
                     {index < 9 ? `0${index + 1}` : index + 1}
                   </span>
                   <h3
-                    className={`text-xl md:text-3xl font-black uppercase tracking-tighter transition-all duration-300 ${
+                    className={`text-xl md:text-3xl font-black  tracking-tighter transition-all duration-300 ${
                       activeIndex === index
                         ? "text-[#050505]"
                         : "text-[#050505]/40 group-hover:text-[#050505]"

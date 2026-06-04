@@ -58,22 +58,18 @@ const Hero: React.FC = () => {
             variants={item}
             className="text-6xl md:text-[8rem] font-black tracking-[-0.06em] leading-[0.8] uppercase"
           >
-            BORING
+            Boring
           </motion.h1>
           <motion.h1
             variants={item}
             className="text-6xl md:text-[8rem] font-black tracking-[-0.06em] leading-[0.8] uppercase text-[#FFD000]"
           >
-            THINKERS
+            Thinkers
           </motion.h1>
         </div>
-        {/* <motion.div
-          variants={item}
-          className="mb-10 w-8 h-[2px] bg-[#FFD000]"
-        /> */}
-        {/* Direct Statement */}
+
         <motion.div variants={item} className="max-w-md">
-          <p className="text-lg md:text-xl font-black uppercase tracking-tight leading-tight text-white/60">
+          <p className="text-lg md:text-xl font-bold uppercase tracking-tight leading-tight text-white/60">
             Software Development Company For Startups and businesses
           </p>
         </motion.div>

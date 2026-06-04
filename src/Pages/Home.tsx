@@ -6,6 +6,7 @@ import We from "../Components/We/We";
 import AccordionSection from "../Components/AccordionSection/AccordionSection";
 //import SlidingPage from "../Components/Footer/SlidingPage";
 import NewProjects from "../Components/NewProjects/Projects";
+import CodeShowcase from "./Hero/CodeShowcase";
 // import AccordionSection from "../Components/AccordionSection/AccordionSection";
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
       <Hero />
       <FlagsRow />
       <OurCompany />
+      <CodeShowcase />
       {/* <SlidingPage /> */}
       <We />
       <NewProjects />
