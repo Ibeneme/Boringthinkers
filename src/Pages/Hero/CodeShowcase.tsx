@@ -1,4 +1,4 @@
-import React from "react";
+
 import { motion } from "framer-motion";
 import fintech from "../../assets/images/codes/fintech.png";
 import uber from "../../assets/images/codes/uber.png";
