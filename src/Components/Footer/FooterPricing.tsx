@@ -105,7 +105,7 @@ const FooterPricing: React.FC = () => {
               transition={{ delay: index * 0.15 }}
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
-              className="group bg-[#011404] p-10 min-h-[580px] flex flex-col"
+              className="group bg-[#011404] p-10 min-h-[580px] flex flex-col rounded-[44px]"
             >
               <span className="text-[#FFD000] text-[10px] font-black uppercase tracking-[0.4em]">
                 {plan.category}
@@ -155,7 +155,7 @@ const FooterPricing: React.FC = () => {
             <span className="text-[11px] font-black uppercase tracking-[0.6em] text-[#011404] block mb-8">
               SEO Services
             </span>
-            <div className="bg-[#011404] p-10">
+            <div className="bg-[#011404] rounded-[44px] p-10">
               <div className="border-b border-white/10 pb-8 mb-8">
                 <h3 className="text-white text-3xl font-black  mb-4">
                   Basic SEO
@@ -179,7 +179,7 @@ const FooterPricing: React.FC = () => {
                 <div
                   id={service.id}
                   key={service.id}
-                  className="flex justify-between items-center py-8 border-b border-[#011404]/20 hover:pl-4 transition-all duration-300"
+                  className="flex justify-between items-center py-8 border-b border-[#011404]/20 hover:pl-4 transition-all duration-300 "
                 >
                   <div className="flex items-center gap-4">
                     {service.id === "dev-mobile" && (

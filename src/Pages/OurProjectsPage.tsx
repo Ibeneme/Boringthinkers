@@ -1,12 +1,14 @@
 
 import BlogHero from "../Components/BlogHero/BlogHero";
 import NewProjects from "../Components/NewProjects/Projects";
+import Showcase from "./Hero/CodeShowcase";
 
 const OurProjectsPage = () => {
   return (
     <div>
       <BlogHero title={`Recent Buildings`} />
       <NewProjects />
+      <Showcase />
     </div>
   );
 };

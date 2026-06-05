@@ -15,13 +15,14 @@ const Home = () => {
       <Hero />
       <FlagsRow />
       <OurCompany />
-      <CodeShowcase />
+
       {/* <SlidingPage /> */}
       <We />
       <NewProjects />
       <div style={{ padding: 16, width: "100vw" }}>
         <AccordionSection />
       </div>
+      <CodeShowcase />
       {/* <AccordionSection /> */}
       {/* <FAQPage /> */}
     </div>

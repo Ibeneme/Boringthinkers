@@ -1,140 +1,155 @@
+import React from "react";
+import { motion } from "framer-motion";
 import fintech from "../../assets/images/codes/fintech.png";
 import uber from "../../assets/images/codes/uber.png";
-import { motion } from "framer-motion";
-
 
 const Showcase = () => {
   return (
-    <section className="bg-[#0A2F1D] min-h-screen py-48 px-6 text-white overflow-hidden">
-      {/* GLOBAL HEADER */}
-
-      <motion.div className="mb-8 flex items-center justify-center gap-4">
-        <span className="text-[10px] uppercase tracking-[0.4em] text-[#FFD000] font-black">
-          BUILDING BUSINESSES WITH CODES
+    <section className="bg-[#0A2F1D] py-32 px-6 text-white overflow-hidden">
+      {/* Header */}
+      <div className="flex items-center justify-center gap-4 mb-6">
+        <div className="w-8 h-[1px] bg-[#FFD000]" />
+        <span className="text-[#FFD000] text-xs font-black uppercase tracking-[0.125em]">
+          BUILDING BUSINESSES
         </span>
-        <div className="w-12 h-[1px] bg-[#FFD000]" />
-      </motion.div>
-
-      <div className="max-w-5xl mx-auto text-center mb-40">
-        <h1 className="text-6xl md:text-8xl font-black leading-tight tracking-tight">
-          Building Businesses with
-          <span className="text-[#FFD000]"> codes</span>
-          <span className="bg-clip-text text-[#FFD000]"></span>
-        </h1>
-        {/* <p className="text-white/60 mt-6 text-xl max-w-2xl mx-auto">
-          Premium design • Smooth animations •{" "}
-          <span className="text-[#FFD000] font-semibold">
-            Production ready code
-          </span>
-        </p> */}
+        <div className="w-8 h-[1px] bg-[#FFD000]" />
       </div>
 
-      <div className="max-w-7xl mt-24 mx-auto grid lg:grid-cols-2 gap-16">
-        {/* ================= MONIEL - FINTECH APP ================= */}
-        <div>
-          <h2 className="text-[#FFD000] text-2xl font-bold mb-6 flex items-center gap-3">
-            Finance{" "}
-            <span className="text-white/40 text-base font-normal">
-              — Digital Wallet
-            </span>
-          </h2>
-          {/* CODE SNIPPET */}
-          <div className="rounded-3xl border border-white/10 bg-[#081c15] overflow-hidden mb-10">
-            <div className="flex gap-2 px-5 py-4 border-b border-white/10">
-              <div className="w-3 h-3 bg-red-500 rounded-full" />
-              <div className="w-3 h-3 bg-yellow-500 rounded-full" />
-              <div className="w-3 h-3 bg-green-500 rounded-full" />
-              <span className="ml-auto text-white/40 text-xs">
+      <div className="max-w-5xl mx-auto text-center mb-20">
+        <h1 className="text-6xl md:text-7xl lg:text-[5.5rem] font-black leading-[0.9] tracking-tighter">
+          Building Businesses with <span className="text-[#FFD000]">code</span>
+        </h1>
+        <p className="mt-6 text-white/70 text-lg md:text-xl max-w-xl mx-auto">
+          Premium design. Butter-smooth interactions. Production-ready systems.
+        </p>
+      </div>
+
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16">
+        {/* Fintech Project */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="flex items-center gap-3 mb-6  mt-[64px]">
+            <h2 className="text-2xl font-black text-[#FFFFFF65] ">We Write Clean Codes</h2>
+            <span className="text-[#FFD000] text-xl font-light">—</span>
+            {/* <span className="text-white/50">Digital Wallet</span> */}
+          </div>
+
+          <div className="group relative rounded-3xl overflow-hidden border border-white/10 bg-[#081c15] shadow-xl">
+            {/* MacOS-style header */}
+            <div className="flex items-center gap-2 px-6 py-4 border-b border-white/10 bg-black/40">
+              <div className="flex gap-1.5">
+                <div className="w-3 h-3 rounded-full bg-red-500" />
+                <div className="w-3 h-3 rounded-full bg-yellow-500" />
+                <div className="w-3 h-3 rounded-full bg-green-500" />
+              </div>
+              <div className="ml-auto text-white/40 text-xs font-mono">
                 sendMoney.ts
-              </span>
+              </div>
             </div>
-            <div className="p-6 font-mono text-sm leading-7 overflow-x-auto">
-              <p>
-                <span className="text-purple-400">const</span>{" "}
-                <span className="text-yellow-400">sendMoney</span> ={" "}
-                <span className="text-yellow-400">async</span> (data:
-                TransferData) =&gt; {"{"}
-              </p>
-              <p className="pl-6 text-gray-400">// Validate balance</p>
-              <p className="pl-6 text-purple-400">if</p>
-              <p className="pl-8">
-                (data.amount &gt; currentBalance) throw new Error("Insufficient
-                funds");
-              </p>
-              <p className="pl-6 mt-3 text-green-400">
-                const response = await fetch("/api/transfer", {"{"}
-              </p>
-              <p className="pl-12">method: "POST",</p>
-              <p className="pl-12">body: JSON.stringify(data),</p>
-              <p className="pl-12">
+
+            {/* Code Snippet */}
+            <div className="p-8 font-mono text-sm leading-relaxed text-white/90 overflow-x-auto">
+              <pre className="select-text">
+                <span className="text-violet-400">const</span>{" "}
+                <span className="text-yellow-300">sendMoney</span> ={" "}
+                <span className="text-yellow-300">async</span> (data:{" "}
+                <span className="text-sky-400">TransferData</span>) =&gt; {"{"}
+              </pre>
+              <div className="pl-6 text-emerald-400/80">
+                // Validate balance
+              </div>
+              <pre className="pl-6">
+                <span className="text-violet-400">if</span> (data.amount &gt;
+                currentBalance)
+                <span className="text-red-400">
+                  {" "}
+                  throw new Error("Insufficient funds")
+                </span>
+                ;
+              </pre>
+              <pre className="pl-6 mt-4">
+                <span className="text-emerald-400">const</span> res ={" "}
+                <span className="text-sky-400">await</span>{" "}
+                fetch("/api/transfer", {"{"}
+              </pre>
+              <pre className="pl-10">method: "POST",</pre>
+              <pre className="pl-10">body: JSON.stringify(data),</pre>
+              <pre className="pl-10">
                 headers: {"{ 'Content-Type': 'application/json' }"}
-              </p>
-              <p className="pl-6">{"}"});</p>
-              <p className="pl-6 mt-3 text-emerald-400">
-                return response.json();
-              </p>
-              <p>{"}"}</p>
+              </pre>
+              <pre className="pl-6">{"}"});</pre>
             </div>
-            {/* DIRECT IMAGE */}
-            <div className="flex justify-center">
+
+            {/* Image Preview */}
+            <div className="p-6 pt-0">
               <img
                 src={fintech}
                 alt="Moniel Fintech App"
-                className="w-full rounded-3xl shadow-2xl "
+                className="w-full rounded-2xl shadow-2xl group-hover:scale-[1.02] transition-transform duration-700"
               />
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* ================= FLOWCAL - TASK & CALENDAR ================= */}
-        <div>
-          <h2 className="text-[#FFD000] text-2xl font-bold mb-6 flex items-center gap-3">
-            Shop{" "}
-            <span className="text-white/40 text-base font-normal">
-              — Airplane Purchase
-            </span>
-          </h2>
-          {/* CODE SNIPPET */}
-          <div className="rounded-3xl border border-white/10 bg-[#081c15] overflow-hidden mb-10">
-            <div className="flex gap-2 px-5 py-4 border-b border-white/10">
-              <div className="w-3 h-3 bg-red-500 rounded-full" />
-              <div className="w-3 h-3 bg-yellow-500 rounded-full" />
-              <div className="w-3 h-3 bg-green-500 rounded-full" />
-              <span className="ml-auto text-white/40 text-xs">tasks.tsx</span>
+        {/* Second Project */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          <div className="flex items-center gap-3 mb-6  mt-[64px]">
+            <h2 className="text-2xl font-black text-[#FFFFFF65] ">
+             We Build Clean UI
+            </h2>
+            <span className="text-[#FFD000] text-xl font-light">—</span>
+            {/* <span className="text-white/50">Task &amp; Calendar</span> */}
+          </div>
+
+          <div className="group relative rounded-3xl overflow-hidden border border-white/10 bg-[#081c15] shadow-xl">
+            {/* MacOS-style header */}
+            <div className="flex items-center gap-2 px-6 py-4 border-b border-white/10 bg-black/40">
+              <div className="flex gap-1.5">
+                <div className="w-3 h-3 rounded-full bg-red-500" />
+                <div className="w-3 h-3 rounded-full bg-yellow-500" />
+                <div className="w-3 h-3 rounded-full bg-green-500" />
+              </div>
+              <div className="ml-auto text-white/40 text-xs font-mono">
+                addTask.tsx
+              </div>
             </div>
-            <div className="p-6 font-mono text-sm leading-7 overflow-x-auto">
-              <p>
-                <span className="text-purple-400">const</span> addTask = (task:
-                Task) =&gt; {"{"}
-              </p>
-              <p className="pl-6 text-green-400">
-                setTasks(prev =&gt; [...prev, {"{"}
-              </p>
-              <p className="pl-12">id: Date.now(),</p>
-              <p className="pl-12">title: task.title,</p>
-              <p className="pl-12">time: task.time,</p>
-              <p className="pl-12">priority: task.priority,</p>
-              <p className="pl-12">completed: false</p>
-              <p className="pl-6">{"}"}]);</p>
-              <p>{"}"}</p>
-              <p className="mt-4 text-gray-400">// Example usage</p>
-              <p className="text-purple-400">addTask</p>
-              <p className="pl-6">
-                {
-                  "({ title: 'Finish client UI', time: '10:00', priority: 'high' })"
-                }
-              </p>
+
+            {/* Code Snippet */}
+            <div className="p-8 font-mono text-sm leading-relaxed text-white/90 overflow-x-auto">
+              <pre>
+                <span className="text-violet-400">const</span> addTask = (task:{" "}
+                <span className="text-sky-400">Task</span>) =&gt; {"{"}
+              </pre>
+              <pre className="pl-6">setTasks(prev =&gt; [...prev, {"{"}</pre>
+              <pre className="pl-10">id: Date.now(),</pre>
+              <pre className="pl-10">title: task.title,</pre>
+              <pre className="pl-10">priority: task.priority,</pre>
+              <pre className="pl-10">completed: false</pre>
+              <pre className="pl-6">{"}"}]);</pre>
+              <pre className="mt-6 text-white/50">
+                // Production ready. Clean. Fast.
+              </pre>
             </div>
-            {/* DIRECT IMAGE */}
-            <div className="flex justify-center">
+
+            {/* Image Preview */}
+            <div className="p-6 pt-0">
               <img
                 src={uber}
-                alt="FlowCal Task & Calendar App"
-                className=" w-full rounded-3xl shadow-2xl "
+                alt="FlowCal App"
+                className="w-full rounded-2xl shadow-2xl group-hover:scale-[1.02] transition-transform duration-700"
               />
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

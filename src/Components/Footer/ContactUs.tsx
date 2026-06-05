@@ -4,87 +4,99 @@ import { ArrowUpRight } from "lucide-react";
 
 const ContactUs: React.FC = () => {
   return (
-    <section className="relative bg-[#FFD000] py-32 px-6 md:px-20 overflow-hidden">
-      {/* Decorative Texture */}
-      <div className="absolute top-0 right-0 opacity-[0.03] pointer-events-none">
-        <span className="text-[20rem] font-black leading-none uppercase select-none">
+    <section className="relative bg-[#FFD000] py-24 md:py-32 px-6 md:px-10 overflow-hidden">
+      {/* Background Texture */}
+      <div className="absolute top-[-80px] right-[-80px] opacity-[0.035] pointer-events-none select-none">
+        <span className="text-[18rem] md:text-[28rem] font-black leading-none uppercase tracking-[-0.05em]">
           Contact
         </span>
       </div>
 
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-end justify-between gap-16">
-        {/* Text Side */}
-        <div className="max-w-2xl">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col lg:flex-row items-end justify-between gap-16 lg:gap-20">
+          {/* Left Content */}
+          <div className="max-w-2xl">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center gap-4 mb-8"
+            >
+              <div className="w-12 h-0.5 bg-[#011404]" />
+              <span className="text-[#011404] text-xs font-black uppercase tracking-[0.125em]">
+                Initiate Briefing
+              </span>
+            </motion.div>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-[4.5rem] md:text-[7rem] lg:text-[8rem] font-black text-[#011404] leading-[0.85] tracking-[-0.06em] mb-10"
+            >
+              Reach
+              <br />
+              Out.
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-[#011404] text-[1.35rem] md:text-2xl font-medium tracking-tight max-w-[38ch] leading-tight"
+            >
+              Discuss your next big project or learn how our systems can
+              accelerate your business growth.
+            </motion.p>
+          </div>
+
+          {/* Contact Card */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, scale: 0.92, y: 20 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex items-center gap-4 mb-8"
+            transition={{ duration: 0.5 }}
+            className="w-full lg:w-auto"
           >
-            <div className="w-12 h-[3px] bg-[#011404]" />
-            <span className="text-[#011404] text-[11px] font-black uppercase tracking-[0.6em]">
-              Initiate Briefing
-            </span>
+            <a
+              href="mailto:contact@boringthinkers.com"
+              className="group block bg-[#011404] rounded-3xl p-8 md:p-10 min-h-[340px] md:min-h-[380px] min-w-[340px] md:min-w-[420px] flex flex-col transition-all duration-700 hover:shadow-2xl hover:shadow-black/40 hover:-translate-y-1"
+            >
+              {/* Top Bar */}
+              <div className="flex justify-between items-start">
+                <div className="px-4 py-1.5 bg-[#FFD000]/10 text-[#FFD000] text-[10px] font-black uppercase tracking-[0.1em] rounded-full border border-[#FFD000]/20">
+                  Official Mail
+                </div>
+
+                <ArrowUpRight
+                  className="text-[#FFD000] transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1"
+                  size={42}
+                  strokeWidth={2.5}
+                />
+              </div>
+
+              {/* Bottom Content */}
+              <div className="mt-auto">
+                <p className="text-white text-4xl md:text-5xl font-black tracking-tighter leading-none mb-4">
+                  Send a Mail
+                </p>
+                <p className="text-[#FFD000] text-[1.35rem] md:text-2xl font-medium tracking-tight">
+                  contact@boringthinkers.com
+                </p>
+              </div>
+            </a>
           </motion.div>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-6xl md:text-[8rem] font-black text-[#011404] leading-[0.8] tracking-[-0.07em]  mb-12"
-          >
-            Reach <br /> Out.
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-[#011404] text-xl md:text-2xl font-black tracking-tighter leading-tight"
-          >
-            Discuss your next big project or learn how our systems can
-            accelerate your business growth.
-          </motion.p>
         </div>
 
-        {/* Action Side */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="w-full lg:w-auto"
-        >
-          <a
-            href="mailto:contact@boringthinkers.com"
-            className="group relative flex flex-col items-start justify-between p-12 bg-[#011404] min-w-[320px] md:min-w-[450px] min-h-[300px] rounded-[48px] transition-all duration-500 hover:bg-black"
-          >
-            <div className="w-full flex justify-between items-start">
-              <span className="text-[#FFD000] text-[10px] font-black uppercase tracking-[0.4em]">
-                Official Mail
-              </span>
-              <ArrowUpRight
-                className="text-[#FFD000] group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500"
-                size={40}
-              />
-            </div>
-
-            <div className="mt-auto">
-              <span className="text-white text-3xl md:text-5xl font-black  tracking-tighter block mb-2">
-                Send a Mail
-              </span>
-              <span className="text-[#FFD000] text-[20px] font-bold ">
-                contact@boringthinkers.com
-              </span>
-            </div>
-          </a>
-        </motion.div>
-      </div>
-
-      {/* Identification Bar */}
-      <div className="mt-32 pt-8 border-t-[1px] border-[#011404]/10 flex flex-wrap justify-between items-center gap-6">
-        <span className="text-[10px] font-black text-[#011404]/40 uppercase tracking-[1em]">
-          Boring Thinkers Limited
-        </span>
+        {/* Footer Bar */}
+        <div className="mt-24 pt-8 border-t border-[#011404]/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-[#011404]/50 text-xs font-black uppercase tracking-[0.1em]">
+          <span>Boring Thinkers Limited</span>
+          <span className="text-center sm:text-right">
+            © {new Date().getFullYear()} • All Rights Reserved
+          </span>
+        </div>
       </div>
     </section>
   );
