@@ -1,7 +1,8 @@
 import AboutUs from "../Components/AboutUs/AboutUs";
 import BlogHero from "../Components/BlogHero/BlogHero";
 import FAQPage from "../Components/Faqs/FAQPage";
-import Showcase from "./Hero/CodeShowcase";
+// import Showcase from "./Hero/CodeShowcase";
+import Team from "./Hero/Team";
 // import We from "../Components/We/We";
 import OurCompany from "./OurCompany/OurCompany";
 
@@ -10,8 +11,10 @@ const AboutUsPage = () => {
     <div>
       <BlogHero title={`"Boring" Thinkers`} />
       <OurCompany />
-      <Showcase />
+      {/* <Showcase /> */}
       <AboutUs />
+
+      <Team />
       <FAQPage />
     </div>
   );
