@@ -111,7 +111,7 @@ export default function IDEHero() {
           </h1>
 
           <p
-            className="mt-6 max-w-2xl mx-auto md:mx-0 text-base md:text-lg text-[#ffffff45] leading-relaxed"
+            className="mt-6 max-w-2xl mx-auto md:mx-0 text-base md:text-lg text-[#ffffff] leading-relaxed"
             style={DISPLAY}
           >
             A software development company for startups and businesses who want
