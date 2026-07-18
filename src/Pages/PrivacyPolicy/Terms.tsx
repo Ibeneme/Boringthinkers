@@ -49,7 +49,22 @@ const TermsOfService: React.FC = () => {
   };
 
   return (
-    <section className="bg-white pt-[180px] pb-24 px-6 md:px-20 min-h-screen">
+    <section className="relative bg-[#FAFAF6] pt-[180px] pb-24 px-6 md:px-20 min-h-screen overflow-hidden">
+      {/* Shared brand type system */}
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Space+Mono:wght@400;700&display=swap');
+        .font-editorial { font-family: 'Instrument Serif', serif; font-style: italic; }
+        .font-technical { font-family: 'Space Mono', monospace; }
+      `}</style>
+      {/* Faint graph-paper texture, consistent with the rest of the site */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#06110A 1px, transparent 1px), linear-gradient(90deg, #06110A 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+        }}
+      />{" "}
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="mb-32">

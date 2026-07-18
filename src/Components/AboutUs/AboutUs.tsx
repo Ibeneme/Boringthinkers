@@ -20,8 +20,17 @@ const stagger: Variants = {
 
 const AboutUs: React.FC<AboutUsProps> = () => {
   return (
-    <section className="bg-white min-h-screen select-none">
+    <section className="relative bg-[#FAFAF6] min-h-screen overflow-hidden">
       {/* --- MISSION SECTION (Dark Green Background) --- */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#666 1px, transparent 1px), linear-gradient(90deg, #666 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+        }}
+      />
+
       <div className="bg-[#0A2F1D] pt-[180px] pb-32 px-6 md:px-20 border-b border-black/5">
         <div className="max-w-7xl mx-auto">
           <motion.div

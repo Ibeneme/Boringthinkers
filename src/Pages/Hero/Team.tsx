@@ -3,7 +3,20 @@ import sandra from "../../assets/images/team/sandra.png";
 
 const Team = () => {
   return (
-    <section className="bg-[#0A2F1D] py-32 px-6 text-white overflow-hidden">
+    <section className="relative min-h-screen w-full bg-[#0A2F1D] text-white px-4 py-20 md:py-24 overflow-hidden">
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Space+Mono:wght@400;700&display=swap');
+        .font-editorial { font-family: 'Instrument Serif', serif; font-style: italic; }
+        .font-technical { font-family: 'Space Mono', monospace; }
+      `}</style>
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+        }}
+      />
       {/* Header */}
       <div className="flex items-center justify-center gap-4 mb-6">
         <div className="w-8 h-[1px] bg-[#FFD000]" />

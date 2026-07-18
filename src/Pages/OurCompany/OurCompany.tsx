@@ -1,43 +1,58 @@
 import React from "react";
-import { motion, useScroll, useTransform, Variants } from "framer-motion"; // Added Variants
+import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import { FiChevronsRight } from "react-icons/fi";
 import crayons from "../../assets/images/new/codeb.jpg";
 
 const OurCompany: React.FC = () => {
   const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
 
   const handleSendMail = () => {
     window.location.href = "mailto:contact@boringthinkers.com";
   };
 
-  // Explicitly typing containerVariants
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1, delayChildren: 0.1 },
+      transition: { staggerChildren: 0.12, delayChildren: 0.15 },
     },
   };
 
-  // Explicitly typing itemVariants fixes the TS2322 errors
   const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 10 },
+    hidden: { opacity: 0, y: 14 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.4,
-        ease: "easeOut", // Now recognized as a valid Easing string
-      },
+      transition: { duration: 0.5, ease: "easeOut" },
     },
   };
 
+
+
   return (
-    <section className="relative min-h-screen bg-white overflow-hidden selection:bg-[#FFD000] selection:text-[#011404]">
-      <div className="flex flex-col lg:flex-row items-stretch min-h-screen">
+    <section className="relative min-h-screen bg-[#FAFAF6] overflow-hidden selection:bg-[#FFD000] selection:text-[#06110A]">
+      {/* Type system: bold system grotesk for the headline, an editorial
+          serif italic for the "thinking" copy, mono for labels/data marks */}
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Space+Mono:wght@400;700&display=swap');
+        . { font-family: 'Instrument Serif', serif; font-style: italic; }
+        .font-technical { font-family: 'Space Mono', monospace; }
+      `}</style>
+
+      {/* Faint graph-paper texture — this is a lab notebook, not a poster */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#06110A 1px, transparent 1px), linear-gradient(90deg, #06110A 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+        }}
+      />
+
+      <div className="relative flex flex-col lg:flex-row items-stretch min-h-screen">
         {/* Left Content Side */}
-        <div className="flex-1 flex flex-col justify-center px-8 md:px-24 py-24 lg:py-12 bg-white z-20">
+        <div className="flex-1 flex flex-col justify-center px-4 md:px-24 py-24 lg:py-12 z-20">
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -45,54 +60,63 @@ const OurCompany: React.FC = () => {
             viewport={{ once: true }}
             className="max-w-xl"
           >
-            {/* Structural Marker */}
-            <motion.div variants={itemVariants} className="mb-12">
-              <span className="text-[#011404] uppercase text-[11px] font-black  tracking-[0.6em] border-b-4 border-[#FFD000] pb-1">
-                THE BRAIN house
+            {/* Manuscript stamp */}
+            <motion.div variants={itemVariants} className="mb-14">
+              <span className="inline-block font-technical text-[11px] font-bold uppercase tracking-[0.5em] text-[#06110A] border-2 border-[#06110A] px-3 py-1.5 -rotate-1">
+                The Brain House
               </span>
             </motion.div>
 
-            <motion.h1
-              variants={itemVariants}
-              className="text-6xl md:text-9xl uppercase font-black text-[#011404] tracking-[-0.06em] mb-12 leading-[0.8]"
-            >
-              Not Just <br />
-              Code.
-            </motion.h1>
+            {/* Headline with the red-pen correction */}
+            <motion.div variants={itemVariants} className="mb-14 relative">
+              <h1 className="text-5xl md:text-7xl font-black text-[#06110A] tracking-[-0.05em] leading-[0.9] pb-4 antialiased">
+                It’s not just about code. <br />
+                <span className="text-[#048C04]">
+                  {" "}
+                  It’s where coding meets business.
+                </span>
+              </h1>
+            </motion.div>
 
-            <motion.div variants={itemVariants} className="space-y-12">
-              <p className="text-2xl font-black text-[#011404] leading-tight  tracking-tighter">
+            <motion.div
+              variants={itemVariants}
+              className="space-y-8 mt-[-32px]"
+            >
+              <p className=" text-2xl md:text-xl text-[#06110A] leading-snug">
                 Boring Thinkers is a creative powerhouse built for visionary
                 startups.
               </p>
 
-              <p className=" text-[#011404] text-lg leading-relaxed font-bold max-w-md">
-                We craft digital experiences that solve complex problems. From
-                MVPs to enterprise platforms, we turn bold concepts into
+              <p className="text-[#06110A]/80 text-[16px] md:text-[16px] leading-relaxed max-w-md">
+                We craft digital experiences that solve complex problems — from
+                MVPs to enterprise platforms, turning bold concepts into
                 intuitive products.
               </p>
-
-              <div className="flex items-center gap-4 py-6 border-y border-gray-100">
-                <span className="w-3 h-3 bg-[#FFD000] rounded-full" />
-                <p className="text-xl uppercase font-black text-[#011404]  tracking-tighter">
+              {/* <div className="flex items-center gap-4 py-6 border-y-2 border-dotted border-[#06110A]/25">
+                <span className="w-3 h-3 bg-[#FFD000] rounded-full shrink-0" />
+                <p className="text-lg md:text-xl uppercase font-black text-[#06110A] tracking-tight">
                   Build fast. Think deep. Deliver smart.
                 </p>
-              </div>
+              </div> */}
+              {/* <div className="flex items-center gap-4 py-6 border-y-2 border-dotted border-[#06110A]/25">
+                <span className="w-3 h-3 bg-[#FFD000] rounded-full shrink-0" />
+                <p className="text-lg md:text-xl uppercase font-black text-[#06110A] tracking-tight">
+                  Build fast. Think deep. Deliver smart.
+                </p>
+              </div> */}
             </motion.div>
 
-            <motion.div variants={itemVariants} className="mt-20">
+            <motion.div variants={itemVariants} className="mt-16">
               <button
                 onClick={handleSendMail}
-                className="group flex items-center justify-between w-full max-w-md py-8 px-0 border-b-2 border-[#011404] hover:border-[#FFD000] transition-colors duration-300"
+                className="group flex items-center justify-between w-full max-w-md py-7 border-b-2 border-[#06110A] hover:border-[#D7301F] transition-colors duration-300"
               >
-                <div className="flex flex-col text-left">
-                  <span className="text-4xl uppercase font-black text-[#011404]  tracking-tighter">
-                    Send a Mail
-                  </span>
-                </div>
+                <span className="text-xl md:text-xl uppercase font-black text-[#06110A] tracking-tighter transition-colors duration-300 ">
+                  Get Started, Send a Mail
+                </span>
                 <FiChevronsRight
                   size={28}
-                  className="text-[#011404] transition-transform duration-500 group-hover:text-[#FFD000] group-hover:translate-x-2"
+                  className="text-[#06110A] transition-all duration-500 group-hover:translate-x-2"
                 />
               </button>
             </motion.div>
@@ -100,10 +124,10 @@ const OurCompany: React.FC = () => {
         </div>
 
         {/* Right Image Side */}
-        <div className="flex-1 relative min-h-[500px] lg:min-h-screen overflow-hidden bg-gray-50">
+        <div className="flex-1 relative min-h-[500px] lg:min-h-screen overflow-hidden bg-[#06110A]">
           <motion.div
             style={{ y }}
-            className="absolute inset-0 w-full h-[115%]"
+            className="absolute inset-0 w-full h-[120%]"
           >
             <img
               src={crayons}
@@ -112,16 +136,31 @@ const OurCompany: React.FC = () => {
             />
           </motion.div>
 
-          {/* Solid Information Plate */}
+          {/* Blueprint corner marks — the image reads as an exhibit */}
+          {[
+            "top-6 left-6 border-t-2 border-l-2",
+            "top-6 right-6 border-t-2 border-r-2",
+            "bottom-6 left-6 border-b-2 border-l-2",
+            "bottom-6 right-6 border-b-2 border-r-2",
+          ].map((cls, i) => (
+            <div
+              key={i}
+              className={`absolute ${cls} w-6 h-6 border-[#FFD000] z-30`}
+            />
+          ))}
+
+          {/* Information plate */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
-            className="absolute bottom-0 left-0 p-12 bg-[#FFD000] text-[#011404] w-full lg:max-w-md z-30"
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="absolute bottom-0 left-0 p-10 md:p-12 bg-[#FFD000] text-[#06110A] w-full lg:max-w-md z-30"
           >
-            <p className="font-black text-xs  tracking-[0.3em] mb-4">
-              Strategic Execution
+            <p className="font-technical text-xs font-bold tracking-[0.3em] mb-4 uppercase">
+              Strategic Execution — Exhibit A
             </p>
-            <h3 className="font-black text-2xl  leading-[0.9] tracking-tighter">
+            <h3 className=" text-2xl md:text-2xl leading-[0.95] tracking-tight">
               We analyze the DNA of your business before writing a line of code.
             </h3>
           </motion.div>

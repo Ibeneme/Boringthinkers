@@ -1,4 +1,5 @@
 import React from "react";
+import { motion, Variants } from "framer-motion";
 import ReactCountryFlag from "react-country-flag";
 
 const flags = [
@@ -9,49 +10,114 @@ const flags = [
   { code: "KE", name: "Kenya" },
   { code: "NL", name: "Netherlands" },
   { code: "GB", name: "United Kingdom" },
+  { code: "IL", name: "Israel" },
+  { code: "CH", name: "Switzerland" },
 ];
 
-const FlagsRow: React.FC = () => {
-  return (
-    <section className="w-full bg-[#fcfcfc] border-t border-b border-[#011404]/5">
-      <div className="max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center justify-between gap-12">
-        {/* Technical Label */}
-        <div className="flex flex-col items-center md:items-start gap-4">
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-[#011404]" />
-            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#011404]/40">
-              Our Clients’
-            </span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-black text-[#011404] uppercase tracking-tighter leading-none">
-            Our Clients’ <br /> <span className="opacity-30">Countries.</span>
-          </h2>
-        </div>
+const tilts = [-4, 3, -6, 5, -2, 4, -5, 3, -4];
 
-        {/* The Registry Grid */}
-        <div className="flex flex-wrap justify-center md:justify-end gap-6 md:gap-10 hover:opacity-100 transition-opacity duration-500">
-          {flags.map(({ code, name }) => (
-            <div
-              key={code}
-              className="group relative flex items-center justify-center"
-            >
-              <ReactCountryFlag
-                countryCode={code}
-                svg
-                className="  transition-all duration-500 "
-                style={{
-                  width: "56px",
-                  height: "auto",
-               //   filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.05))",
-                }}
-                title={name}
-              />
-              {/* Tooltip Label */}
-              <span className="absolute -bottom-6 text-[9px] font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity text-[#011404]">
-                {name}
+const FlagsRow: React.FC = () => {
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.08, delayChildren: 0.1 },
+    },
+  };
+
+  const stampVariants: Variants = {
+    hidden: { opacity: 0, y: 16, scale: 0.9 },
+    visible: (custom: number) => ({
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      rotate: tilts[custom],
+      transition: { duration: 0.45, ease: "easeOut" },
+    }),
+  };
+
+  return (
+    <section className="relative bg-[#FAFAF6] overflow-hidden px-4 py-20 md:py-24">
+      {/* Fonts */}
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Space+Mono:wght@400;700&display=swap');
+        .font-editorial { font-family: 'Instrument Serif', serif; font-style: italic; }
+        .font-technical { font-family: 'Space Mono', monospace; }
+      `}</style>
+
+      {/* Background texture */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#06110A 1px, transparent 1px), linear-gradient(90deg, #06110A 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+        }}
+      />
+
+      <div className="relative max-w-7xl mx-auto pb-[64px]">
+        <div className="flex flex-col items-start gap-16 lg:gap-20">
+          {/* Text Content */}
+          <div className="max-w-5xl">
+            <span className="inline-block font-technical text-[11px] font-bold uppercase tracking-[0.5em] text-[#06110A] border-2 border-[#06110A] px-3 py-1.5 -rotate-1 mb-8">
+              Our Trust is Global
+            </span>
+
+            <h2 className="text-5xl md:text-7xl font-black text-[#06110A] tracking-[-0.05em] leading-[0.85]">
+              Our Clients’ Countries &amp;
+              <br />
+              <span className="relative inline-block text-[#048C04]">
+                Our Impact is Beyond Borders
               </span>
-            </div>
-          ))}
+            </h2>
+
+            <p className="text-xl md:text-2xl text-[#06110A]/70 mt-8 leading-relaxed">
+              Engineering impact across countries by turning ideas into
+              high-performance digital systems beyond borders. We collaborate
+              across time zones to build robust web, mobile, and desktop
+              architectures that scale.
+            </p>
+          </div>
+
+          {/* Flags Row */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="relative flex flex-wrap gap-x-10 gap-y-14 items-center w-full"
+          >
+            {/* Dotted route line */}
+            <div className="absolute left-0 right-0 top-[38px] border-t-2 border-dashed border-[#06110A]/15 -z-0" />
+
+            {flags.map(({ code, name }, i) => (
+              <motion.div
+                key={code}
+                custom={i}
+                variants={stampVariants}
+                whileHover={{ rotate: 0, y: -4, scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                className="relative z-10 flex flex-col items-center gap-3 group cursor-default"
+              >
+                <div className="w-16 h-16 md:w-24 md:h-24 rounded-full border-2 border-dashed border-[#06110A]/40 bg-white flex items-center justify-center overflow-hidden shadow-sm transition-colors duration-300 group-hover:border-[#D7301F]">
+                  <ReactCountryFlag
+                    countryCode={code}
+                    svg
+                    title={name}
+                    style={{
+                      width: "70%",
+                      height: "70%",
+                      objectFit: "cover",
+                      borderRadius: "50%",
+                    }}
+                  />
+                </div>
+                <span className="font-technical text-[10px] md:text-[11px] uppercase tracking-[0.15em] text-[#06110A]/80 text-center">
+                  {name}
+                </span>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>

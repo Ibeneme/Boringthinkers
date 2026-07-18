@@ -1,30 +1,29 @@
 import Hero from "./Hero/Hero";
-//import FAQPage from "../Components/Faqs/FAQPage";
 import FlagsRow from "./Hero/FlagsRow";
 import OurCompany from "./OurCompany/OurCompany";
-import We from "../Components/We/We";
-import AccordionSection from "../Components/AccordionSection/AccordionSection";
-//import SlidingPage from "../Components/Footer/SlidingPage";
-import NewProjects from "../Components/NewProjects/Projects";
 import CodeShowcase from "./Hero/CodeShowcase";
-// import AccordionSection from "../Components/AccordionSection/AccordionSection";
+import WhatWeBuild from "../Components/AccordionSection/Whatwebuild";
 
 const Home = () => {
   return (
-    <div style={{ margin: 0, padding: 0 }}>
-      <Hero />
-      <FlagsRow />
-      <OurCompany />
+    <div className="w-full overflow-x-hidden">
+      {/* Main Content Container */}
+      <div className="max-w-[100vw] mx-auto">
+        <Hero />
+        <FlagsRow />
+        <CodeShowcase />
+        <OurCompany />
 
-      {/* <SlidingPage /> */}
-      <We />
-      <NewProjects />
-      <div style={{ padding: 16, width: "100vw" }}>
-        <AccordionSection />
+        {/* WhatWeBuild Section - Safely wrapped */}
+        <div className="w-full overflow-hidden">
+          <WhatWeBuild />
+        </div>
+
+
+
+        {/* Uncomment when needed */}
+        {/* <NewProjects /> */}
       </div>
-      <CodeShowcase />
-      {/* <AccordionSection /> */}
-      {/* <FAQPage /> */}
     </div>
   );
 };

@@ -2,6 +2,13 @@ import React from "react";
 import { type Variants, motion } from "framer-motion";
 import { ArrowUpRight, Check } from "lucide-react";
 
+interface Plan {
+  tagline: string;
+  title: string;
+  price: string;
+  features: string[];
+}
+
 const PricingComponent: React.FC = () => {
   const handleSendMail = () =>
     (window.location.href = "mailto:contact@boringthinkers.com");
@@ -24,14 +31,14 @@ const PricingComponent: React.FC = () => {
   };
 
   const renderFeatures = (features: string[]) => (
-    <ul className="space-y-5 mb-12 flex-1">
+    <ul className="space-y-4 mb-12 flex-1">
       {features.map((feature, i) => (
         <li
           key={i}
-          className="flex items-start gap-4 text-white/90 text-[15px] font-medium leading-snug group-hover:text-white transition-colors"
+          className="flex items-start gap-3 text-white/80 font-technical text-[13px] leading-snug group-hover:text-white transition-colors"
         >
-          <div className="mt-1 w-5 h-5 rounded bg-[#FFD000]/10 flex items-center justify-center shrink-0">
-            <Check size={14} className="text-[#FFD000]" />
+          <div className="mt-0.5 w-4 h-4 border border-[#FFD000]/50 flex items-center justify-center shrink-0">
+            <Check size={11} className="text-[#FFD000]" strokeWidth={3} />
           </div>
           {feature}
         </li>
@@ -39,103 +46,117 @@ const PricingComponent: React.FC = () => {
     </ul>
   );
 
-  const Section = ({ title, plans }: { title: string; plans: any[] }) => (
-    <div className="mb-28 md:mb-36">
-      <motion.div
-        initial={{ opacity: 0, x: -40 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        className="mb-16 md:mb-20"
-      >
-        <div className="flex items-center gap-4 mb-6">
-          <div className="w-12 h-[3px] bg-[#FFD000]" />
-          <span className="text-[#0A2F1D] text-xs font-black uppercase tracking-[0.6em]">
-            Tiers
-          </span>
-        </div>
-        <h2 className="text-5xl md:text-7xl font-black text-[#0A2F1D] leading-[0.85] tracking-[-0.06em] ">
-          {title}
-        </h2>
-      </motion.div>
+  const Section = ({ title, plans }: { title: string; plans: Plan[] }) => {
+    // The middle-ish tier carries the "editor's pick" — a red-pen note,
+    // the same mark used for the headline correction across the site.
+    const recommendedIndex =
+      plans.length > 1 ? Math.floor(plans.length / 2) : -1;
 
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-      >
-        {plans.map((plan, _) => (
-          <motion.div
-            key={plan.title}
-            variants={cardVariants}
-            whileHover={{ y: -12 }}
-            className="group bg-[#0A2F1D] p-8 md:p-10 flex flex-col border border-[#0A2F1D] hover:border-[#FFD000] transition-all duration-500 rounded-[49px]"
-          >
-            <div className="mb-8">
-              <span className="inline-block text-[#FFD000] text-[10px] font-black uppercase tracking-[0.4em] mb-3">
-                {plan.tagline}
-              </span>
-              <h3 className="text-white text-4xl font-black  tracking-tighter mb-1">
-                {plan.title}
-              </h3>
-              <p className="text-[#FFD000] text-5xl font-black tracking-tighter">
-                {plan.price}
-              </p>
-            </div>
+    return (
+      <div className="mb-28 md:mb-36">
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="mb-16 md:mb-20"
+        >
+          <h2 className="text-5xl md:text-7xl font-black text-[#fff] leading-[0.85] tracking-[-0.06em]">
+            {title}
+          </h2>
+        </motion.div>
 
-            {renderFeatures(plan.features)}
-            <motion.button
-              onClick={handleSendMail}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.985 }}
-              className="mt-auto w-full py-4 px-6 pr-3 bg-[#FFD000] text-[#0A2F1D] font-black uppercase text-[14px] tracking-widest flex items-center justify-between transition-all duration-300 rounded-[64px] group"
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {plans.map((plan, i) => (
+            <motion.div
+              key={plan.title + i}
+              variants={cardVariants}
+              whileHover={{ y: -10 }}
+              className="group relative bg-[#ffffff08] p-8 md:p-10 flex flex-col border border-[#06110A] hover:border-[#FFD000] transition-all duration-500 rounded-2xl"
             >
-              <span>Let's Get Started</span>
-              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                <ArrowUpRight
-                  size={20}
-                  className="text-[#0A2F1D] group-hover:rotate-45 transition-transform duration-300"
-                />
+              {i === recommendedIndex && (
+                <span className="absolute -top-3 -right-3 bg-[#FAFAF6] border-2 border-[#D7301F] text-[#D7301F] rounded-full px-3 py-1 font-technical text-[10px] font-bold uppercase tracking-widest rotate-3 z-10">
+                  Editor’s Pick
+                </span>
+              )}
+
+              <div className="mb-8">
+                <span className="inline-block text-[#FFD000] font-technical text-[10px] font-bold uppercase tracking-[0.4em] mb-3">
+                  {plan.tagline}
+                </span>
+                <h3 className="text-white text-4xl font-black tracking-tighter mb-2">
+                  {plan.title}
+                </h3>
+                <p className="text-[#FFD000] font-technical text-4xl font-bold tracking-tight">
+                  {plan.price}
+                </p>
               </div>
-            </motion.button>
-          </motion.div>
-        ))}
-      </motion.div>
-    </div>
-  );
+
+              {renderFeatures(plan.features)}
+
+              <motion.button
+                onClick={handleSendMail}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.985 }}
+                className="mt-auto w-full py-4 px-6 pr-3 bg-[#FFD000] text-[#06110A] font-black uppercase text-[13px] tracking-widest flex items-center justify-between transition-all duration-300 rounded-full"
+              >
+                <span>Let's Get Started</span>
+                <div className="w-9 h-9 bg-[#FAFAF6] rounded-full flex items-center justify-center">
+                  <ArrowUpRight
+                    size={18}
+                    className="text-[#06110A] group-hover:rotate-45 transition-transform duration-300"
+                  />
+                </div>
+              </motion.button>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    );
+  };
 
   return (
-    <section className="bg-white pt-[140px] md:pt-[180px] pb-24 px-6 md:px-20 font-sans min-h-screen">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-24 md:mb-32">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex items-center gap-4 mb-8"
-          >
-            <div className="w-12 h-[3px] bg-[#FFD000]" />
-            <span className="text-[#0A2F1D] text-[11px] font-black uppercase tracking-[0.6em]">
-              Transparent Pricing
-            </span>
-          </motion.div>
+    <section className="relative bg-[#06110A] pt-[140px] md:pt-[180px] pb-24 px-6 md:px-20 font-sans min-h-screen overflow-hidden">
+      {/* Shared brand type system */}
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Space+Mono:wght@400;700&display=swap');
+        .font-editorial { font-family: 'Instrument Serif', serif; font-style: italic; }
+        .font-technical { font-family: 'Space Mono', monospace; }
+      `}</style>
 
+      {/* Faint graph-paper texture, consistent with the rest of the site */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#ffffff85 1px, transparent 1px), linear-gradient(90deg, #ffffff85 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+        }}
+      />
+
+      <div className="relative max-w-7xl mx-auto">
+        <div className="mb-24 md:mb-32">
           <motion.h1
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-6xl sm:text-7xl md:text-[9.5rem] font-black text-[#0A2F1D] leading-[0.82] tracking-[-0.07em] "
+            className="text-6xl sm:text-7xl md:text-[9.5rem] font-black text-[#fff] leading-[0.82] tracking-[-0.07em] relative inline-block"
           >
             Pricing
-            <br />
+            <span className="absolute left-0 -bottom-2 md:-bottom-4 w-full h-[4px] bg-[#FFD000]" />
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="mt-8 max-w-2xl text-xl md:text-2xl font-bold text-[#0A2F1D] tracking-tight leading-tight"
+            className="mt-10 max-w-2xl text-2xl md:text-3xl text-[#fff]/70 leading-snug"
           >
-            Serious builds. Serious numbers. No fluff.
+            Engineering great software is what we do
           </motion.p>
         </div>
 
@@ -361,6 +382,7 @@ const PricingComponent: React.FC = () => {
             },
           ]}
         />
+
         <Section
           title="SEO Setup & Management"
           plans={[
