@@ -28,8 +28,6 @@ const OurCompany: React.FC = () => {
     },
   };
 
-
-
   return (
     <section className="relative min-h-screen bg-[#FAFAF6] overflow-hidden selection:bg-[#FFD000] selection:text-[#06110A]">
       {/* Type system: bold system grotesk for the headline, an editorial
@@ -157,10 +155,10 @@ const OurCompany: React.FC = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="absolute bottom-0 left-0 p-10 md:p-12 bg-[#FFD000] text-[#06110A] w-full lg:max-w-md z-30"
           >
-            <p className="font-technical text-xs font-bold tracking-[0.3em] mb-4 uppercase">
+            <p className=" text-xs font-bold tracking-[0.3em] mb-4 uppercase">
               Strategic Execution — Exhibit A
             </p>
-            <h3 className=" text-2xl md:text-2xl leading-[0.95] tracking-tight">
+            <h3 className=" text-xl md:text-2xl leading-[0.95] tracking-tight">
               We analyze the DNA of your business before writing a line of code.
             </h3>
           </motion.div>

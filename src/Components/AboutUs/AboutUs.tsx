@@ -68,7 +68,7 @@ const AboutUs: React.FC<AboutUsProps> = () => {
                 To design and deliver reliable, user-centric software solutions
                 that solve real-world problems.
               </p>
-              <p className="text-white/60 text-lg font-bold leading-relaxed max-w-xl">
+              <p className="text-white/60 text-lg  leading-relaxed max-w-xl">
                 Through relentless research and precise engineering, we strip
                 away friction to simplify complex workflows, enhance baseline
                 productivity, and maximize user output.
@@ -116,7 +116,7 @@ const AboutUs: React.FC<AboutUsProps> = () => {
                 To become the premier engineering engine for digital systems
                 that drive the next generation of modern enterprise.
               </p>
-              <p className="text-[#050505]/60 text-lg font-bold leading-relaxed max-w-xl">
+              <p className="text-[#050505]/60 text-lg leading-relaxed max-w-xl">
                 We design and integrate software seamlessly into active business
                 pipelines—making operations predictable, highly visible, and
                 effortlessly scalable.

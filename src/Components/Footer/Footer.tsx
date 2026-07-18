@@ -64,11 +64,11 @@ const Footer: React.FC = () => {
                 alt="BoringThinkers Logo"
                 className="h-10 w-auto"
               />
-              <h2 className="text-[24px] font-black text-[#fff] uppercase">
+              <h2 className="text-[18px] font-black text-[#fff] ">
                 {" "}
                 Boring Thinkers Limited
               </h2>
-              <p className="text-xl text-white/70 max-w-sm leading-snug">
+              <p className="text-[14px] text-white/70 max-w-sm leading-snug">
                 A premium software development company building digital
                 solutions for startups and ambitious businesses.
               </p>

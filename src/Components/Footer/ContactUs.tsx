@@ -37,7 +37,7 @@ const ContactUs: React.FC = () => {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="inline-block font-technical text-[11px] font-bold uppercase tracking-[0.5em] text-[#06110A] border-2 border-[#06110A] px-3 py-1.5 -rotate-1 mb-8"
+              className="inline-block text-[11px] font-bold uppercase tracking-[0.5em] text-[#06110A] border-2 border-[#06110A] px-3 py-1.5 -rotate-1 mb-8"
             >
               Initiate Briefing
             </motion.span>
@@ -59,7 +59,7 @@ const ContactUs: React.FC = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-[1.6rem] md:text-2xl text-[#06110A] max-w-[38ch] leading-snug"
+              className="text-[1.2rem] md:text-xl text-[#06110A] max-w-[38ch] leading-snug"
             >
               Discuss your next big project, or learn how our systems can
               accelerate your business growth.
@@ -76,11 +76,11 @@ const ContactUs: React.FC = () => {
           >
             <a
               href="mailto:contact@boringthinkers.com"
-              className="group block bg-[#06110A] rounded-2xl p-8 md:p-10 min-h-[340px] md:min-h-[380px] min-w-[340px] md:min-w-[420px] flex flex-col border border-[#06110A] hover:border-[#D7301F] transition-all duration-700 hover:shadow-2xl hover:shadow-black/40 hover:-translate-y-1"
+              className="group block bg-[#06110A] rounded-2xl p-8 md:p-10 min-h-[340px] md:min-h-[380px] min-w-[340px] md:min-w-[420px] flex flex-col border border-[#06110A] hover:border-[#D7301F] transition-all duration-700"
             >
               {/* Top Bar */}
               <div className="flex justify-between items-start">
-                <div className="px-4 py-1.5 bg-[#FFD000]/10 text-[#FFD000] font-technical text-[10px] font-bold uppercase tracking-[0.2em] rounded-full border border-[#FFD000]/20">
+                <div className="px-4 py-1.5 bg-[#FFD000]/10 text-[#FFD000] text-[10px] font-bold uppercase tracking-[0.2em] rounded-full border border-[#FFD000]/20">
                   Official Mail
                 </div>
 
@@ -96,7 +96,7 @@ const ContactUs: React.FC = () => {
                 <p className="text-white text-4xl md:text-5xl font-black tracking-tighter leading-none mb-4">
                   Send a Mail
                 </p>
-                <p className="font-technical text-[#FFD000] text-lg md:text-xl">
+                <p className="text-[#FFD000] text-lg md:text-xl">
                   contact@boringthinkers.com
                 </p>
               </div>
@@ -105,7 +105,7 @@ const ContactUs: React.FC = () => {
         </div>
 
         {/* Footer Bar
-        <div className="mt-24 pt-8 border-t border-dashed border-[#06110A]/15 flex flex-col sm:flex-row justify-between items-center gap-4 text-[#06110A]/50 font-technical text-[11px] font-bold uppercase tracking-[0.2em]">
+        <div className="mt-24 pt-8 border-t border-dashed border-[#06110A]/15 flex flex-col sm:flex-row justify-between items-center gap-4 text-[#06110A]/50 text-[11px] font-bold uppercase tracking-[0.2em]">
           <span>Boring Thinkers Limited</span>
           <span className="text-center sm:text-right">
             © {new Date().getFullYear()} • All Rights Reserved

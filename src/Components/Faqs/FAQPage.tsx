@@ -58,7 +58,7 @@ const FAQPage: React.FC = () => {
       />
 
       <div className="min-h-screen bg-white  selection:bg-[#FFD000] selection:text-[#050505]">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-5xl mx-auto  px-4">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -151,7 +151,7 @@ const FAQPage: React.FC = () => {
           </div>
 
           {/* Support Callout */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="mt-20 p-10 bg-gray-50 flex flex-col md:flex-row items-center justify-between gap-6"
@@ -162,7 +162,7 @@ const FAQPage: React.FC = () => {
             <button className="bg-[#050505] text-white px-8 py-4 font-black uppercase tracking-widest text-xs hover:bg-[#FFD000] hover:text-[#050505] transition-all">
               Contact Engineering
             </button>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>

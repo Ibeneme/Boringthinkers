@@ -27,7 +27,7 @@ const Team = () => {
       </div>
 
       <div className="max-w-5xl mx-auto text-center mb-20">
-        <h1 className="text-6xl md:text-7xl lg:text-[5.5rem] font-black leading-[0.9] tracking-tighter">
+        <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-black leading-[0.9] tracking-tighter">
           Built by thinkers.
           <br />
           Led by <span className="text-[#FFD000]">Sandra</span>.
@@ -71,7 +71,7 @@ const Team = () => {
               </div>
 
               {/* Right: Content */}
-              <div className="md:col-span-3 p-10 md:p-16 flex flex-col justify-center">
+              <div className="md:col-span-3 p-8 md:p-8 flex flex-col justify-center">
                 <div className="mb-8">
                   <span className="inline-block px-4 py-1.5 bg-[#FFD000] text-black text-xs font-black tracking-widest rounded-full mb-4">
                     CO - FOUNDER &amp; CEO
