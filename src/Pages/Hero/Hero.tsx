@@ -15,7 +15,7 @@ type TabId = "ts" | "rust" | "readme";
 const TABS: { id: TabId; label: string; dot: string }[] = [
   { id: "ts", label: "boring-thinkers.ts", dot: "#6ab0f3" },
   { id: "readme", label: "README.md", dot: "#9aa4b2" },
- // { id: "rust", label: "engine.rs", dot: "#ce6a3f" },
+  // { id: "rust", label: "engine.rs", dot: "#ce6a3f" },
 ];
 
 const MONO = { fontFamily: "'JetBrains Mono', monospace" };
@@ -103,11 +103,10 @@ export default function IDEHero() {
             className="py-2 text-5xl md:text-8xl lg:text-8xl font-bold tracking-[-1.5px] leading-[1.05] text-[#f0f3f7]"
             style={DISPLAY}
           >
-            Engineering{" "}
+           We Engineer{" "}
             <span className="bg-gradient-to-r from-[#ffd000] via-[#ffd000] to-[#ffd000] bg-clip-text text-transparent">
-              great softwares
+              great softwares.
             </span>{" "}
-            is what we do
           </h1>
 
           <p
