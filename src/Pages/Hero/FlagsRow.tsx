@@ -67,7 +67,7 @@ const FlagsRow: React.FC = () => {
               Our Clients’ Countries &amp;
               <br />
               <span className="relative inline-block text-[#048C04]">
-                Our Impact is Beyond Borders
+                Our Impact Beyond Borders
               </span>
             </h2>
 
