@@ -127,13 +127,13 @@ export default function IDEHero() {
             >
               Send us a mail →
             </button>
-            <button
+            {/* <button
               onClick={() => mailto("I have a mad idea")}
               className="rounded-full border border-[#1e2530] px-8 py-4 font-medium text-base text-[#d5dae3] hover:border-[#4ec9b0] hover:text-[#4ec9b0] active:scale-[0.985] transition-all duration-200"
               style={DISPLAY}
             >
               Pitch to us
-            </button>
+            </button> */}
           </div>
         </div>
 
