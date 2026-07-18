@@ -88,7 +88,7 @@ export default function IDEHero() {
         }}
       />
 
-      <div className="relative mx-auto max-w-6xl md:pt-[120px] pt-[60px]">
+      <div className="relative mx-auto max-w-7xl md:pt-[120px] pt-[60px]">
         {/* Headline */}
         <div className="mb-12 md:mb-16 text-left">
           {/* <div className="mx-auto md:mx-0 mb-6 inline-flex items-center gap-2 rounded-full bg-[#ffd00021] px-4 py-1 text-[16px] text-[#ffd000]">
