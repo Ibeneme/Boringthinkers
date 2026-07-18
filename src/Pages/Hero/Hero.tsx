@@ -15,7 +15,7 @@ type TabId = "ts" | "rust" | "readme";
 const TABS: { id: TabId; label: string; dot: string }[] = [
   { id: "ts", label: "boring-thinkers.ts", dot: "#6ab0f3" },
   { id: "readme", label: "README.md", dot: "#9aa4b2" },
-  { id: "rust", label: "engine.rs", dot: "#ce6a3f" },
+ // { id: "rust", label: "engine.rs", dot: "#ce6a3f" },
 ];
 
 const MONO = { fontFamily: "'JetBrains Mono', monospace" };
