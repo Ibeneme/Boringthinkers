@@ -105,7 +105,7 @@ export default function IDEHero() {
           >
             Engineering{" "}
             <span className="bg-gradient-to-r from-[#ffd000] via-[#ffd000] to-[#ffd000] bg-clip-text text-transparent">
-              great software
+              great softwares
             </span>{" "}
             is what we do
           </h1>
@@ -122,7 +122,7 @@ export default function IDEHero() {
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <button
               onClick={() => mailto("Let's build a project")}
-              className="rounded-full bg-[#ffd000] px-8 py-4 font-bold text-base text-[#0b0e14] hover:bg-[#ffdf4d] active:scale-[0.985] transition-all duration-200"
+              className="uppercase rounded-full bg-[#ffd000] px-8 py-4 font-bold text-base text-[#0b0e14] hover:bg-[#ffdf4d] active:scale-[0.985] transition-all duration-200"
               style={DISPLAY}
             >
               Send us a mail →
