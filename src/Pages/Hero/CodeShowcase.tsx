@@ -49,7 +49,7 @@ const Showcase = () => {
       </div>
 
       <div className="relative max-w-5xl text-left mb-12 md:mb-20 px-2">
-        <h1 className="text-6xl sm:text-6xl md:text-6xl lg:text-[6.2rem] font-black leading-[0.95] tracking-tighter">
+        <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-[6.2rem] font-black leading-[0.95] tracking-tighter">
           Building Softwares for{" "}
           <span className="text-[#FFD000]">Businesses</span>
         </h1>
