@@ -105,8 +105,9 @@ export default function IDEHero() {
           >
            We Engineer{" "}
             <span className="bg-gradient-to-r from-[#ffd000] via-[#ffd000] to-[#ffd000] bg-clip-text text-transparent">
-              great softwares.
+              great softwares
             </span>{" "}
+            & solutions.
           </h1>
 
           <p
