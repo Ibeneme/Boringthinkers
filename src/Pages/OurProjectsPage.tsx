@@ -5,7 +5,7 @@ import Showcase from "./Hero/CodeShowcase";
 const OurProjectsPage = () => {
   return (
     <div>
-      <BlogHero title={`Recent Engineerings`} />
+      <BlogHero title={`Recent Engineerings`} bgColor='#FFF' />
       <NewProjects />
       <Showcase />
     </div>
