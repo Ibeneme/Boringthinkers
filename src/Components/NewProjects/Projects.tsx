@@ -156,14 +156,14 @@ const ndaProjects: Project[] = [
     thumbnail: agip,
 
   },
-  {
-    id: 16,
-    title: "Colsphere",
-    role: "Collaborative Platform",
-    status: "Live",
-    thumbnail: csIcon,
+  // {
+  //   id: 16,
+  //   title: "Colsphere",
+  //   role: "Collaborative Platform",
+  //   status: "Live",
+  //   thumbnail: csIcon,
 
-  },
+  // },
 ];
 
 const toSlug = (title: string) =>
@@ -318,7 +318,7 @@ const NewProjects: React.FC = () => {
             </p>
           </div>
 
-          <div className="mt-10 grid grid-cols-3 rounded-2xl p-6 md:grid-cols-5 gap-6 bg-white border border-[#06110A]/10 shadow-sm">
+          <div className="mt-10 grid grid-cols-3 rounded-2xl p-6 md:grid-cols-4 gap-6 bg-white border border-[#06110A]/10 shadow-sm">
             {ndaProjects.map((project) => (
               <div
                 key={project.id}
