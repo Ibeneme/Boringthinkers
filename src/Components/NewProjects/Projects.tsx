@@ -1,14 +1,38 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
-import { ArrowDownRight } from "lucide-react";
+import { FaApple, FaGooglePlay } from "react-icons/fa";
+import { GitBranch } from "lucide-react";
 
-// Asset Imports
-import nexus from "../../assets/projects/nexus.png";
-import pickars from "../../assets/projects/pickars.png";
-import bulkup from "../../assets/projects/bulkup.png";
-import kraft from "../../assets/projects/kraft.png";
+export const IOS_URL = "https://apps.apple.com/ng/app/pickars/id6746796884";
+export const ANDROID_URL =
+  "https://play.google.com/store/apps/details?id=com.pickars.app&hl=en";
+
+import pickars from "../../assets/projects/new-pickars.png";
+import pickarsapp from "../../assets/projects/content_e.png";
 import yare from "../../assets/projects/yare.png";
+import koko from "../../assets/projects/koko.png";
+import ariad from "../../assets/projects/ariad.png";
+import voted from "../../assets/projects/voted.png";
+import rivers from "../../assets/projects/image.png";
+import total from "../../assets/projects/total.png";
+
+/**
+ * DESIGN NOTE
+ * This version leans fully into a code-editor aesthetic. It assumes
+ * `font-brand` and `font-technical` are wired up in tailwind.config.js.
+ * For the intended effect, point BOTH at a monospace family, e.g.:
+ *   font-brand      -> "JetBrains Mono", monospace  (headline, bold)
+ *   font-technical  -> "JetBrains Mono", monospace  (labels, UI, body)
+ * If you want a touch more readability in longer copy, swap font-technical
+ * for "IBM Plex Mono" or keep a sans like "Inter" there instead — both work.
+ */
+
+interface ProjectLink {
+  label: "App Store" | "Google Play" | "View Website";
+  url: string;
+  icon?: React.ReactNode;
+}
 
 interface Project {
   id: number;
@@ -16,20 +40,13 @@ interface Project {
   role: string;
   status: string;
   thumbnail: string;
-  url: string;
+  url?: string;
+  links?: ProjectLink[];
 }
 
 const sampleProjects: Project[] = [
   {
-    id: 91,
-    title: "CloneKraft",
-    role: "Digital Brand Identity",
-    status: "Live",
-    thumbnail: kraft,
-    url: "http://www.clonekraft.com/",
-  },
-  {
-    id: 92,
+    id: 1,
     title: "Yare Heights",
     role: "Academic Learning Hub",
     status: "Live",
@@ -38,139 +55,317 @@ const sampleProjects: Project[] = [
   },
   {
     id: 2,
-    title: "Pickars",
-    role: "Logistics & Delivery",
+    title: "Pickars Website",
+    role: "Web - Logistics",
     status: "Live",
     thumbnail: pickars,
     url: "http://pickars.com/",
   },
   {
     id: 3,
-    title: "Bulkupdata",
-    role: "SME Fintech Platform",
+    title: "Pickars Mobile App",
+    role: "Mobile App - Logistics",
     status: "Live",
-    thumbnail: bulkup,
-    url: "https://www.bulkupdata.com/",
+    thumbnail: pickarsapp,
+    links: [
+      { label: "App Store", url: IOS_URL, icon: <FaApple size={15} /> },
+      {
+        label: "Google Play",
+        url: ANDROID_URL,
+        icon: <FaGooglePlay size={15} />,
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "KokoHor Circle",
+    role: "Brand & Web Experience",
+    status: "Live",
+    thumbnail: koko,
+    url: "https://www.kokohorcircle.com/",
   },
   {
     id: 5,
-    title: "Nexus Music",
-    role: "Music Publishing",
+    title: "Ariad Psych Services",
+    role: "Mental Health Platform",
     status: "Live",
-    thumbnail: nexus,
-    url: "https://www.nexusmusicpublishing.com/",
+    thumbnail: ariad,
+    url: "https://www.ariadpsychservices.com/",
+  },
+  {
+    id: 6,
+    title: "Votedamarcus",
+    role: "Campaign Website",
+    status: "Live",
+    thumbnail: voted,
+    url: "https://www.votedamarcus.com/",
   },
 ];
 
-// Fixed tilt per case tag — same device as the passport stamps, kept stable.
-const tilts = [-3, 2, -2, 3, -4];
+const ndaProjects: Project[] = [
+  {
+    id: 7,
+    title: "Rivers State Government",
+    role: "Public Sector Platform",
+    status: "Live",
+    thumbnail: rivers,
+  },
+  {
+    id: 8,
+    title: "TotalEnergies",
+    role: "Corporate Web Platform",
+    status: "Live",
+    thumbnail: total,
+  },
+];
+
+const toSlug = (title: string) =>
+  title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+
+const EditorChrome: React.FC<{ filename: string }> = ({ filename }) => (
+  <div className="flex items-center gap-2 px-4 py-2.5 bg-[#06110A] border border-[#ffffff30] rounded-t-lg">
+    <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]" />
+    <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]" />
+    <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F]" />
+    <span className="ml-3 font-technical text-xs text-[#6E7681]">
+      {filename}
+    </span>
+  </div>
+);
+
+const CaseFileMedia: React.FC<{ project: Project }> = ({ project }) => (
+  <div className="relative bg-[#161B22] border border-[#30363D] border-t-0 rounded-b-lg overflow-hidden">
+    <div className="relative aspect-[4/3] overflow-hidden">
+      {/* line-number gutter */}
+      <div className="absolute left-0 top-0 bottom-0 w-8 bg-[#011404]/80 backdrop-blur-sm border-r border-[#30363D] flex flex-col items-center pt-3 gap-[6px] z-10">
+        {Array.from({ length: 8 }).map((_, i) => (
+          <span key={i} className="font-technical text-[10px] text-[#484F58]">
+            {String(i + 1).padStart(2, "0")}
+          </span>
+        ))}
+      </div>
+
+      <img
+        src={project.thumbnail}
+        alt={`Screenshot of ${project.title}`}
+        loading="lazy"
+        decoding="async"
+        className="w-full h-full object-cover pl-8 transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+      />
+
+      <div className="absolute top-3 right-3 flex items-center gap-1.5 bg-[#011404]/90 border border-[#30363D] rounded-full px-3 py-1">
+        <span className="relative flex h-2 w-2">
+          <span className="pulse-dot absolute inline-flex h-full w-full rounded-full bg-[#3FB950] opacity-75" />
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-[#3FB950]" />
+        </span>
+        <GitBranch size={11} className="text-[#3FB950]" />
+        <span className="font-technical text-[11px] text-[#3FB950]">main</span>
+      </div>
+    </div>
+  </div>
+);
+
+const CardMeta: React.FC<{ project: Project }> = ({ project }) => (
+  <div className="mt-5 px-1">
+    <p className="font-technical text-xs text-[#6E7681]">
+      <span className="text-[#484F58]">// </span>
+      {project.role}
+    </p>
+    <h3 className="text-2xl font-brand font-bold tracking-tight mt-1.5 mb-4 text-[#C9D1D9] group-hover:text-[#D2A8FF] transition-colors duration-300">
+      {project.title}
+    </h3>
+  </div>
+);
+
+const ActionButton: React.FC<{ link: ProjectLink; projectTitle: string }> = ({
+  link,
+  projectTitle,
+}) => (
+  <a
+    href={link.url}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label={`${link.label} ${projectTitle}`}
+    className="flex-1 flex items-center justify-center gap-2 bg-[#ffffff12]  text-[#fff] py-4 px-5 rounded-full font-technical text-[16px] font-semibold tracking-wide transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#011404] focus-visible:ring-[#3FB950]"
+  >
+    {link.icon && <span aria-hidden="true">{link.icon}</span>}
+    <span>{link.label}</span>
+    {!link.icon && <FiArrowUpRight size={14} />}
+  </a>
+);
 
 const NewProjects: React.FC = () => {
+  const shouldReduceMotion = useReducedMotion();
+
+  const revealMotion = (index: number) => ({
+    initial: shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 28 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, margin: "-40px" },
+    transition: {
+      duration: 0.5,
+      ease: "easeOut" as const,
+      delay: shouldReduceMotion ? 0 : (index % 2) * 0.08,
+    },
+  });
+
   return (
-    <section className="relative bg-[#FAFAF6] py-32 px-6 md:px-20 text-[#06110A] overflow-hidden">
-      {/* Shared brand type system */}
+    <section className="relative bg-[#011404] py-32 px-6 md:px-20 text-[#C9D1D9] overflow-hidden">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Space+Mono:wght@400;700&display=swap');
-        .font-editorial { font-family: 'Instrument Serif', serif; font-style: italic; }
-        .font-technical { font-family: 'Space Mono', monospace; }
+        @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+        @keyframes pulseDot { 0% { transform: scale(1); opacity: 0.75; } 100% { transform: scale(2.2); opacity: 0; } }
+        .cursor-blink { animation: blink 1s step-end infinite; }
+        .pulse-dot { animation: pulseDot 1.6s ease-out infinite; }
       `}</style>
 
-      {/* Faint graph-paper texture, consistent with the rest of the site */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.05]"
+        className="absolute inset-0 pointer-events-none opacity-[0.04]"
         style={{
           backgroundImage:
-            "linear-gradient(#06110A 1px, transparent 1px), linear-gradient(90deg, #06110A 1px, transparent 1px)",
+            "linear-gradient(#FFD000 1px, transparent 1px), linear-gradient(90deg, #FFD000 1px, transparent 1px)",
           backgroundSize: "40px 40px",
         }}
       />
 
-      {/* Header Section */}
-      <div className="relative max-w-7xl mx-auto mb-32 flex flex-col md:flex-row justify-between items-start md:items-end gap-10">
-        <div className="space-y-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-4 bg-[#06110A] py-2 pl-6 pr-2 rounded-full"
-          >
-            <span className="font-technical text-[10px] font-bold tracking-[0.3em] uppercase text-[#FFD000]">
-              Case Files
-            </span>
-            <div className="bg-[#FFD000] p-2.5 rounded-full text-[#06110A]">
-              <ArrowDownRight size={16} strokeWidth={3} />
-            </div>
-          </motion.div>
+      {/* faint dot-grid, like an editor minimap */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none opacity-[0.15]"
+        style={{
+          backgroundImage: "radial-gradient(#30363D 1px, transparent 1px)",
+          backgroundSize: "22px 22px",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="absolute -top-40 right-0 w-[500px] h-[500px] rounded-full bg-[#D2A8FF] opacity-[0.06] blur-[120px] pointer-events-none"
+      />
 
-          <h2 className="text-7xl md:text-9xl font-black tracking-tighter leading-none uppercase">
-            Recent
-            <br />
-            <span className="relative inline-block">
-              Projects.
-              <span className="absolute left-0 -bottom-2 w-full h-[3px] bg-[#FFD000]" />
-            </span>
-          </h2>
+      <div className="relative max-w-7xl mx-auto mb-24">
+        <div className="flex items-center gap-2 mb-6 font-technical text-sm text-[#6E7681]">
+          <span className="text-[#3FB950]">user@studio</span>
+          <span>:</span>
+          <span className="text-[#79C0FF]">~/work</span>
+          <span>$ cat portfolio.ts</span>
         </div>
 
-        <p className=" max-w-md text-xl text-[#06110A]/70 leading-snug">
-          Design-led engineering for scalable digital products — the record,
-          2025 to 2026.
+        <h2 className="text-5xl md:text-7xl font-brand font-bold tracking-tight leading-tight">
+          <span className="text-[#FF7B72]">export const</span>{" "}
+          <span className="text-[#D2A8FF]">recent works</span>{" "}
+          <span className="text-[#C9D1D9]">= {"{"}</span>
+          <span
+            aria-hidden="true"
+            className={`inline-block w-[3px] h-[0.85em] bg-[#3FB950] ml-2 align-middle ${
+              shouldReduceMotion ? "" : "cursor-blink"
+            }`}
+          />
+        </h2>
+
+        <p className="mt-6 max-w-xl font-technical text-sm text-[#6E7681] pl-6 border-l-2 border-[#30363D]">
+          <span className="text-[#484F58]">/* </span>
+          thoughtful engineering, shipped and running in production
+          <span className="text-[#484F58]"> */</span>
+          <br />
+          <span className="text-[#484F58]">// record: 2025 – 2026</span>
         </p>
       </div>
 
-      {/* Projects Grid */}
-      <div className="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24">
-        {sampleProjects.map((project, index) => (
-          <motion.a
-            key={project.id}
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className={`group block ${
-              index % 2 !== 0 ? "md:mt-24" : "md:mt-0"
-            }`}
-          >
-            <div className="relative overflow-hidden mb-8 bg-gray-200 aspect-[4/3] border-2 border-[#06110A]/10 group-hover:border-[#D7301F]/60 transition-colors duration-500">
-              <img
-                src={project.thumbnail}
-                alt={project.title}
-                className="w-full h-full object-cover grayscale-[40%] transition-all duration-1000 scale-100 group-hover:scale-105 group-hover:grayscale-0"
-              />
+      {/* Primary Projects Grid */}
+      <ul className="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-16 list-none p-0 m-0 pl-0 md:pl-6">
+        {sampleProjects.map((project, index) => {
+          const hasLinks = !!project.links?.length;
+          const hasUrl = !!project.url;
 
-              {/* Case tag — a stamped file number, not a decorative index */}
-              <div
-                className="absolute top-6 left-6 bg-[#FAFAF6] border-2 border-[#06110A] px-3 py-1 font-technical text-[10px] font-bold uppercase tracking-[0.2em]"
-                style={{
-                  transform: `rotate(${tilts[index % tilts.length]}deg)`,
-                }}
-              >
-                Case N°0{index + 1}
+          const displayLinks = hasLinks
+            ? project.links!
+            : hasUrl
+            ? [{ label: "Visit Website" as const, url: project.url! }]
+            : [];
+
+          return (
+            <motion.li key={project.id} {...revealMotion(index)}>
+              <div className="group block">
+                <EditorChrome filename={`${toSlug(project.title)}.tsx`} />
+                <CaseFileMedia project={project} />
+                <CardMeta project={project} />
+
+                {displayLinks.length > 0 && (
+                  <div className="flex flex-col sm:flex-row gap-2.5 mt-6 px-1">
+                    {displayLinks.map((link) => (
+                      <ActionButton
+                        key={link.label}
+                        link={link}
+                        projectTitle={project.title}
+                      />
+                    ))}
+                  </div>
+                )}
               </div>
+            </motion.li>
+          );
+        })}
+      </ul>
 
-              {/* Status stamp */}
-              <div className="absolute top-6 right-6 bg-[#FFD000] text-[#06110A] px-3 py-1 font-technical text-[10px] font-bold uppercase tracking-[0.2em]">
-                {project.status}
-              </div>
+      {/* NDA Section, styled as restricted/redacted logs */}
+      <motion.div
+        initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="relative max-w-7xl mx-auto mt-32 mb-16 pl-0 md:pl-6"
+      >
+        <div className="flex items-center gap-2 mb-4 font-technical text-sm text-[#6E7681]">
+          <span className="text-[#3FB950]">user@studio</span>
+          <span>:</span>
+          <span className="text-[#79C0FF]">~/work</span>
+          <span>$ cat ./sealed/*.log</span>
+        </div>
 
-              <div className="absolute bottom-6 right-6 bg-[#06110A] text-white p-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-                <FiArrowUpRight size={24} />
+        <div className="max-w-4xl">
+          <h3 className="text-4xl md:text-6xl font-brand font-bold tracking-tight text-[#ffd000]">
+            <span className="text-[#ffd000]">// </span>
+            Top companies we've built for
+          </h3>
+          <p className="mt-3 text-sm font-technical text-[#6E7681] max-w-2xl">
+            NDA on file. Hover a log to peek — names stay redacted either way.
+          </p>
+        </div>
+
+        <div className="mt-10 grid grid-cols-1 rounded-lg  p-5 md:grid-cols-3 gap-6 bg-[#fff]">
+          {ndaProjects.map((project) => (
+            <div key={project.id} className="group relative  overflow-hidden">
+              {/* <div className="flex items-center gap-2 px-4 py-2.5 border-b border-[#30363D]">
+                <Lock size={12} className="text-[#D29922]" />
+                <span className="font-technical text-xs text-[#D29922]">
+                  ACCESS RESTRICTED
+                </span>
+              </div> */}
+              <div className="relative aspect-video overflow-hidden">
+                <img
+                  src={project.thumbnail}
+                  alt={`Screenshot of ${project.title}`}
+                  width={400}
+                  height={300}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover  transition-all duration-500"
+                />
               </div>
             </div>
+          ))}
+        </div>
+      </motion.div>
 
-            <div>
-              <span className="block font-technical text-[10px] font-bold uppercase tracking-widest text-[#06110A]/50 mb-2">
-                {project.role}
-              </span>
-              <h3 className="text-3xl font-bold tracking-tight text-[#06110A] uppercase transition-colors duration-300 group-hover:text-[#D7301F]">
-                {project.title}
-              </h3>
-            </div>
-          </motion.a>
-        ))}
+      <div className="relative max-w-7xl mx-auto pl-0 md:pl-6">
+        <span className="font-brand font-bold text-3xl text-[#C9D1D9]">
+          {"}"}
+        </span>
+        <span className="font-technical text-lg text-[#6E7681]">
+          {" "}
+          satisfies Project[];
+        </span>
       </div>
     </section>
   );

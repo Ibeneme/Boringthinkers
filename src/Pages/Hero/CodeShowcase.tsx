@@ -24,7 +24,7 @@ const Showcase = () => {
   const [activeMobileTab, setActiveMobileTab] = useState(0);
 
   return (
-    <section className="relative bg-[#06110A] py-16 md:py-24 lg:py-32 px-4 md:px-6 text-white overflow-hidden">
+    <section className="relative bg-[#011404] py-16 md:py-24 lg:py-32 px-4 md:px-6 text-white overflow-hidden">
       {/* Fonts */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Space+Mono:wght@400;700&display=swap');

@@ -103,7 +103,7 @@ export default function IDEHero() {
             className="py-2 text-5xl md:text-8xl lg:text-8xl font-bold tracking-[-1.5px] leading-[1.05] text-[#f0f3f7]"
             style={DISPLAY}
           >
-           We Engineer{" "}
+           We engineer{" "}
             <span className="bg-gradient-to-r from-[#ffd000] via-[#ffd000] to-[#ffd000] bg-clip-text text-transparent">
               great softwares
             </span>{" "}

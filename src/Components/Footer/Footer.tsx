@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <section className="relative bg-[#06110A] text-white overflow-hidden">
+    <section className="relative bg-[#011404] text-white overflow-hidden">
       {/* Shared brand type system */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Space+Mono:wght@400;700&display=swap');
@@ -82,7 +82,7 @@ const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="p-4 rounded-full border border-white/10 bg-white/5 hover:bg-[#FFD000] hover:border-[#FFD000] hover:text-[#06110A] transition-all duration-300"
+                  className="p-4 rounded-full border border-white/10 bg-white/5 hover:bg-[#FFD000] hover:border-[#FFD000] hover:text-[#011404] transition-all duration-300"
                 >
                   <Icon size={20} />
                 </a>
@@ -91,7 +91,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Quick Links */}
-          <nav className="lg:col-span-5 bg-[#FFD000] text-[#06110A] p-10 rounded-2xl">
+          <nav className="lg:col-span-5 bg-[#FFD000] text-[#011404] p-10 rounded-2xl">
             <h4 className="font-technical font-bold text-[11px] uppercase opacity-70 mb-8">
               VISIT ALSO
             </h4>
@@ -102,7 +102,7 @@ const Footer: React.FC = () => {
                   to={item.path}
                   className="group flex items-baseline gap-3 hover:translate-x-2 transition-transform duration-300"
                 >
-                  <span className="font-technical text-xs text-[#06110A]/40">
+                  <span className="font-technical text-xs text-[#011404]/40">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <span className="text-xl font-black uppercase tracking-tighter">
