@@ -28,7 +28,7 @@ const Team = () => {
 
       <div className="max-w-5xl mx-auto text-center mb-20">
         <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-black leading-[0.9] tracking-tighter">
-          Built by thinkers.
+          Built by Thinkers.
           <br />
           Led by <span className="text-[#FFD000]">Sandra</span>.
         </h1>
