@@ -1,13 +1,15 @@
+import WhatWeBuild from "../Components/AccordionSection/Whatwebuild";
 import BlogHero from "../Components/BlogHero/BlogHero";
 import NewProjects from "../Components/NewProjects/Projects";
-import Showcase from "./Hero/CodeShowcase";
+// import Showcase from "./Hero/CodeShowcase";
 
 const OurProjectsPage = () => {
   return (
     <div>
-      <BlogHero title={`Recent Engineerings`} bgColor='#FFF' />
+      <BlogHero title={`Recent Engineerings`} />
       <NewProjects />
-      <Showcase />
+      {/* <Showcase /> */}
+      <WhatWeBuild />
     </div>
   );
 };

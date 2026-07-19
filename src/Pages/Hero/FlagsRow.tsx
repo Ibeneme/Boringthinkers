@@ -2,16 +2,36 @@ import React from "react";
 import { motion, Variants } from "framer-motion";
 import ReactCountryFlag from "react-country-flag";
 
-const flags = [
+interface FlagEntry {
+  code: string;
+  name: string;
+  // true = only shown on md+ screens (web); hidden on mobile
+  extra?: boolean;
+}
+
+const flags: FlagEntry[] = [
   { code: "NG", name: "Nigeria" },
   { code: "CA", name: "Canada" },
   { code: "US", name: "United States" },
   { code: "GH", name: "Ghana" },
-  { code: "KE", name: "Kenya" },
   { code: "NL", name: "Netherlands" },
   { code: "GB", name: "United Kingdom" },
-  { code: "IL", name: "Israel" },
   { code: "CH", name: "Switzerland" },
+  { code: "DE", name: "Germany" },
+  ,
+  { code: "AU", name: "Australia" },
+  // { code: "NZ", name: "New Zealand", },
+
+  // --- Shown on web, hidden on mobile ---
+  { code: "TZ", name: "Tanzania", extra: true },
+  { code: "IN", name: "India", extra: true },
+  { code: "KE", name: "Kenya", extra: true },
+
+  // { code: "GB-WLS", name: "Wales", extra: true },
+  // { code: "GB-SCT", name: "Scotland", extra: true },
+  // { code: "AE", name: "Dubai (UAE)", extra: true },
+  // { code: "ES", name: "Spain", extra: true },
+  // { code: "IT", name: "Italy",extra: true }
 ];
 
 const tilts = [-4, 3, -6, 5, -2, 4, -5, 3, -4];
@@ -31,7 +51,7 @@ const FlagsRow: React.FC = () => {
       opacity: 1,
       y: 0,
       scale: 1,
-      rotate: tilts[custom],
+      rotate: tilts[custom % tilts.length],
       transition: { duration: 0.45, ease: "easeOut" },
     }),
   };
@@ -64,10 +84,10 @@ const FlagsRow: React.FC = () => {
             </span>
 
             <h2 className="text-5xl md:text-7xl font-black text-[#06110A] tracking-[-0.05em] leading-[0.85]">
-              Our Clients’ Countries &amp;
+              Our Clients’ Countries 
               <br />
               <span className="relative inline-block text-[#048C04]">
-                Our Impact Beyond Borders
+                Building across borders.
               </span>
             </h2>
 
@@ -90,14 +110,16 @@ const FlagsRow: React.FC = () => {
             {/* Dotted route line */}
             <div className="absolute left-0 right-0 top-[38px] border-t-2 border-dashed border-[#06110A]/15 -z-0" />
 
-            {flags.map(({ code, name }, i) => (
+            {flags.map(({ code, name, extra }, i) => (
               <motion.div
                 key={code}
                 custom={i}
                 variants={stampVariants}
                 whileHover={{ rotate: 0, y: -4, scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300, damping: 15 }}
-                className="relative z-10 flex flex-col items-center gap-3 group cursor-default"
+                className={`relative z-10 ${
+                  extra ? "hidden md:flex" : "flex"
+                } flex-col items-center gap-3 group cursor-default`}
               >
                 <div className="w-16 h-16 md:w-24 md:h-24 rounded-full border-2 border-dashed border-[#06110A]/40 bg-white flex items-center justify-center overflow-hidden shadow-sm transition-colors duration-300 group-hover:border-[#D7301F]">
                   <ReactCountryFlag

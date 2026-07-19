@@ -3,7 +3,12 @@ import { motion, useReducedMotion } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
 import { GitBranch } from "lucide-react";
-
+import PickarIcon from "../../assets/projects/icon.png";
+import KokoIcon from "../../assets/projects/kokoicon.png";
+import csIcon from "../../assets/projects/csicon.png";
+import yareicon from "../../assets/projects/yareicon.png";
+import agip from "../../assets/projects/agip.png";
+//agip
 export const IOS_URL = "https://apps.apple.com/ng/app/pickars/id6746796884";
 export const ANDROID_URL =
   "https://play.google.com/store/apps/details?id=com.pickars.app&hl=en";
@@ -16,13 +21,9 @@ import ariad from "../../assets/projects/ariad.png";
 import voted from "../../assets/projects/voted.png";
 import rivers from "../../assets/projects/image.png";
 import total from "../../assets/projects/total.png";
-import cols from "../../assets/projects/cols.png"; // Imported Colsphere thumbnail
-
-/**
- * DESIGN NOTE
- * This version leans fully into a code-editor aesthetic. It assumes
- * `font-brand` and `font-technical` are wired up in tailwind.config.js.
- */
+import cols from "../../assets/projects/cols.png";
+import afdb from "../../assets/projects/afdb.png";
+//afdb
 
 interface ProjectLink {
   label: "App Store" | "Google Play" | "Visit Website";
@@ -96,14 +97,14 @@ const sampleProjects: Project[] = [
     thumbnail: ariad,
     url: "https://www.ariadpsychservices.com/",
   },
-  {
-    id: 7,
-    title: "Votedamarcus",
-    role: "Campaign Website",
-    status: "Live",
-    thumbnail: voted,
-    url: "https://www.votedamarcus.com/",
-  },
+  // {
+  //   id: 7,
+  //   title: "Votedamarcus",
+  //   role: "Campaign Website",
+  //   status: "Live",
+  //   thumbnail: voted,
+  //   url: "https://www.votedamarcus.com/",
+  // },
 ];
 
 const ndaProjects: Project[] = [
@@ -120,6 +121,52 @@ const ndaProjects: Project[] = [
     role: "Corporate Web Platform",
     status: "Live",
     thumbnail: total,
+  },
+  // {
+  //   id: 10,
+  //   title: "Yare Heights",
+  //   role: "Academic Learning Hub",
+  //   status: "Live",
+  //   thumbnail: yareicon,
+  // },
+  // {
+  //   id: 11,
+  //   title: "KokoHor Circle",
+  //   role: "Logistics Platform",
+  //   status: "Brand & Web Experience",
+  //   thumbnail: KokoIcon,
+  // },
+  // {
+  //   id: 2,
+  //   title: "Pickars Website",
+  //   role: "Web - Logistics",
+  //   status: "Live",
+  //   thumbnail: PickarIcon,
+
+  // },afdb
+  {
+    id: 14,
+    title: "Afdb",
+    role: "Afdb",
+    status: "Live",
+    thumbnail: afdb,
+
+  },
+  {
+    id: 15,
+    title: "Agip",
+    role: "Agip",
+    status: "Live",
+    thumbnail: agip,
+
+  },
+  {
+    id: 16,
+    title: "Colsphere",
+    role: "Collaborative Platform",
+    status: "Live",
+    thumbnail: csIcon,
+
   },
 ];
 
@@ -143,7 +190,6 @@ const EditorChrome: React.FC<{ filename: string }> = ({ filename }) => (
 const CaseFileMedia: React.FC<{ project: Project }> = ({ project }) => (
   <div className="relative bg-[#161B22] border border-[#30363D] border-t-0 rounded-b-lg overflow-hidden">
     <div className="relative aspect-[4/3] overflow-hidden">
-      {/* line-number gutter */}
       <div className="absolute left-0 top-0 bottom-0 w-8 bg-[#011404]/80 backdrop-blur-sm border-r border-[#30363D] flex flex-col items-center pt-3 gap-[6px] z-10">
         {Array.from({ length: 8 }).map((_, i) => (
           <span key={i} className="font-technical text-[10px] text-[#484F58]">
@@ -216,7 +262,7 @@ const NewProjects: React.FC = () => {
   });
 
   return (
-    <section className="relative bg-[#011404] py-32 px-6 md:px-20 text-[#C9D1D9] overflow-hidden">
+    <>
       <style>{`
         @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
         @keyframes pulseDot { 0% { transform: scale(1); opacity: 0.75; } 100% { transform: scale(2.2); opacity: 0; } }
@@ -224,147 +270,181 @@ const NewProjects: React.FC = () => {
         .pulse-dot { animation: pulseDot 1.6s ease-out infinite; }
       `}</style>
 
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.04]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#FFD000 1px, transparent 1px), linear-gradient(90deg, #FFD000 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-        }}
-      />
+      {/* 1. TOP COMPANIES SECTION (White Background) */}
+      <section className="relative bg-[#FAFAF6] py-24 px-6 md:px-20 overflow-hidden border-b border-[#06110A]/10">
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.03]"
+          style={{
+            backgroundImage:
+              "linear-gradient(#06110A 1px, transparent 1px), linear-gradient(90deg, #06110A 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+          }}
+        />
 
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 pointer-events-none opacity-[0.15]"
-        style={{
-          backgroundImage: "radial-gradient(#30363D 1px, transparent 1px)",
-          backgroundSize: "22px 22px",
-        }}
-      />
-      <div
-        aria-hidden="true"
-        className="absolute -top-40 right-0 w-[500px] h-[500px] rounded-full bg-[#D2A8FF] opacity-[0.06] blur-[120px] pointer-events-none"
-      />
+        <motion.div
+          initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="relative max-w-7xl mx-auto pl-0 md:pl-6"
+        >
+          <div className="flex items-center gap-2 mb-4 font-technical text-sm text-[#06110A]/50">
+            <span className="text-[#048C04]">contact@boringthinkers.com</span>
+            {/* <span>:</span>
+            <span className="text-[#0A2540]">~/work</span>
+            <span>$ cat ./sealed/*.log</span> */}
+          </div>
 
-      <div className="relative max-w-7xl mx-auto mb-24">
-        <div className="flex items-center gap-2 mb-6 font-technical text-sm text-[#6E7681]">
-          <span className="text-[#3FB950]">user@studio</span>
-          <span>:</span>
-          <span className="text-[#79C0FF]">~/work</span>
-          <span>$ cat portfolio.ts</span>
-        </div>
+          {/* <div className="max-w-4xl">
+            <h3 className="text-4xl md:text-6xl font-brand font-bold tracking-tight text-[#06110A]">
+              {/* <span className="text-[#048C04]">// </span> 
+              Top companies we've built for
+            </h3>
+            <p className="mt-3 text-sm font-technical text-[#06110A]/60 max-w-2xl">
+              NDA on file. Hover a log to peek — names stay redacted either way.
+            </p>
+          </div> */}
 
-        <h2 className="text-5xl md:text-7xl font-brand font-bold tracking-tight leading-tight">
-          <span className="text-[#FF7B72]">export const</span>{" "}
-          <span className="text-[#D2A8FF]">recent works</span>{" "}
-          <span className="text-[#C9D1D9]">= {"{"}</span>
-          <span
-            aria-hidden="true"
-            className={`inline-block w-[3px] h-[0.85em] bg-[#3FB950] ml-2 align-middle ${
-              shouldReduceMotion ? "" : "cursor-blink"
-            }`}
-          />
-        </h2>
+          <div className="max-w-4xl">
+            <span className="font-technical text-xs font-bold tracking-[0.4em] bg-[#FFD000] px-2 py-0.5 rounded">
+              SEALED FILES
+            </span>
+            <h3 className="text-5xl md:text-7xl font-brand font-black tracking-tight mt-4">
+              Top Companies we've Engineered Solutions for.
+            </h3>
+            <p className="mt-4 text-lg font-medium">
+              Several projects were completed under{" "}
+              <strong>NDA (Non-Disclosure Agreement)</strong>. These are
+              confidential partnerships where we delivered solutions for major
+              organizations. While the work exists and continues to power
+              important systems, the names and specific details remain sealed
+              due to strict confidentiality agreements. But the companies are
+            </p>
+          </div>
 
-        <p className="mt-6 max-w-xl font-technical text-sm text-[#6E7681] pl-6 border-l-2 border-[#30363D]">
-          <span className="text-[#484F58]">/* </span>
-          thoughtful engineering, shipped and running in production
-          <span className="text-[#484F58]"> */</span>
-          <br />
-          <span className="text-[#484F58]">// record: 2025 – 2026</span>
-        </p>
-      </div>
-
-      {/* Primary Projects Grid */}
-      <ul className="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-16 list-none p-0 m-0 pl-0 md:pl-6">
-        {sampleProjects.map((project, index) => {
-          const hasLinks = !!project.links?.length;
-          const hasUrl = !!project.url;
-
-          const displayLinks = hasLinks
-            ? project.links!
-            : hasUrl
-            ? [{ label: "Visit Website" as const, url: project.url! }]
-            : [];
-
-          return (
-            <motion.li key={project.id} {...revealMotion(index)}>
-              <div className="group block">
-                <EditorChrome filename={`${toSlug(project.title)}.tsx`} />
-                <CaseFileMedia project={project} />
-                <CardMeta project={project} />
-
-                {displayLinks.length > 0 && (
-                  <div className="flex flex-col sm:flex-row gap-2.5 mt-6 px-1">
-                    {displayLinks.map((link) => (
-                      <ActionButton
-                        key={link.label}
-                        link={link}
-                        projectTitle={project.title}
-                      />
-                    ))}
-                  </div>
-                )}
+          <div className="mt-10 grid grid-cols-3 rounded-2xl p-6 md:grid-cols-5 gap-6 bg-white border border-[#06110A]/10 shadow-sm">
+            {ndaProjects.map((project) => (
+              <div
+                key={project.id}
+                className="group relative overflow-hidden rounded-xl"
+              >
+                <div className="relative aspect-video overflow-hidden">
+                  <img
+                    src={project.thumbnail}
+                    alt={`Screenshot of ${project.title}`}
+                    width={400}
+                    height={300}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover transition-all duration-500 "
+                  />
+                </div>
               </div>
-            </motion.li>
-          );
-        })}
-      </ul>
+            ))}
+          </div>
+        </motion.div>
+      </section>
 
-      {/* NDA Section */}
-      <motion.div
-        initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-        className="relative max-w-7xl mx-auto mt-32 mb-16 pl-0 md:pl-6"
-      >
-        <div className="flex items-center gap-2 mb-4 font-technical text-sm text-[#6E7681]">
-          <span className="text-[#3FB950]">user@studio</span>
-          <span>:</span>
-          <span className="text-[#79C0FF]">~/work</span>
-          <span>$ cat ./sealed/*.log</span>
-        </div>
+      {/* 2. RECENT PROJECTS SECTION (Maintains Dark Background) */}
+      <section className="relative bg-[#011404] py-32 px-6 md:px-20 text-[#C9D1D9] overflow-hidden">
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.04]"
+          style={{
+            backgroundImage:
+              "linear-gradient(#FFD000 1px, transparent 1px), linear-gradient(90deg, #FFD000 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+          }}
+        />
 
-        <div className="max-w-4xl">
-          <h3 className="text-4xl md:text-6xl font-brand font-bold tracking-tight text-[#ffd000]">
-            <span className="text-[#ffd000]">// </span>
-            Top companies we've built for
-          </h3>
-          <p className="mt-3 text-sm font-technical text-[#6E7681] max-w-2xl">
-            NDA on file. Hover a log to peek — names stay redacted either way.
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none opacity-[0.15]"
+          style={{
+            backgroundImage: "radial-gradient(#30363D 1px, transparent 1px)",
+            backgroundSize: "22px 22px",
+          }}
+        />
+        <div
+          aria-hidden="true"
+          className="absolute -top-40 right-0 w-[500px] h-[500px] rounded-full bg-[#D2A8FF] opacity-[0.06] blur-[120px] pointer-events-none"
+        />
+
+        <div className="relative max-w-7xl mx-auto mb-24">
+          <div className="flex items-center gap-2 mb-6 font-technical text-sm text-[#6E7681]">
+            <span className="text-[#3FB950]">user@studio</span>
+            <span>:</span>
+            <span className="text-[#79C0FF]">~/work</span>
+            <span>$ cat portfolio.ts</span>
+          </div>
+
+          <h2 className="text-5xl md:text-7xl font-brand font-bold tracking-tight leading-tight">
+            <span className="text-[#FF7B72]">Our Most</span>{" "}
+            <span className="text-[#D2A8FF]">Recent works</span>{" "}
+            <span className="text-[#C9D1D9]">= {"{"}</span>
+            <span
+              aria-hidden="true"
+              className={`inline-block w-[3px] h-[0.85em] bg-[#3FB950] ml-2 align-middle ${
+                shouldReduceMotion ? "" : "cursor-blink"
+              }`}
+            />
+          </h2>
+
+          <p className="mt-6 max-w-xl font-technical text-sm text-[#6E7681] pl-6 border-l-2 border-[#30363D]">
+            <span className="text-[#484F58]">/* </span>
+            thoughtful engineering, shipped and running in production
+            <span className="text-[#484F58]"> */</span>
+            <br />
+            <span className="text-[#484F58]">// record: 2025 – 2026</span>
           </p>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 rounded-lg p-5 md:grid-cols-3 gap-6 bg-[#fff]">
-          {ndaProjects.map((project) => (
-            <div key={project.id} className="group relative overflow-hidden">
-              <div className="relative aspect-video overflow-hidden">
-                <img
-                  src={project.thumbnail}
-                  alt={`Screenshot of ${project.title}`}
-                  width={400}
-                  height={300}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover transition-all duration-500"
-                />
-              </div>
-            </div>
-          ))}
-        </div>
-      </motion.div>
+        {/* Primary Projects Grid */}
+        <ul className="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-16 list-none p-0 m-0 pl-0 md:pl-6">
+          {sampleProjects.map((project, index) => {
+            const hasLinks = !!project.links?.length;
+            const hasUrl = !!project.url;
 
-      <div className="relative max-w-7xl mx-auto pl-0 md:pl-6">
-        <span className="font-brand font-bold text-3xl text-[#C9D1D9]">
-          {"}"}
-        </span>
-        <span className="font-technical text-lg text-[#6E7681]">
-          {" "}
-          satisfies Project[];
-        </span>
-      </div>
-    </section>
+            const displayLinks = hasLinks
+              ? project.links!
+              : hasUrl
+              ? [{ label: "Visit Website" as const, url: project.url! }]
+              : [];
+
+            return (
+              <motion.li key={project.id} {...revealMotion(index)}>
+                <div className="group block">
+                  <EditorChrome filename={`${toSlug(project.title)}.tsx`} />
+                  <CaseFileMedia project={project} />
+                  <CardMeta project={project} />
+
+                  {displayLinks.length > 0 && (
+                    <div className="flex flex-col sm:flex-row gap-2.5 mt-6 px-1">
+                      {displayLinks.map((link) => (
+                        <ActionButton
+                          key={link.label}
+                          link={link}
+                          projectTitle={project.title}
+                        />
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </motion.li>
+            );
+          })}
+        </ul>
+
+        <div className="relative max-w-7xl mx-auto mt-24 pl-0 md:pl-6">
+          <span className="font-brand font-bold text-3xl text-[#C9D1D9]">
+            {"}"}
+          </span>
+          <span className="font-technical text-lg text-[#6E7681]">
+            {" "}
+            satisfies Project[];
+          </span>
+        </div>
+      </section>
+    </>
   );
 };
 
