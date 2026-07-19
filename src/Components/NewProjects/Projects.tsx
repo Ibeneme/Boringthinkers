@@ -29,7 +29,7 @@ import total from "../../assets/projects/total.png";
  */
 
 interface ProjectLink {
-  label: "App Store" | "Google Play" | "View Website";
+  label: "App Store" | "Google Play" | "Visit Website";
   url: string;
   icon?: React.ReactNode;
 }
