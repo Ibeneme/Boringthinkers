@@ -1,6 +1,6 @@
 import Hero from "./Hero/Hero";
 import FlagsRow from "./Hero/FlagsRow";
-import OurCompany from "./OurCompany/OurCompany";
+// import OurCompany from "./OurCompany/OurCompany";
 import CodeShowcase from "./Hero/CodeShowcase";
 import WhatWeBuild from "../Components/AccordionSection/Whatwebuild";
 
@@ -12,7 +12,7 @@ const Home = () => {
         <Hero />
         <FlagsRow />
         <CodeShowcase />
-        <OurCompany />
+        {/* <OurCompany /> */}
 
         {/* WhatWeBuild Section - Safely wrapped */}
         <div className="w-full overflow-hidden">
