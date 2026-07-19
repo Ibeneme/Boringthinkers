@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
             <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]" />
             <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]" />
             <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F]" />
-            <span className="ml-3 text-xs text-[#7FA08D]">
+            <span className="ml-3 text-xs text-[#D3E5D9]">
               footer.config.ts
             </span>
           </div>
@@ -85,7 +85,7 @@ const Footer: React.FC = () => {
                   alt="BoringThinkers Logo"
                   className="h-9 w-auto"
                 />
-                <p className="text-xs text-[#7FA08D]">
+                <p className="text-xs text-[#D3E5D9]">
                   <span className="text-[#4F6B5A]">// </span>company
                 </p>
                 <h2 className="text-2xl font-bold text-white">
@@ -126,13 +126,13 @@ const Footer: React.FC = () => {
                 <span className="w-2 h-2 rounded-full bg-[#FF5F56]" />
                 <span className="w-2 h-2 rounded-full bg-[#FFBD2E]" />
                 <span className="w-2 h-2 rounded-full bg-[#27C93F]" />
-                <span className="ml-2 text-xs text-[#7FA08D]">
+                <span className="ml-2 text-xs text-[#D3E5D9]">
                   routes.config.json
                 </span>
               </div>
 
               <div className="py-3">
-                <div className="px-5 py-1 text-xs text-[#7FA08D]">{"{"}</div>
+                <div className="px-5 py-1 text-xs text-[#D3E5D9]">{"{"}</div>
                 {navLinks.map((item, i) => (
                   <Link
                     key={item.name}
@@ -143,7 +143,7 @@ const Footer: React.FC = () => {
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span className="text-sm">
-                      <span className="text-[#D2A8FF] group-hover:text-white transition-colors">
+                      <span className="text-[#D2A8FF] group-hover:text-[#D3E5D9] transition-colors">
                         "{item.name}"
                       </span>
                       <span className="text-[#D3E5D9]">: </span>
@@ -158,13 +158,13 @@ const Footer: React.FC = () => {
                     </span>
                   </Link>
                 ))}
-                <div className="px-5 py-1 text-xs text-[#7FA08D]">{"}"}</div>
+                <div className="px-5 py-1 text-xs text-[#D3E5D9]">{"}"}</div>
               </div>
             </nav>
           </div>
 
           {/* Status bar */}
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 px-5 py-3 bg-[#0F2A1A] border-t border-[#1F4030] text-[11px] uppercase tracking-widest text-[#7FA08D]">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 px-5 py-3 bg-[#0F2A1A] border-t border-[#1F4030] text-[11px] uppercase tracking-widest text-[#D3E5D9]">
             <div className="flex items-center gap-5">
               <span className="flex items-center gap-1.5 text-[#3FB950]">
                 <span className="relative flex h-1.5 w-1.5">
@@ -174,7 +174,7 @@ const Footer: React.FC = () => {
                 <GitBranch size={12} />
                 main
               </span>
-              <span className="flex items-center gap-1.5 text-[#7FA08D]">
+              <span className="flex items-center gap-1.5 text-[#D3E5D9]">
                 <CheckCircle2 size={12} className="text-[#3FB950]" />
                 build passing
               </span>
@@ -187,21 +187,21 @@ const Footer: React.FC = () => {
               {/* Added dotted underlines that become solid on hover so text links are visually distinct from plain text statuses */}
               <Link
                 to="/privacy-policy"
-                className="underline decoration-dotted hover:decoration-solid hover:text-[#3FB950] text-[#7FA08D] transition-colors cursor-pointer"
+                className="underline decoration-dotted hover:decoration-solid hover:text-[#3FB950] text-[#D3E5D9] transition-colors cursor-pointer"
               >
                 Privacy
               </Link>
               <span className="text-[#1F4030]">|</span>
               <Link
                 to="/terms-and-conditions"
-                className="underline decoration-dotted hover:decoration-solid hover:text-[#3FB950] text-[#7FA08D] transition-colors cursor-pointer"
+                className="underline decoration-dotted hover:decoration-solid hover:text-[#3FB950] text-[#D3E5D9] transition-colors cursor-pointer"
               >
                 Terms
               </Link>
               <span className="text-[#1F4030]">|</span>
               <Link
                 to="/security"
-                className="underline decoration-dotted hover:decoration-solid hover:text-[#3FB950] text-[#7FA08D] transition-colors cursor-pointer"
+                className="underline decoration-dotted hover:decoration-solid hover:text-[#3FB950] text-[#D3E5D9] transition-colors cursor-pointer"
               >
                 Security
               </Link>
