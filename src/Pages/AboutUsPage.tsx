@@ -5,13 +5,13 @@ import We from "../Components/We/We";
 // import Showcase from "./Hero/CodeShowcase";
 import Team from "./Hero/Team";
 // import We from "../Components/We/We";
-import OurCompany from "./OurCompany/OurCompany";
+// import OurCompany from "./OurCompany/OurCompany";
 
 const AboutUsPage = () => {
   return (
     <div>
       <BlogHero title={`"Boring" Thinkers`} />
-      <OurCompany />
+      {/* <OurCompany /> */}
       {/* <Showcase /> */}
       <AboutUs />
 
