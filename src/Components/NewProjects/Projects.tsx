@@ -216,7 +216,7 @@ const NewProjects: React.FC = () => {
   });
 
   return (
-    <section className="relative bg-[#0A1F13] py-32 px-6 md:px-20 text-[#C9D1D9] overflow-hidden">
+    <section className="relative bg-[#011404] py-32 px-6 md:px-20 text-[#C9D1D9] overflow-hidden">
       <style>{`
         @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
         @keyframes pulseDot { 0% { transform: scale(1); opacity: 0.75; } 100% { transform: scale(2.2); opacity: 0; } }

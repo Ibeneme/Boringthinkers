@@ -68,8 +68,8 @@ const Navbar = () => {
           className={`font-technical max-w-6xl mx-auto transition-all duration-500 ease-in-out px-6 rounded-full border flex items-center justify-between relative z-[120] backdrop-blur-md shadow-2xl
             ${
               scrolled
-                ? "h-14 bg-[#0A1F13]/90 border-[#1F4030] shadow-[#0A1F13]/20"
-                : "h-16 bg-[#0A1F13]/70 border-[#1F4030]/40 shadow-transparent"
+                ? "h-14 bg-[#011404]/90 border-[#1F4030] shadow-[#011404]/20"
+                : "h-16 bg-[#011404]/70 border-[#1F4030]/40 shadow-transparent"
             }`}
         >
           {/* Window chrome + Brand Logo */}
@@ -120,7 +120,7 @@ const Navbar = () => {
           {/* Desktop Action Button */}
           <button
             onClick={() => handleNavigation("/start-a-project")}
-            className="hidden lg:flex items-center gap-2 bg-transparent border-2 border-[#FFD000] text-[#FFD000] hover:bg-[#FFD000] hover:text-[#0A1F13] px-5 py-2 rounded-full text-xs font-bold tracking-wide transition-all duration-300 transform active:scale-95 shrink-0 outline-none select-none"
+            className="hidden lg:flex items-center gap-2 bg-transparent border-2 border-[#FFD000] text-[#FFD000] hover:bg-[#FFD000] hover:text-[#011404] px-5 py-2 rounded-full text-xs font-bold tracking-wide transition-all duration-300 transform active:scale-95 shrink-0 outline-none select-none"
           >
             <span>&gt;</span>
             Start a Project
@@ -142,7 +142,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Fullscreen Overlay */}
       <div
-        className={`font-technical fixed inset-0 bg-[#0A1F13] z-[150] flex flex-col justify-center transition-all duration-700 ease-[cubic-bezier(0.85,0,0.15,1)] ${
+        className={`font-technical fixed inset-0 bg-[#011404] z-[150] flex flex-col justify-center transition-all duration-700 ease-[cubic-bezier(0.85,0,0.15,1)] ${
           isOpen
             ? "clip-path-open opacity-100 visible pointer-events-auto"
             : "clip-path-closed opacity-0 invisible pointer-events-none"
@@ -214,7 +214,7 @@ const Navbar = () => {
           >
             <button
               onClick={() => handleNavigation("/start-a-project")}
-              className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#FFD000] text-[#0A1F13] px-8 py-4 rounded-full text-xs md:text-sm font-black uppercase tracking-widest transition-all duration-300 hover:bg-[#4ae25e] shadow-lg shadow-[#FFD000]/10 hover:shadow-[#FFD000]/20 transform active:scale-[0.98] outline-none select-none"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#FFD000] text-[#011404] px-8 py-4 rounded-full text-xs md:text-sm font-black uppercase tracking-widest transition-all duration-300 hover:bg-[#4ae25e] shadow-lg shadow-[#FFD000]/10 hover:shadow-[#FFD000]/20 transform active:scale-[0.98] outline-none select-none"
             >
               <span>&gt;</span>
               Start a Project

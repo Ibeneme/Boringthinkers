@@ -47,7 +47,7 @@ export default function IDEHero() {
   const lineCount = activeTab === "ts" ? 22 : activeTab === "rust" ? 19 : 0;
 
   return (
-    <section className="relative min-h-screen w-full bg-[#0A1F13] px-4 py-20 md:py-24 overflow-hidden">
+    <section className="relative min-h-screen w-full bg-[#011404] px-4 py-20 md:py-24 overflow-hidden">
       <style>{`
         @keyframes bt-drift {
           0%, 100% { transform: translate(0, 0) scale(1); }

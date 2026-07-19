@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <section className="relative bg-[#0A1F13] text-[#D3E5D9] overflow-hidden">
+    <section className="relative bg-[#011404] text-[#D3E5D9] overflow-hidden">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
         .font-technical { font-family: 'Space Mono', monospace; }
