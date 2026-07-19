@@ -3,7 +3,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
 import { GitBranch } from "lucide-react";
-import csIcon from "../../assets/projects/csicon.png";
+// import csIcon from "../../assets/projects/csicon.png";
 import agip from "../../assets/projects/agip.png";
 //agip
 export const IOS_URL = "https://apps.apple.com/ng/app/pickars/id6746796884";
