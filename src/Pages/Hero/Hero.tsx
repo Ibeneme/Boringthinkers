@@ -122,7 +122,7 @@ export default function IDEHero() {
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <button
               onClick={() => mailto("Let's build a project")}
-              className="uppercase rounded-full bg-[#ffd000] px-8 py-4 font-bold text-base text-[#0b0e14] hover:bg-[#ffdf4d] active:scale-[0.985] transition-all duration-200"
+              className="uppercase rounded-full bg-[#ffd000] px-8 py-4 font-bold text-base text-[#0b0e14] active:scale-[0.985] transition-all duration-200"
               style={DISPLAY}
             >
               Send us a mail →
