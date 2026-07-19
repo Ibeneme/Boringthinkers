@@ -18,7 +18,7 @@ const flags: FlagEntry[] = [
   { code: "GB", name: "United Kingdom" },
   { code: "CH", name: "Switzerland" },
   { code: "DE", name: "Germany" },
-  ,
+  
   { code: "AU", name: "Australia" },
   // { code: "NZ", name: "New Zealand", },
 

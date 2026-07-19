@@ -3,10 +3,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
 import { GitBranch } from "lucide-react";
-import PickarIcon from "../../assets/projects/icon.png";
-import KokoIcon from "../../assets/projects/kokoicon.png";
 import csIcon from "../../assets/projects/csicon.png";
-import yareicon from "../../assets/projects/yareicon.png";
 import agip from "../../assets/projects/agip.png";
 //agip
 export const IOS_URL = "https://apps.apple.com/ng/app/pickars/id6746796884";
@@ -18,7 +15,6 @@ import pickarsapp from "../../assets/projects/content_e.png";
 import yare from "../../assets/projects/yare.png";
 import koko from "../../assets/projects/koko.png";
 import ariad from "../../assets/projects/ariad.png";
-import voted from "../../assets/projects/voted.png";
 import rivers from "../../assets/projects/image.png";
 import total from "../../assets/projects/total.png";
 import cols from "../../assets/projects/cols.png";
