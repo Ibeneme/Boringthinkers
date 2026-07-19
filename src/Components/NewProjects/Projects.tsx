@@ -220,7 +220,7 @@ const CardMeta: React.FC<{ project: Project }> = ({ project }) => (
       <span className="text-[#484F58]">// </span>
       {project.role}
     </p>
-    <h3 className="text-2xl font-brand font-bold tracking-tight mt-1.5 mb-4 text-[#C9D1D9] group-hover:text-[#D2A8FF] transition-colors duration-300">
+    <h3 className="text-2xl font-brand font-bold tracking-tight mt-1.5 mb-4 text-[#D3E5D9] group-hover:text-[#D3E5D9] transition-colors duration-300">
       {project.title}
     </h3>
   </div>
@@ -342,7 +342,7 @@ const NewProjects: React.FC = () => {
       </section>
 
       {/* 2. RECENT PROJECTS SECTION (Maintains Dark Background) */}
-      <section className="relative bg-[#011404] py-32 px-6 md:px-20 text-[#C9D1D9] overflow-hidden">
+      <section className="relative bg-[#011404] py-32 px-6 md:px-20 text-[#D3E5D9] overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.04]"
           style={{
@@ -362,7 +362,7 @@ const NewProjects: React.FC = () => {
         />
         <div
           aria-hidden="true"
-          className="absolute -top-40 right-0 w-[500px] h-[500px] rounded-full bg-[#D2A8FF] opacity-[0.06] blur-[120px] pointer-events-none"
+          className="absolute -top-40 right-0 w-[500px] h-[500px] rounded-full bg-[#D3E5D9] opacity-[0.06] blur-[120px] pointer-events-none"
         />
 
         <div className="relative max-w-7xl mx-auto mb-24">
@@ -374,9 +374,9 @@ const NewProjects: React.FC = () => {
           </div>
 
           <h2 className="text-5xl md:text-7xl font-brand font-bold tracking-tight leading-tight">
-            <span className="text-[#FF7B72]">Our Most</span>{" "}
-            <span className="text-[#D2A8FF]">Recent works</span>{" "}
-            <span className="text-[#C9D1D9]">= {"{"}</span>
+            <span className="text-[#D3E5D9]">Most</span>{" "}
+            <span className="text-[#D3E5D9]">Recent Works</span>{" "}
+            <span className="text-[#D3E5D9]">= {"{"}</span>
             <span
               aria-hidden="true"
               className={`inline-block w-[3px] h-[0.85em] bg-[#3FB950] ml-2 align-middle ${
@@ -431,7 +431,7 @@ const NewProjects: React.FC = () => {
         </ul>
 
         <div className="relative max-w-7xl mx-auto mt-24 pl-0 md:pl-6">
-          <span className="font-brand font-bold text-3xl text-[#C9D1D9]">
+          <span className="font-brand font-bold text-3xl text-[#D3E5D9]">
             {"}"}
           </span>
           <span className="font-technical text-lg text-[#6E7681]">
