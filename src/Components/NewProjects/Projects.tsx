@@ -16,16 +16,12 @@ import ariad from "../../assets/projects/ariad.png";
 import voted from "../../assets/projects/voted.png";
 import rivers from "../../assets/projects/image.png";
 import total from "../../assets/projects/total.png";
+import cols from "../../assets/projects/cols.png"; // Imported Colsphere thumbnail
 
 /**
  * DESIGN NOTE
  * This version leans fully into a code-editor aesthetic. It assumes
  * `font-brand` and `font-technical` are wired up in tailwind.config.js.
- * For the intended effect, point BOTH at a monospace family, e.g.:
- *   font-brand      -> "JetBrains Mono", monospace  (headline, bold)
- *   font-technical  -> "JetBrains Mono", monospace  (labels, UI, body)
- * If you want a touch more readability in longer copy, swap font-technical
- * for "IBM Plex Mono" or keep a sans like "Inter" there instead — both work.
  */
 
 interface ProjectLink {
@@ -78,6 +74,14 @@ const sampleProjects: Project[] = [
   },
   {
     id: 4,
+    title: "Colsphere",
+    role: "Collaborative Platform",
+    status: "Live",
+    thumbnail: cols,
+    url: "https://www.colsphere.com/",
+  },
+  {
+    id: 5,
     title: "KokoHor Circle",
     role: "Brand & Web Experience",
     status: "Live",
@@ -85,7 +89,7 @@ const sampleProjects: Project[] = [
     url: "https://www.kokohorcircle.com/",
   },
   {
-    id: 5,
+    id: 6,
     title: "Ariad Psych Services",
     role: "Mental Health Platform",
     status: "Live",
@@ -93,7 +97,7 @@ const sampleProjects: Project[] = [
     url: "https://www.ariadpsychservices.com/",
   },
   {
-    id: 6,
+    id: 7,
     title: "Votedamarcus",
     role: "Campaign Website",
     status: "Live",
@@ -104,14 +108,14 @@ const sampleProjects: Project[] = [
 
 const ndaProjects: Project[] = [
   {
-    id: 7,
+    id: 8,
     title: "Rivers State Government",
     role: "Public Sector Platform",
     status: "Live",
     thumbnail: rivers,
   },
   {
-    id: 8,
+    id: 9,
     title: "TotalEnergies",
     role: "Corporate Web Platform",
     status: "Live",
@@ -189,7 +193,7 @@ const ActionButton: React.FC<{ link: ProjectLink; projectTitle: string }> = ({
     target="_blank"
     rel="noopener noreferrer"
     aria-label={`${link.label} ${projectTitle}`}
-    className="flex-1 flex items-center justify-center gap-2 bg-[#ffffff12]  text-[#fff] py-4 px-5 rounded-full font-technical text-[16px] font-semibold tracking-wide transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#011404] focus-visible:ring-[#3FB950]"
+    className="flex-1 flex items-center justify-center gap-2 bg-[#ffffff12] text-[#fff] py-4 px-5 rounded-full font-technical text-[16px] font-semibold tracking-wide transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#011404] focus-visible:ring-[#3FB950]"
   >
     {link.icon && <span aria-hidden="true">{link.icon}</span>}
     <span>{link.label}</span>
@@ -212,7 +216,7 @@ const NewProjects: React.FC = () => {
   });
 
   return (
-    <section className="relative bg-[#011404] py-32 px-6 md:px-20 text-[#C9D1D9] overflow-hidden">
+    <section className="relative bg-[#0A1F13] py-32 px-6 md:px-20 text-[#C9D1D9] overflow-hidden">
       <style>{`
         @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
         @keyframes pulseDot { 0% { transform: scale(1); opacity: 0.75; } 100% { transform: scale(2.2); opacity: 0; } }
@@ -229,7 +233,6 @@ const NewProjects: React.FC = () => {
         }}
       />
 
-      {/* faint dot-grid, like an editor minimap */}
       <div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none opacity-[0.15]"
@@ -308,7 +311,7 @@ const NewProjects: React.FC = () => {
         })}
       </ul>
 
-      {/* NDA Section, styled as restricted/redacted logs */}
+      {/* NDA Section */}
       <motion.div
         initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -333,15 +336,9 @@ const NewProjects: React.FC = () => {
           </p>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 rounded-lg  p-5 md:grid-cols-3 gap-6 bg-[#fff]">
+        <div className="mt-10 grid grid-cols-1 rounded-lg p-5 md:grid-cols-3 gap-6 bg-[#fff]">
           {ndaProjects.map((project) => (
-            <div key={project.id} className="group relative  overflow-hidden">
-              {/* <div className="flex items-center gap-2 px-4 py-2.5 border-b border-[#30363D]">
-                <Lock size={12} className="text-[#D29922]" />
-                <span className="font-technical text-xs text-[#D29922]">
-                  ACCESS RESTRICTED
-                </span>
-              </div> */}
+            <div key={project.id} className="group relative overflow-hidden">
               <div className="relative aspect-video overflow-hidden">
                 <img
                   src={project.thumbnail}
@@ -350,7 +347,7 @@ const NewProjects: React.FC = () => {
                   height={300}
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-full object-cover  transition-all duration-500"
+                  className="w-full h-full object-cover transition-all duration-500"
                 />
               </div>
             </div>

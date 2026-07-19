@@ -17,14 +17,14 @@ const ContactUs: React.FC = () => {
         className="absolute inset-0 pointer-events-none opacity-[0.05]"
         style={{
           backgroundImage:
-            "linear-gradient(#06110A 1px, transparent 1px), linear-gradient(90deg, #06110A 1px, transparent 1px)",
+            "linear-gradient(#0A1F13 1px, transparent 1px), linear-gradient(90deg, #0A1F13 1px, transparent 1px)",
           backgroundSize: "40px 40px",
         }}
       />
 
       {/* Background Texture */}
       <div className="absolute top-[-80px] right-[-80px] opacity-[0.04] pointer-events-none select-none">
-        <span className="text-[18rem] md:text-[28rem] font-black leading-none uppercase tracking-[-0.05em] text-[#06110A]">
+        <span className="text-[18rem] md:text-[28rem] font-black leading-none uppercase tracking-[-0.05em] text-[#0A1F13]">
           Contact
         </span>
       </div>
@@ -37,7 +37,7 @@ const ContactUs: React.FC = () => {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="inline-block text-[11px] font-bold uppercase tracking-[0.5em] text-[#06110A] border-2 border-[#06110A] px-3 py-1.5 -rotate-1 mb-8"
+              className="inline-block text-[11px] font-bold uppercase tracking-[0.5em] text-[#0A1F13] border-2 border-[#0A1F13] px-3 py-1.5 -rotate-1 mb-8"
             >
               Initiate Briefing
             </motion.span>
@@ -47,7 +47,7 @@ const ContactUs: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-[4.5rem] md:text-[7rem] lg:text-[8rem] font-black text-[#06110A] leading-[0.85] tracking-[-0.06em] mb-10"
+              className="text-[4.5rem] md:text-[7rem] lg:text-[8rem] font-black text-[#0A1F13] leading-[0.85] tracking-[-0.06em] mb-10"
             >
               Reach
               <br />
@@ -59,7 +59,7 @@ const ContactUs: React.FC = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-[1.2rem] md:text-xl text-[#06110A] max-w-[38ch] leading-snug"
+              className="text-[1.2rem] md:text-xl text-[#0A1F13] max-w-[38ch] leading-snug"
             >
               Discuss your next big project, or learn how our systems can
               accelerate your business growth.
@@ -76,7 +76,7 @@ const ContactUs: React.FC = () => {
           >
             <a
               href="mailto:contact@boringthinkers.com"
-              className="group block bg-[#06110A] rounded-2xl p-8 md:p-10 min-h-[340px] md:min-h-[380px] min-w-[340px] md:min-w-[420px] flex flex-col border border-[#06110A] hover:border-[#D7301F] transition-all duration-700"
+              className="group block bg-[#0A1F13] rounded-2xl p-8 md:p-10 min-h-[340px] md:min-h-[380px] min-w-[340px] md:min-w-[420px] flex flex-col border border-[#0A1F13] hover:border-[#D7301F] transition-all duration-700"
             >
               {/* Top Bar */}
               <div className="flex justify-between items-start">
@@ -105,7 +105,7 @@ const ContactUs: React.FC = () => {
         </div>
 
         {/* Footer Bar
-        <div className="mt-24 pt-8 border-t border-dashed border-[#06110A]/15 flex flex-col sm:flex-row justify-between items-center gap-4 text-[#06110A]/50 text-[11px] font-bold uppercase tracking-[0.2em]">
+        <div className="mt-24 pt-8 border-t border-dashed border-[#0A1F13]/15 flex flex-col sm:flex-row justify-between items-center gap-4 text-[#0A1F13]/50 text-[11px] font-bold uppercase tracking-[0.2em]">
           <span>Boring Thinkers Limited</span>
           <span className="text-center sm:text-right">
             © {new Date().getFullYear()} • All Rights Reserved
