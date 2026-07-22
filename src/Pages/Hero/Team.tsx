@@ -24,21 +24,21 @@ const Team = () => {
   return (
     <>
       <Helmet>
-        <title>About Us & Leadership | Boring Thinkers</title>
+        <title>Our Team & Leadership | Boring Thinkers</title>
         <meta
           name="description"
-          content="Learn about Boring Thinkers Limited and meet our leadership. Led by CEO Sandra, we engineer reliable, scalable, and beautifully designed digital solutions."
+          content="Meet the team at Boring Thinkers Limited. Led by CEO Sandra, we engineer reliable, scalable, and beautifully designed digital solutions."
         />
-        <link rel="canonical" href="https://boringthinkers.com/team" />
+        <link rel="canonical" href="https://boringthinkers.com/our-team" />
         <meta
           property="og:title"
-          content="About Us & Leadership | Boring Thinkers"
+          content="Our Team & Leadership | Boring Thinkers"
         />
         <meta
           property="og:description"
           content="Meet Sandra, CEO of Boring Thinkers Limited, and explore our mission of building clean code and bulletproof digital products."
         />
-        <meta property="og:url" content="https://boringthinkers.com/team" />
+        <meta property="og:url" content="https://boringthinkers.com/our-team" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Boring Thinkers" />
         <script type="application/ld+json">
@@ -64,7 +64,7 @@ const Team = () => {
         <div className="flex items-center justify-center gap-4 mb-6">
           <div className="w-8 h-[1px] bg-[#FFD000]" />
           <span className="text-[#FFD000] text-xs font-black uppercase tracking-[0.125em]">
-            THE TEAM
+            OUR TEAM
           </span>
           <div className="w-8 h-[1px] bg-[#FFD000]" />
         </div>
