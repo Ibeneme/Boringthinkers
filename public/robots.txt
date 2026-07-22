@@ -1,23 +1,4 @@
-# =============================================
-# robots.txt for BoringThinkers
-# =============================================
-
 User-agent: *
 Allow: /
 
-# Disallow sensitive or duplicate pages
-Disallow: /admin/
-Disallow: /api/
-Disallow: /private/
-Disallow: /dashboard/
-
-# Legal pages are allowed but low priority
-Allow: /privacy-policy
-Allow: /terms-and-conditions
-Allow: /security
-
-# Sitemap
-Sitemap: https://boringthinkers.com/sitemap.xml
-
-# Crawl delay (optional - good for smaller sites)
-Crawl-delay: 1
+Sitemap: https://www.boringthinkers.com/sitemap.xml
