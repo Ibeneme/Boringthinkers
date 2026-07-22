@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 
 const privacySections = [
@@ -34,7 +35,27 @@ const privacySections = [
   },
 ];
 
-const PrivacyPolicy: React.FC = () => {
+export const PrivacyPolicy: React.FC = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Privacy Policy | Boring Thinkers",
+    url: "https://boringthinkers.com/privacy",
+    description:
+      "Boring Thinkers Limited takes security seriously. We handle client data, intellectual property, and system infrastructure with total transparency.",
+    publisher: {
+      "@type": "Organization",
+      name: "Boring Thinkers",
+      url: "https://boringthinkers.com/",
+      logo: "https://boringthinkers.com/logo.png",
+      sameAs: [
+        "https://www.linkedin.com/company/boring-thinkers/",
+        "https://x.com/BoringThinkers",
+        "https://www.instagram.com/boringthinkers",
+      ],
+    },
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -50,14 +71,31 @@ const PrivacyPolicy: React.FC = () => {
 
   return (
     <section className="relative bg-[#FAFAF6] pt-[180px] pb-24 px-6 md:px-20 min-h-screen overflow-hidden">
-      {/* Shared brand type system */}
+      <Helmet>
+        <title>Privacy Policy | Boring Thinkers</title>
+        <meta
+          name="description"
+          content="Learn how Boring Thinkers handles client data, intellectual property privacy, and secure cloud infrastructure protection."
+        />
+        <link rel="canonical" href="https://boringthinkers.com/privacy" />
+        <meta property="og:title" content="Privacy Policy | Boring Thinkers" />
+        <meta
+          property="og:description"
+          content="Handling client data, intellectual property, and system infrastructure with total transparency."
+        />
+        <meta property="og:url" content="https://boringthinkers.com/privacy" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Boring Thinkers" />
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      </Helmet>
+
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Space+Mono:wght@400;700&display=swap');
         .font-editorial { font-family: 'Instrument Serif', serif; font-style: italic; }
         .font-technical { font-family: 'Space Mono', monospace; }
       `}</style>
-
-      {/* Faint graph-paper texture, consistent with the rest of the site */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.05]"
         style={{
@@ -66,9 +104,7 @@ const PrivacyPolicy: React.FC = () => {
           backgroundSize: "40px 40px",
         }}
       />
-      
-       <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
+      <div className="max-w-7xl mx-auto">
         <div className="mb-32">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -101,7 +137,6 @@ const PrivacyPolicy: React.FC = () => {
           </motion.p>
         </div>
 
-        {/* Sections Grid - Structural List */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -115,19 +150,16 @@ const PrivacyPolicy: React.FC = () => {
               variants={itemVariants}
               className="group flex flex-col md:flex-row items-start md:items-center py-12 border-b border-gray-100 hover:bg-gray-50 transition-colors px-4"
             >
-              {/* Section Number */}
               <div className="text-4xl md:text-7xl font-black text-[#050505] opacity-5 group-hover:opacity-100 group-hover:text-[#FFD000] transition-all w-24 md:w-32 mb-4 md:mb-0">
                 0{index + 1}
               </div>
 
-              {/* Title */}
               <div className="flex-1">
                 <h3 className="text-2xl md:text-4xl font-black text-[#050505] uppercase tracking-tighter mb-2 group-hover:pl-4 transition-all duration-300">
                   {section.title}
                 </h3>
               </div>
 
-              {/* Description */}
               <div className="flex-[1.5]">
                 <p className="text-[#050505] text-lg font-bold opacity-50 group-hover:opacity-100 transition-opacity max-w-lg leading-snug">
                   {section.description}
@@ -137,7 +169,6 @@ const PrivacyPolicy: React.FC = () => {
           ))}
         </motion.div>
 
-        {/* Bottom Callout */}
         <motion.div
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}

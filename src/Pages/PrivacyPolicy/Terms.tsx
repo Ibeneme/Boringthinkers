@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 
 const termsSections = [
@@ -34,7 +35,27 @@ const termsSections = [
   },
 ];
 
-const TermsOfService: React.FC = () => {
+export const TermsOfService: React.FC = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Terms of Service | Boring Thinkers",
+    url: "https://boringthinkers.com/terms",
+    description:
+      "Rules of engagement, technical obligations, and intellectual property ownership definitions for Boring Thinkers Limited.",
+    publisher: {
+      "@type": "Organization",
+      name: "Boring Thinkers",
+      url: "https://boringthinkers.com/",
+      logo: "https://boringthinkers.com/logo.png",
+      sameAs: [
+        "https://www.linkedin.com/company/boring-thinkers/",
+        "https://x.com/BoringThinkers",
+        "https://www.instagram.com/boringthinkers",
+      ],
+    },
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -50,13 +71,34 @@ const TermsOfService: React.FC = () => {
 
   return (
     <section className="relative bg-[#FAFAF6] pt-[180px] pb-24 px-6 md:px-20 min-h-screen overflow-hidden">
-      {/* Shared brand type system */}
+      <Helmet>
+        <title>Terms of Service | Boring Thinkers</title>
+        <meta
+          name="description"
+          content="Review the terms of service, intellectual property guidelines, and technical obligations for custom software development with Boring Thinkers."
+        />
+        <link rel="canonical" href="https://boringthinkers.com/terms" />
+        <meta
+          property="og:title"
+          content="Terms of Service | Boring Thinkers"
+        />
+        <meta
+          property="og:description"
+          content="Rules of engagement, technical obligations, and intellectual property ownership definitions."
+        />
+        <meta property="og:url" content="https://boringthinkers.com/terms" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Boring Thinkers" />
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      </Helmet>
+
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Space+Mono:wght@400;700&display=swap');
         .font-editorial { font-family: 'Instrument Serif', serif; font-style: italic; }
         .font-technical { font-family: 'Space Mono', monospace; }
       `}</style>
-      {/* Faint graph-paper texture, consistent with the rest of the site */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.05]"
         style={{
@@ -64,9 +106,8 @@ const TermsOfService: React.FC = () => {
             "linear-gradient(#06110A 1px, transparent 1px), linear-gradient(90deg, #06110A 1px, transparent 1px)",
           backgroundSize: "40px 40px",
         }}
-      />{" "}
+      />
       <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
         <div className="mb-32">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -98,7 +139,6 @@ const TermsOfService: React.FC = () => {
           </motion.p>
         </div>
 
-        {/* Sections Grid - Structural List */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -112,19 +152,16 @@ const TermsOfService: React.FC = () => {
               variants={itemVariants}
               className="group flex flex-col md:flex-row items-start md:items-center py-12 border-b border-gray-100 hover:bg-gray-50 transition-colors px-4"
             >
-              {/* Section Number */}
               <div className="text-4xl md:text-7xl font-black text-[#050505] opacity-5 group-hover:opacity-100 group-hover:text-[#FFD000] transition-all w-24 md:w-32 mb-4 md:mb-0">
                 0{index + 1}
               </div>
 
-              {/* Title */}
               <div className="flex-1">
                 <h3 className="text-2xl md:text-4xl font-black text-[#050505] uppercase tracking-tighter mb-2 group-hover:pl-4 transition-all duration-300">
                   {section.title}
                 </h3>
               </div>
 
-              {/* Description */}
               <div className="flex-[1.5]">
                 <p className="text-[#050505] text-lg font-bold opacity-50 group-hover:opacity-100 transition-opacity max-w-lg leading-snug">
                   {section.description}
@@ -134,7 +171,6 @@ const TermsOfService: React.FC = () => {
           ))}
         </motion.div>
 
-        {/* Bottom Callout */}
         <motion.div
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}

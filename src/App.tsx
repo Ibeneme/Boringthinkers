@@ -5,7 +5,6 @@ import Footer from "./Components/Footer/Footer";
 import PrivacyPolicy from "./Pages/PrivacyPolicy/PrivacyPolicy";
 import AboutUsPage from "./Pages/AboutUsPage";
 import OurProjectsPage from "./Pages/OurProjectsPage";
-import OurTeamPage from "./Pages/OurTeamPage";
 import CareerPage from "./Pages/CareersPage";
 import NotFound from "./Pages/NotFound";
 import Navbar from "./Components/Navbar/Navbar";
@@ -18,6 +17,9 @@ import StartProjectPage from "./Pages/StartProjectPage";
 import BlogPage from "./Pages/BlogPage";
 import BlogDetailsPage from "./Pages/BlogDetailPage";
 import PricingPage from "./Pages/PricingPage";
+import Team from "./Pages/Hero/Team";
+import FAQPage from "./Components/Faqs/FAQPage";
+import PageHero from "./Components/BlogHero/BlogHero";
 
 function App() {
   return (
@@ -31,9 +33,26 @@ function App() {
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/blog/:id" element={<BlogDetailsPage />} />
         <Route path="/about-us" element={<AboutUsPage />} />
+        <Route
+          path="/faq"
+          element={
+            <>
+              <PageHero title="Frequently asked Questions" />
+              <FAQPage />
+            </>
+          }
+        />
         <Route path="/projects" element={<OurProjectsPage />} />
         <Route path="/how-we-work" element={<HowWeWorkPage />} />
-        <Route path="/team" element={<OurTeamPage />} />
+        <Route
+          path="/team"
+          element={
+            <>
+              <PageHero title="Our Team" />
+              <Team />
+            </>
+          }
+        />
         <Route path="/careers" element={<CareerPage />} />
         <Route path="/start-a-project" element={<StartProjectPage />} />
         <Route path="*" element={<NotFound />} />

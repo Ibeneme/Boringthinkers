@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import fintech from "../assets/images/codes/fintech.png";
 import uber from "../assets/images/codes/uber.png";
@@ -22,6 +23,27 @@ const projectBriefSteps = [
 ];
 
 const StartProjectPage: React.FC = () => {
+  // Structured Data (JSON-LD) for Start Project / Contact WebPage
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Start a Project | Hire Boring Thinkers Software Engineers",
+    url: "https://boringthinkers.com/start-project",
+    description:
+      "Kick off your custom software development project with Boring Thinkers. Share your project brief for scalable web and mobile app engineering.",
+    publisher: {
+      "@type": "Organization",
+      name: "Boring Thinkers",
+      url: "https://boringthinkers.com/",
+      logo: "https://boringthinkers.com/logo.png",
+      sameAs: [
+        "https://www.linkedin.com/company/boring-thinkers/",
+        "https://x.com/BoringThinkers",
+        "https://www.instagram.com/boringthinkers",
+      ],
+    },
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -89,6 +111,48 @@ const StartProjectPage: React.FC = () => {
 
   return (
     <section className="bg-white pt-[140px] md:pt-[180px] pb-24 px-6 md:px-20 min-h-screen select-none">
+      {/* Dynamic SEO Meta Data, Open Graph Tags & Structured Data */}
+      <Helmet>
+        <title>Start a Project | Boring Thinkers Software Development</title>
+        <meta
+          name="description"
+          content="Initiate your next custom software engineering project with Boring Thinkers. Review our protocol and collaborate on high-performance web and mobile solutions."
+        />
+        <link rel="canonical" href="https://boringthinkers.com/start-project" />
+
+        {/* Open Graph / Social Sharing Meta Tags */}
+        <meta
+          property="og:title"
+          content="Start a Project | Boring Thinkers Software Development"
+        />
+        <meta
+          property="og:description"
+          content="Bring your product to life through transparent collaboration, clean architecture, and rapid software engineering with Boring Thinkers."
+        />
+        <meta
+          property="og:url"
+          content="https://boringthinkers.com/start-project"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Boring Thinkers" />
+
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Start a Project | Boring Thinkers Software Development"
+        />
+        <meta
+          name="twitter:description"
+          content="Collaborate with Boring Thinkers for custom web and mobile app development."
+        />
+
+        {/* JSON-LD Structured Data Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      </Helmet>
+
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="mb-24 md:mb-32">
@@ -200,7 +264,7 @@ const StartProjectPage: React.FC = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="group flex flex-col md:flex-row items-start md:items-center py-10 md:py-12 border-b border-gray-100 hover:bg-gray-50 transition-colors px-4"
+              className="group flex flex-col md:flex-row items-start md:items-center py-10 md:py-12 border-b border-gray-100 hover:bg-gray-550 transition-colors px-4"
             >
               {/* Step Number */}
               <div className="text-4xl md:text-7xl font-black text-[#0A2F1D] opacity-5 group-hover:opacity-100 group-hover:text-[#FFD000] transition-all w-24 md:w-32 mb-4 md:mb-0">
@@ -223,33 +287,6 @@ const StartProjectPage: React.FC = () => {
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Full-Section CTA Block */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="border-t border-black/5 pt-12"
-        >
-          <a
-            href="mailto:contact@boringthinkers.com"
-            className="group block bg-[#0A2F1D] hover:bg-[#FFD000] transition-all duration-500 rounded-none w-full p-8 md:p-16 select-none cursor-pointer"
-          >
-            <div className="flex flex-col gap-6">
-              <span className="text-[#FFD000] group-hover:text-[#0A2F1D] text-xs font-black uppercase tracking-[0.4em] transition-colors duration-500">
-                Next Step
-              </span>
-              <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
-                <h3 className="text-3xl md:text-6xl font-black text-white group-hover:text-[#0A2F1D] uppercase tracking-tight leading-none transition-colors duration-500 max-w-2xl">
-                  Ready to execute? Reach out directly.
-                </h3>
-                <span className="text-2xl md:text-4xl font-black text-[#FFD000] group-hover:text-[#0A2F1D] underline underline-offset-8 transition-colors duration-500 break-all lg:text-right shrink-0">
-                  contact@boringthinkers.com
-                </span>
-              </div>
-            </div>
-          </a>
-        </motion.div> */}
       </div>
     </section>
   );
