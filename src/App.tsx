@@ -20,6 +20,8 @@ import PricingPage from "./Pages/PricingPage";
 import Team from "./Pages/Hero/Team";
 import FAQPage from "./Components/Faqs/FAQPage";
 import PageHero from "./Components/BlogHero/BlogHero";
+import WhatWeBuild from "./Components/AccordionSection/Whatwebuild";
+import FlagsRow from "./Pages/Hero/FlagsRow";
 
 function App() {
   return (
@@ -39,6 +41,7 @@ function App() {
             <>
               <PageHero title="Frequently asked Questions" />
               <FAQPage />
+              <WhatWeBuild />
             </>
           }
         />
@@ -50,6 +53,7 @@ function App() {
             <>
               <PageHero title="Our Team" />
               <Team />
+              <FlagsRow />
             </>
           }
         />
